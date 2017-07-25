@@ -1,0 +1,6 @@
+trans(s(’start’, 1-Jan-0) , s(1, 83) , True),
+trans(s(1, 83) , s(2, 84) , ’Jones’ : rb((3-May-1987)) : Pay (’Smith’, $ 500)),
+trans(s(1, 83) , s(default(’Jones’), 90) , ~’Jones’ : rb((3-May-1987)) : Pay (’Smith’, $ 500)),
+trans(s(2, 84) , s(3, 85) , ’Smith’ : rb((15-May-1987)) : Deliver (’Jones’, ’Washer’)),
+trans(s(2, 84) , s(default(’Smith’), 90) , ~’Smith’ : rb((15-May-1987)) : Deliver (’Jones’, ’Washer’)),
+trans(s(3, 85) , s(’finish’, 91) , True)

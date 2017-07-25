@@ -1,5 +1,6 @@
 import pipe.actions.gui.PipeApplicationModel;
 import pipe.controllers.application.PipeApplicationController;
+import pipe.ucl.constructor.Constructor;
 import pipe.views.PipeApplicationBuilder;
 import pipe.views.PipeApplicationView;
 
@@ -16,6 +17,7 @@ public final class Pipe {
         PipeApplicationBuilder builder = new PipeApplicationBuilder();
         applicationView = builder.build(applicationController, applicationModel);
         applicationController.createEmptyPetriNet();
+        Constructor constructor = new Constructor(applicationController, applicationModel);
 
     }
 
