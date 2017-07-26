@@ -2,9 +2,9 @@ package pipe.views;
 
 import pipe.actions.gui.PipeApplicationModel;
 import pipe.controllers.PetriNetController;
-import uk.ac.imperial.pipe.models.petrinet.Arc;
-import uk.ac.imperial.pipe.models.petrinet.ArcPoint;
-import uk.ac.imperial.pipe.models.petrinet.Connectable;
+import pipe.imperial.pipe.models.petrinet.Arc;
+import pipe.imperial.pipe.models.petrinet.ArcPoint;
+import pipe.imperial.pipe.models.petrinet.Connectable;
 
 import javax.swing.event.MouseInputAdapter;
 

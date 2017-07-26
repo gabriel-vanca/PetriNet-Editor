@@ -3,8 +3,8 @@ package pipe.imperial.pipe.parsers;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
-import uk.ac.imperial.pipe.parsers.RateGrammarListener;
-import uk.ac.imperial.pipe.parsers.RateGrammarParser;
+import pipe.imperial.pipe.parsers.RateGrammarListener;
+import pipe.imperial.pipe.parsers.RateGrammarParser;
 
 public class RateGrammarBaseListener implements RateGrammarListener {
    public void enterProgram(uk.ac.imperial.pipe.parsers.RateGrammarParser.ProgramContext ctx) {

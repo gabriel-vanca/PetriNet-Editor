@@ -1,8 +1,8 @@
 package pipe.imperial.pipe.models.petrinet;
 
-import uk.ac.imperial.pipe.models.petrinet.Arc;
-import uk.ac.imperial.pipe.models.petrinet.ArcPoint;
-import uk.ac.imperial.pipe.models.petrinet.ArcType;
+import pipe.imperial.pipe.models.petrinet.Arc;
+import pipe.imperial.pipe.models.petrinet.ArcPoint;
+import pipe.imperial.pipe.models.petrinet.ArcType;
 
 import java.awt.geom.Point2D;
 import java.awt.geom.Point2D.Double;

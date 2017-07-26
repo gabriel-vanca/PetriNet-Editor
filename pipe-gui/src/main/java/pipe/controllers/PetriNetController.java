@@ -2,16 +2,16 @@ package pipe.controllers;
 
 import pipe.gui.PetriNetTab;
 import pipe.historyActions.component.DeletePetriNetObject;
-import uk.ac.imperial.pipe.exceptions.PetriNetComponentException;
-import uk.ac.imperial.pipe.exceptions.PetriNetComponentNotFoundException;
-import uk.ac.imperial.pipe.models.petrinet.*;
-import uk.ac.imperial.pipe.naming.PlaceNamer;
-import uk.ac.imperial.pipe.naming.TransitionNamer;
-import uk.ac.imperial.pipe.naming.UniqueNamer;
-import uk.ac.imperial.pipe.parsers.FunctionalResults;
-import uk.ac.imperial.pipe.visitor.ClonePetriNet;
-import uk.ac.imperial.pipe.visitor.TranslationVisitor;
-import uk.ac.imperial.pipe.visitor.component.PetriNetComponentVisitor;
+import pipe.imperial.pipe.exceptions.PetriNetComponentException;
+import pipe.imperial.pipe.exceptions.PetriNetComponentNotFoundException;
+import pipe.imperial.pipe.models.petrinet.*;
+import pipe.imperial.pipe.naming.PlaceNamer;
+import pipe.imperial.pipe.naming.TransitionNamer;
+import pipe.imperial.pipe.naming.UniqueNamer;
+import pipe.imperial.pipe.parsers.FunctionalResults;
+import pipe.imperial.pipe.visitor.ClonePetriNet;
+import pipe.imperial.pipe.visitor.TranslationVisitor;
+import pipe.imperial.pipe.visitor.component.PetriNetComponentVisitor;
 
 import javax.swing.event.UndoableEditListener;
 import javax.swing.undo.UndoManager;

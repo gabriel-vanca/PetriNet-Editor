@@ -1,7 +1,7 @@
 package pipe.actions.gui;
 
 import pipe.controllers.ArcController;
-import uk.ac.imperial.pipe.models.petrinet.ArcPoint;
+import pipe.imperial.pipe.models.petrinet.ArcPoint;
 
 import javax.swing.*;
 

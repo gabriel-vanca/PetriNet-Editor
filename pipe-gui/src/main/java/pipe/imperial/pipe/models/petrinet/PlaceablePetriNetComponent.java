@@ -1,6 +1,6 @@
 package pipe.imperial.pipe.models.petrinet;
 
-import uk.ac.imperial.pipe.models.petrinet.PetriNetComponent;
+import pipe.imperial.pipe.models.petrinet.PetriNetComponent;
 
 public interface PlaceablePetriNetComponent extends PetriNetComponent {
    String X_CHANGE_MESSAGE = "x";

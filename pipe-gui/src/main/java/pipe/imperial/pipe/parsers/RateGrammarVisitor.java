@@ -1,7 +1,7 @@
 package pipe.imperial.pipe.parsers;
 
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
-import uk.ac.imperial.pipe.parsers.RateGrammarParser;
+import pipe.imperial.pipe.parsers.RateGrammarParser;
 
 public interface RateGrammarVisitor extends ParseTreeVisitor {
    Object visitProgram(uk.ac.imperial.pipe.parsers.RateGrammarParser.ProgramContext var1);

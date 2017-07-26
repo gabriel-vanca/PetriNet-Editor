@@ -6,12 +6,12 @@ import pipe.gui.PetriNetTab;
 import pipe.historyActions.MultipleEdit;
 import pipe.historyActions.component.AddPetriNetObject;
 import pipe.utilities.gui.GuiUtils;
-import uk.ac.imperial.pipe.exceptions.PetriNetComponentException;
-import uk.ac.imperial.pipe.models.petrinet.*;
-import uk.ac.imperial.pipe.naming.MultipleNamer;
-import uk.ac.imperial.pipe.naming.PetriNetComponentNamer;
-import uk.ac.imperial.pipe.visitor.PasteVisitor;
-import uk.ac.imperial.pipe.visitor.component.PetriNetComponentVisitor;
+import pipe.imperial.pipe.exceptions.PetriNetComponentException;
+import pipe.imperial.pipe.models.petrinet.*;
+import pipe.imperial.pipe.naming.MultipleNamer;
+import pipe.imperial.pipe.naming.PetriNetComponentNamer;
+import pipe.imperial.pipe.visitor.PasteVisitor;
+import pipe.imperial.pipe.visitor.component.PetriNetComponentVisitor;
 
 import javax.swing.event.UndoableEditEvent;
 import javax.swing.event.UndoableEditListener;

@@ -2,11 +2,11 @@ package pipe.imperial.pipe.dsl;
 
 import java.util.Map;
 
-import uk.ac.imperial.pipe.dsl.DSLCreator;
-import uk.ac.imperial.pipe.models.petrinet.DiscreteTransition;
-import uk.ac.imperial.pipe.models.petrinet.NormalRate;
-import uk.ac.imperial.pipe.models.petrinet.Rate;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.dsl.DSLCreator;
+import pipe.imperial.pipe.models.petrinet.DiscreteTransition;
+import pipe.imperial.pipe.models.petrinet.NormalRate;
+import pipe.imperial.pipe.models.petrinet.Rate;
+import pipe.imperial.pipe.models.petrinet.Transition;
 
 public abstract class AnAbstractTransition implements DSLCreator {
    protected String id;

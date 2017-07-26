@@ -1,8 +1,8 @@
 package pipe.imperial.pipe.naming;
 
 import java.util.Iterator;
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
-import uk.ac.imperial.pipe.models.petrinet.Place;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.models.petrinet.Place;
 
 public class PlaceNamer extends ComponentNamer {
    public PlaceNamer(PetriNet petriNet) {

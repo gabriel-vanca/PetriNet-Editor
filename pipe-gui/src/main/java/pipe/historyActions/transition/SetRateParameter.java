@@ -4,8 +4,8 @@
 package pipe.historyActions.transition;
 
 
-import uk.ac.imperial.pipe.models.petrinet.Rate;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.models.petrinet.Rate;
+import pipe.imperial.pipe.models.petrinet.Transition;
 
 import javax.swing.undo.AbstractUndoableEdit;
 

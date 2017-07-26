@@ -5,11 +5,11 @@ import pipe.historyActions.arc.AddArcPathPoint;
 import pipe.historyActions.arc.ArcPathPointType;
 import pipe.historyActions.arc.DeleteArcPathPoint;
 import pipe.historyActions.arc.SetArcWeightAction;
-import uk.ac.imperial.pipe.models.petrinet.Connectable;
-import uk.ac.imperial.pipe.models.petrinet.Arc;
-import uk.ac.imperial.pipe.models.petrinet.ArcPoint;
-import uk.ac.imperial.pipe.parsers.FunctionalResults;
-import uk.ac.imperial.pipe.parsers.UnparsableException;
+import pipe.imperial.pipe.models.petrinet.Connectable;
+import pipe.imperial.pipe.models.petrinet.Arc;
+import pipe.imperial.pipe.models.petrinet.ArcPoint;
+import pipe.imperial.pipe.parsers.FunctionalResults;
+import pipe.imperial.pipe.parsers.UnparsableException;
 
 import javax.swing.event.UndoableEditListener;
 import javax.swing.undo.UndoableEdit;

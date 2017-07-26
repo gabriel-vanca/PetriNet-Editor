@@ -4,8 +4,8 @@ import com.google.common.collect.Sets;
 import pipe.controllers.application.PipeApplicationController;
 import pipe.historyActions.AnimationHistory;
 import pipe.utilities.gui.GuiUtils;
-import uk.ac.imperial.pipe.animation.Animator;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.animation.Animator;
+import pipe.imperial.pipe.models.petrinet.Transition;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

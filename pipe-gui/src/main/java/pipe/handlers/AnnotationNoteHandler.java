@@ -9,7 +9,7 @@ import pipe.actions.gui.PipeApplicationModel;
 import pipe.controllers.PetriNetController;
 import pipe.gui.widgets.AnnotationEditorPanel;
 import pipe.gui.widgets.EscapableDialog;
-import uk.ac.imperial.pipe.models.petrinet.Annotation;
+import pipe.imperial.pipe.models.petrinet.Annotation;
 
 import javax.swing.*;
 import java.awt.Container;

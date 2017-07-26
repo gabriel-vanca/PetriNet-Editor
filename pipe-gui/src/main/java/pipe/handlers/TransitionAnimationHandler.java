@@ -2,7 +2,7 @@ package pipe.handlers;
 
 import pipe.controllers.PetriNetController;
 import pipe.controllers.GUIAnimator;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.models.petrinet.Transition;
 
 import javax.swing.*;
 import java.awt.event.MouseEvent;

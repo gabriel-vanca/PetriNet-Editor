@@ -11,7 +11,7 @@ import pipe.actions.petrinet.SplitArcPointAction;
 import pipe.controllers.ArcController;
 import pipe.controllers.PetriNetController;
 import pipe.views.ArcPathPoint;
-import uk.ac.imperial.pipe.models.petrinet.ArcPoint;
+import pipe.imperial.pipe.models.petrinet.ArcPoint;
 
 import javax.swing.*;
 import java.awt.Container;

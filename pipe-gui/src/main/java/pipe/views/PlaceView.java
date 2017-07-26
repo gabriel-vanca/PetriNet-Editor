@@ -2,9 +2,9 @@ package pipe.views;
 
 import pipe.constants.GUIConstants;
 import pipe.controllers.PetriNetController;
-import uk.ac.imperial.pipe.exceptions.PetriNetComponentNotFoundException;
-import uk.ac.imperial.pipe.models.petrinet.Place;
-import uk.ac.imperial.pipe.models.petrinet.Token;
+import pipe.imperial.pipe.exceptions.PetriNetComponentNotFoundException;
+import pipe.imperial.pipe.models.petrinet.Place;
+import pipe.imperial.pipe.models.petrinet.Token;
 
 import javax.swing.event.MouseInputAdapter;
 import java.awt.*;

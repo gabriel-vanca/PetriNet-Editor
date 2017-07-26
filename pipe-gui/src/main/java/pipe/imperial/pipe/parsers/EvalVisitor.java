@@ -1,9 +1,9 @@
 package pipe.imperial.pipe.parsers;
 
 import org.antlr.v4.runtime.tree.TerminalNode;
-import uk.ac.imperial.pipe.exceptions.PetriNetComponentNotFoundException;
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
-import uk.ac.imperial.pipe.models.petrinet.Place;
+import pipe.imperial.pipe.exceptions.PetriNetComponentNotFoundException;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.models.petrinet.Place;
 
 public final class EvalVisitor extends RateGrammarBaseVisitor {
    private PetriNet petriNet;

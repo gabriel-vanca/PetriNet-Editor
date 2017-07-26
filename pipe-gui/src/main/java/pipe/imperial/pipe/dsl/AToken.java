@@ -2,8 +2,8 @@ package pipe.imperial.pipe.dsl;
 
 import java.awt.Color;
 import java.util.Map;
-import uk.ac.imperial.pipe.models.petrinet.ColoredToken;
-import uk.ac.imperial.pipe.models.petrinet.Token;
+import pipe.imperial.pipe.models.petrinet.ColoredToken;
+import pipe.imperial.pipe.models.petrinet.Token;
 
 public final class AToken implements DSLCreator {
    private String name;

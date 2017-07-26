@@ -9,10 +9,10 @@ import java.awt.Point;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import uk.ac.imperial.pipe.models.petrinet.Arc;
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
-import uk.ac.imperial.pipe.models.petrinet.Place;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.models.petrinet.Arc;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.models.petrinet.Place;
+import pipe.imperial.pipe.models.petrinet.Transition;
 
 public class Layout {
    private static final int LAYOUT_OFFSET = 20;

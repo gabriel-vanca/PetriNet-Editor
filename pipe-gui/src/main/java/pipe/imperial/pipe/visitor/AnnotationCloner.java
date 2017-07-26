@@ -1,8 +1,8 @@
 package pipe.imperial.pipe.visitor;
 
-import uk.ac.imperial.pipe.models.petrinet.Annotation;
-import uk.ac.imperial.pipe.models.petrinet.AnnotationImpl;
-import uk.ac.imperial.pipe.models.petrinet.AnnotationImplVisitor;
+import pipe.imperial.pipe.models.petrinet.Annotation;
+import pipe.imperial.pipe.models.petrinet.AnnotationImpl;
+import pipe.imperial.pipe.models.petrinet.AnnotationImplVisitor;
 
 public class AnnotationCloner implements AnnotationImplVisitor {
    public Annotation cloned;

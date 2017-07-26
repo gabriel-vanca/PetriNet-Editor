@@ -1,6 +1,6 @@
 package pipe.controllers;
 
-import uk.ac.imperial.pipe.models.petrinet.Connectable;
+import pipe.imperial.pipe.models.petrinet.Connectable;
 
 import javax.swing.event.UndoableEditListener;
 import java.awt.Point;

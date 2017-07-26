@@ -10,8 +10,8 @@ import pipe.steadystate.algorithm.ParallelGaussSeidel;
 import pipe.steadystate.algorithm.SteadyStateSolver;
 import pipe.steadystate.metrics.TokenMetrics;
 import pipe.steadystate.metrics.TransitionMetrics;
-import uk.ac.imperial.pipe.exceptions.InvalidRateException;
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.exceptions.InvalidRateException;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
 import uk.ac.imperial.state.ClassifiedState;
 import uk.ac.imperial.state.Record;
 

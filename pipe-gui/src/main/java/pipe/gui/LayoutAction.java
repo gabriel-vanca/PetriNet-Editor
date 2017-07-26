@@ -6,9 +6,9 @@ import pipe.controllers.application.PipeApplicationController;
 import pipe.gui.widgets.EscapableDialog;
 import pipe.historyActions.LayoutPetriNetEvent;
 import pipe.views.PipeApplicationView;
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
-import uk.ac.imperial.pipe.models.petrinet.Place;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.models.petrinet.Place;
+import pipe.imperial.pipe.models.petrinet.Transition;
 
 import javax.swing.*;
 import java.awt.Container;

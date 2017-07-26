@@ -3,8 +3,8 @@ package pipe.gui.widgets;
 import pipe.controllers.ArcController;
 import pipe.controllers.PetriNetController;
 import pipe.utilities.gui.GuiUtils;
-import uk.ac.imperial.pipe.models.petrinet.Token;
-import uk.ac.imperial.pipe.parsers.UnparsableException;
+import pipe.imperial.pipe.models.petrinet.Token;
+import pipe.imperial.pipe.parsers.UnparsableException;
 
 import javax.swing.*;
 

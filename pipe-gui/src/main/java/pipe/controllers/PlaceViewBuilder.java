@@ -3,7 +3,7 @@ package pipe.controllers;
 import pipe.actions.gui.PipeApplicationModel;
 import pipe.handlers.PlaceHandler;
 import pipe.views.PlaceView;
-import uk.ac.imperial.pipe.models.petrinet.Place;
+import pipe.imperial.pipe.models.petrinet.Place;
 
 import java.awt.Container;
 

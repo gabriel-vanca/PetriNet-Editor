@@ -1,9 +1,9 @@
 package pipe.imperial.pipe.animation;
 
 import java.util.Iterator;
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
-import uk.ac.imperial.pipe.models.petrinet.Place;
-import uk.ac.imperial.pipe.models.petrinet.Token;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.models.petrinet.Place;
+import pipe.imperial.pipe.models.petrinet.Token;
 import pipe.imperial.state.HashedStateBuilder;
 import pipe.imperial.state.State;
 

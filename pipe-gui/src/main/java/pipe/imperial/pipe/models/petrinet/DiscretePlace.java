@@ -3,10 +3,10 @@ package pipe.imperial.pipe.models.petrinet;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import uk.ac.imperial.pipe.exceptions.PetriNetComponentException;
-import uk.ac.imperial.pipe.models.petrinet.Place;
-import uk.ac.imperial.pipe.models.petrinet.PlaceVisitor;
-import uk.ac.imperial.pipe.visitor.component.PetriNetComponentVisitor;
+import pipe.imperial.pipe.exceptions.PetriNetComponentException;
+import pipe.imperial.pipe.models.petrinet.Place;
+import pipe.imperial.pipe.models.petrinet.PlaceVisitor;
+import pipe.imperial.pipe.visitor.component.PetriNetComponentVisitor;
 
 public final class DiscretePlace extends AbstractConnectable implements Place {
    private double markingXOffset = 0.0D;

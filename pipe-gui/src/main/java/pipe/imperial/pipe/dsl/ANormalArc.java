@@ -5,12 +5,12 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import uk.ac.imperial.pipe.models.petrinet.Arc;
-import uk.ac.imperial.pipe.models.petrinet.ArcPoint;
-import uk.ac.imperial.pipe.models.petrinet.InboundNormalArc;
-import uk.ac.imperial.pipe.models.petrinet.OutboundNormalArc;
-import uk.ac.imperial.pipe.models.petrinet.Place;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.models.petrinet.Arc;
+import pipe.imperial.pipe.models.petrinet.ArcPoint;
+import pipe.imperial.pipe.models.petrinet.InboundNormalArc;
+import pipe.imperial.pipe.models.petrinet.OutboundNormalArc;
+import pipe.imperial.pipe.models.petrinet.Place;
+import pipe.imperial.pipe.models.petrinet.Transition;
 
 public final class ANormalArc implements DSLCreator {
    private String source;

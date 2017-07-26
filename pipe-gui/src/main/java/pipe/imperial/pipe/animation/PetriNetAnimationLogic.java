@@ -10,14 +10,14 @@ import java.util.Set;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 
-import uk.ac.imperial.pipe.animation.AnimationLogic;
-import uk.ac.imperial.pipe.models.petrinet.Arc;
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
-import uk.ac.imperial.pipe.models.petrinet.Place;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
-import uk.ac.imperial.pipe.parsers.FunctionalResults;
-import uk.ac.imperial.pipe.parsers.PetriNetWeightParser;
-import uk.ac.imperial.pipe.parsers.StateEvalVisitor;
+import pipe.imperial.pipe.animation.AnimationLogic;
+import pipe.imperial.pipe.models.petrinet.Arc;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.models.petrinet.Place;
+import pipe.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.parsers.FunctionalResults;
+import pipe.imperial.pipe.parsers.PetriNetWeightParser;
+import pipe.imperial.pipe.parsers.StateEvalVisitor;
 import pipe.imperial.state.HashedStateBuilder;
 import pipe.imperial.state.State;
 

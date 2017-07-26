@@ -1,7 +1,7 @@
 package pipe.imperial.pipe.naming;
 
-import uk.ac.imperial.pipe.naming.NameChangeListener;
-import uk.ac.imperial.pipe.naming.UniqueNamer;
+import pipe.imperial.pipe.naming.NameChangeListener;
+import pipe.imperial.pipe.naming.UniqueNamer;
 
 import java.beans.PropertyChangeListener;
 import java.util.Collection;

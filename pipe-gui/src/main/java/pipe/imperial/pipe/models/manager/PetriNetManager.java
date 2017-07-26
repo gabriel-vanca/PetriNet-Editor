@@ -6,7 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import javax.xml.bind.JAXBException;
 import pipe.imperial.pipe.models.petrinet.PetriNet;
-import uk.ac.imperial.pipe.parsers.UnparsableException;
+import pipe.imperial.pipe.parsers.UnparsableException;
 
 public interface PetriNetManager {
    void createNewPetriNet();

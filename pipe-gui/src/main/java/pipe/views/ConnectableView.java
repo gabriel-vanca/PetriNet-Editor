@@ -3,7 +3,7 @@ package pipe.views;
 import pipe.controllers.AbstractConnectableController;
 import pipe.controllers.PetriNetController;
 import pipe.handlers.LabelHandler;
-import uk.ac.imperial.pipe.models.petrinet.Connectable;
+import pipe.imperial.pipe.models.petrinet.Connectable;
 
 import javax.swing.*;
 import java.awt.Component;

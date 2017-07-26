@@ -10,13 +10,13 @@ import pipe.controllers.PetriNetController;
 import pipe.gui.PetriNetTab;
 import pipe.actions.gui.PipeApplicationModel;
 import pipe.views.ArcView;
-import uk.ac.imperial.pipe.models.petrinet.Connectable;
-import uk.ac.imperial.pipe.models.petrinet.InboundArc;
-import uk.ac.imperial.pipe.models.petrinet.InboundNormalArc;
-import uk.ac.imperial.pipe.models.petrinet.DiscretePlace;
-import uk.ac.imperial.pipe.models.petrinet.Place;
-import uk.ac.imperial.pipe.models.petrinet.DiscreteTransition;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.models.petrinet.Connectable;
+import pipe.imperial.pipe.models.petrinet.InboundArc;
+import pipe.imperial.pipe.models.petrinet.InboundNormalArc;
+import pipe.imperial.pipe.models.petrinet.DiscretePlace;
+import pipe.imperial.pipe.models.petrinet.Place;
+import pipe.imperial.pipe.models.petrinet.DiscreteTransition;
+import pipe.imperial.pipe.models.petrinet.Transition;
 
 import java.util.HashMap;
 

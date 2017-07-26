@@ -9,11 +9,11 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 import pipe.gui.*;
 import pipe.historyActions.component.DeletePetriNetObject;
-import uk.ac.imperial.pipe.exceptions.PetriNetComponentException;
-import uk.ac.imperial.pipe.exceptions.PetriNetComponentNotFoundException;
-import uk.ac.imperial.pipe.models.petrinet.*;
-import uk.ac.imperial.pipe.visitor.TranslationVisitor;
-import uk.ac.imperial.pipe.visitor.component.PetriNetComponentVisitor;
+import pipe.imperial.pipe.exceptions.PetriNetComponentException;
+import pipe.imperial.pipe.exceptions.PetriNetComponentNotFoundException;
+import pipe.imperial.pipe.models.petrinet.*;
+import pipe.imperial.pipe.visitor.TranslationVisitor;
+import pipe.imperial.pipe.visitor.component.PetriNetComponentVisitor;
 
 import javax.swing.event.UndoableEditListener;
 import javax.swing.undo.UndoableEdit;

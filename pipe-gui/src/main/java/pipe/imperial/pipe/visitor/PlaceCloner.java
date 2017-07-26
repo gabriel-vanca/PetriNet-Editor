@@ -1,8 +1,8 @@
 package pipe.imperial.pipe.visitor;
 
-import uk.ac.imperial.pipe.models.petrinet.DiscretePlace;
-import uk.ac.imperial.pipe.models.petrinet.DiscretePlaceVisitor;
-import uk.ac.imperial.pipe.models.petrinet.Place;
+import pipe.imperial.pipe.models.petrinet.DiscretePlace;
+import pipe.imperial.pipe.models.petrinet.DiscretePlaceVisitor;
+import pipe.imperial.pipe.models.petrinet.Place;
 
 public final class PlaceCloner implements DiscretePlaceVisitor {
    public Place cloned = null;

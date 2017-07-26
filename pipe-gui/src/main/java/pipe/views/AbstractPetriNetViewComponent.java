@@ -1,7 +1,7 @@
 package pipe.views;
 
 import pipe.controllers.PetriNetController;
-import uk.ac.imperial.pipe.models.petrinet.PetriNetComponent;
+import pipe.imperial.pipe.models.petrinet.PetriNetComponent;
 
 import javax.swing.*;
 import java.awt.Container;

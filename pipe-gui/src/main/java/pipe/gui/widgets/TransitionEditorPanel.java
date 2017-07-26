@@ -3,10 +3,10 @@ package pipe.gui.widgets;
 import pipe.controllers.PetriNetController;
 import pipe.controllers.TransitionController;
 import pipe.utilities.gui.GuiUtils;
-import uk.ac.imperial.pipe.models.petrinet.*;
-import uk.ac.imperial.pipe.parsers.EvalVisitor;
-import uk.ac.imperial.pipe.parsers.FunctionalResults;
-import uk.ac.imperial.pipe.parsers.PetriNetWeightParser;
+import pipe.imperial.pipe.models.petrinet.*;
+import pipe.imperial.pipe.parsers.EvalVisitor;
+import pipe.imperial.pipe.parsers.FunctionalResults;
+import pipe.imperial.pipe.parsers.PetriNetWeightParser;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

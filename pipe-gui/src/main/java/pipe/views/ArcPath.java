@@ -10,9 +10,9 @@ import pipe.controllers.PetriNetController;
 import pipe.handlers.ArcPathPointHandler;
 import pipe.utilities.gui.GuiUtils;
 import pipe.utilities.math.Cubic;
-import uk.ac.imperial.pipe.exceptions.PetriNetComponentException;
-import uk.ac.imperial.pipe.models.petrinet.*;
-import uk.ac.imperial.pipe.visitor.component.PetriNetComponentVisitor;
+import pipe.imperial.pipe.exceptions.PetriNetComponentException;
+import pipe.imperial.pipe.models.petrinet.*;
+import pipe.imperial.pipe.visitor.component.PetriNetComponentVisitor;
 
 import java.awt.*;
 import java.awt.geom.*;

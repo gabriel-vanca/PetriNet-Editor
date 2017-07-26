@@ -2,8 +2,8 @@ package pipe.imperial.pipe.dsl;
 
 import java.util.Map;
 
-import uk.ac.imperial.pipe.dsl.DSLCreator;
-import uk.ac.imperial.pipe.models.petrinet.FunctionalRateParameter;
+import pipe.imperial.pipe.dsl.DSLCreator;
+import pipe.imperial.pipe.models.petrinet.FunctionalRateParameter;
 
 public final class ARateParameter implements DSLCreator {
    private final String id;

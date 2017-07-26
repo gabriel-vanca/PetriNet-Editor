@@ -1,7 +1,7 @@
 package pipe.imperial.pipe.parsers;
 
 import org.antlr.v4.runtime.tree.ParseTreeListener;
-import uk.ac.imperial.pipe.parsers.RateGrammarParser;
+import pipe.imperial.pipe.parsers.RateGrammarParser;
 
 public interface RateGrammarListener extends ParseTreeListener {
    void enterProgram(uk.ac.imperial.pipe.parsers.RateGrammarParser.ProgramContext var1);

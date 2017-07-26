@@ -5,9 +5,9 @@ import pipe.controllers.SelectionManager;
 import pipe.controllers.ZoomController;
 import pipe.views.AbstractPetriNetViewComponent;
 import pipe.views.PetriNetViewComponent;
-import uk.ac.imperial.pipe.exceptions.PetriNetComponentException;
-import uk.ac.imperial.pipe.models.petrinet.*;
-import uk.ac.imperial.pipe.visitor.component.PetriNetComponentVisitor;
+import pipe.imperial.pipe.exceptions.PetriNetComponentException;
+import pipe.imperial.pipe.models.petrinet.*;
+import pipe.imperial.pipe.visitor.component.PetriNetComponentVisitor;
 
 import javax.swing.*;
 import javax.swing.event.MouseInputAdapter;

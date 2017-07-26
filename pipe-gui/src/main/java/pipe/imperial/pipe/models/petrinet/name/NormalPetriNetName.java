@@ -1,9 +1,9 @@
 package pipe.imperial.pipe.models.petrinet.name;
 
-import uk.ac.imperial.pipe.models.petrinet.name.FileNameVisitor;
-import uk.ac.imperial.pipe.models.petrinet.name.NameVisitor;
-import uk.ac.imperial.pipe.models.petrinet.name.NormalNameVisitor;
-import uk.ac.imperial.pipe.models.petrinet.name.PetriNetName;
+import pipe.imperial.pipe.models.petrinet.name.FileNameVisitor;
+import pipe.imperial.pipe.models.petrinet.name.NameVisitor;
+import pipe.imperial.pipe.models.petrinet.name.NormalNameVisitor;
+import pipe.imperial.pipe.models.petrinet.name.PetriNetName;
 
 public final class NormalPetriNetName implements PetriNetName {
    private String name;

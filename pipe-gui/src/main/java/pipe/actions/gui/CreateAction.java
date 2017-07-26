@@ -1,7 +1,7 @@
 package pipe.actions.gui;
 
 import pipe.controllers.PetriNetController;
-import uk.ac.imperial.pipe.models.petrinet.Connectable;
+import pipe.imperial.pipe.models.petrinet.Connectable;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;

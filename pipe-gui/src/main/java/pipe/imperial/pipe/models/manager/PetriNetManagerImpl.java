@@ -7,9 +7,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import javax.xml.bind.JAXBException;
-import uk.ac.imperial.pipe.io.PetriNetIOImpl;
-import uk.ac.imperial.pipe.io.PetriNetReader;
-import uk.ac.imperial.pipe.io.PetriNetWriter;
+import pipe.imperial.pipe.io.PetriNetIOImpl;
+import pipe.imperial.pipe.io.PetriNetReader;
+import pipe.imperial.pipe.io.PetriNetWriter;
 import pipe.imperial.pipe.models.PetriNetHolder;
 import pipe.imperial.pipe.models.petrinet.ColoredToken;
 import pipe.imperial.pipe.models.petrinet.PetriNet;
@@ -17,9 +17,9 @@ import pipe.imperial.pipe.models.petrinet.Token;
 import pipe.imperial.pipe.models.petrinet.name.NormalPetriNetName;
 import pipe.imperial.pipe.models.petrinet.name.PetriNetFileName;
 import pipe.imperial.pipe.models.petrinet.name.PetriNetName;
-import uk.ac.imperial.pipe.models.manager.PetriNetManager;
-import uk.ac.imperial.pipe.naming.PetriNetNamer;
-import uk.ac.imperial.pipe.parsers.UnparsableException;
+import pipe.imperial.pipe.models.manager.PetriNetManager;
+import pipe.imperial.pipe.naming.PetriNetNamer;
+import pipe.imperial.pipe.parsers.UnparsableException;
 
 public final class PetriNetManagerImpl implements PetriNetManager {
    public static final String NEW_PETRI_NET_MESSAGE = "New Petri net!";

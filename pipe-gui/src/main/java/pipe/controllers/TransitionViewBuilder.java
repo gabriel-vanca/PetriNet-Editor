@@ -4,7 +4,7 @@ import pipe.actions.gui.PipeApplicationModel;
 import pipe.handlers.TransitionAnimationHandler;
 import pipe.handlers.TransitionHandler;
 import pipe.views.TransitionView;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.models.petrinet.Transition;
 
 import java.awt.Container;
 

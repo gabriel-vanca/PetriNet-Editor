@@ -16,17 +16,17 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
-import uk.ac.imperial.pipe.io.PetriNetIO;
-import uk.ac.imperial.pipe.io.adapters.modelAdapter.ArcAdapter;
-import uk.ac.imperial.pipe.io.adapters.modelAdapter.PlaceAdapter;
-import uk.ac.imperial.pipe.io.adapters.modelAdapter.RateParameterAdapter;
-import uk.ac.imperial.pipe.io.adapters.modelAdapter.TokenAdapter;
-import uk.ac.imperial.pipe.io.adapters.modelAdapter.TokenSetIntegerAdapter;
-import uk.ac.imperial.pipe.io.adapters.modelAdapter.TransitionAdapter;
-import uk.ac.imperial.pipe.models.PetriNetHolder;
-import uk.ac.imperial.pipe.models.petrinet.ColoredToken;
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
-import uk.ac.imperial.pipe.models.petrinet.Token;
+import pipe.imperial.pipe.io.PetriNetIO;
+import pipe.imperial.pipe.io.adapters.modelAdapter.ArcAdapter;
+import pipe.imperial.pipe.io.adapters.modelAdapter.PlaceAdapter;
+import pipe.imperial.pipe.io.adapters.modelAdapter.RateParameterAdapter;
+import pipe.imperial.pipe.io.adapters.modelAdapter.TokenAdapter;
+import pipe.imperial.pipe.io.adapters.modelAdapter.TokenSetIntegerAdapter;
+import pipe.imperial.pipe.io.adapters.modelAdapter.TransitionAdapter;
+import pipe.imperial.pipe.models.PetriNetHolder;
+import pipe.imperial.pipe.models.petrinet.ColoredToken;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.models.petrinet.Token;
 
 public class PetriNetIOImpl implements PetriNetIO {
    private final JAXBContext context;

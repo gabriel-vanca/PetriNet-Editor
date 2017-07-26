@@ -4,7 +4,7 @@ import pipe.controllers.PetriNetController;
 import pipe.controllers.application.PipeApplicationController;
 import pipe.historyActions.MultipleEdit;
 import pipe.utilities.gui.GuiUtils;
-import uk.ac.imperial.pipe.exceptions.PetriNetComponentException;
+import pipe.imperial.pipe.exceptions.PetriNetComponentException;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;

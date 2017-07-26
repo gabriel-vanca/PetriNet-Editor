@@ -2,10 +2,10 @@ package pipe.actions.gui;
 
 import pipe.controllers.PetriNetController;
 import pipe.historyActions.component.AddPetriNetObject;
-import uk.ac.imperial.pipe.models.petrinet.Connectable;
-import uk.ac.imperial.pipe.models.petrinet.DiscreteTransition;
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.models.petrinet.Connectable;
+import pipe.imperial.pipe.models.petrinet.DiscreteTransition;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.models.petrinet.Transition;
 
 import java.awt.Point;
 import java.awt.event.MouseEvent;

@@ -1,7 +1,7 @@
 package pipe.imperial.pipe.io.adapters.model;
 
-import uk.ac.imperial.pipe.io.adapters.model.NameDetails;
-import uk.ac.imperial.pipe.io.adapters.model.PositionGraphics;
+import pipe.imperial.pipe.io.adapters.model.NameDetails;
+import pipe.imperial.pipe.io.adapters.model.PositionGraphics;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

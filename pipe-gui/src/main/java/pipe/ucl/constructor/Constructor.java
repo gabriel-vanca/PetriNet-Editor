@@ -5,9 +5,9 @@ import pipe.actions.gui.PipeApplicationModel;
 import pipe.controllers.PetriNetController;
 import pipe.controllers.application.PipeApplicationController;
 import pipe.historyActions.component.AddPetriNetObject;
-import uk.ac.imperial.pipe.models.petrinet.DiscretePlace;
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
-import uk.ac.imperial.pipe.models.petrinet.Place;
+import pipe.imperial.pipe.models.petrinet.DiscretePlace;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.models.petrinet.Place;
 
 import java.awt.*;
 

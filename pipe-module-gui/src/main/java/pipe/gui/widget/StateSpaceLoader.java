@@ -10,10 +10,10 @@ import pipe.reachability.algorithm.VanishingExplorer;
 import pipe.reachability.algorithm.parallel.MassiveParallelStateSpaceExplorer;
 import pipe.reachability.algorithm.sequential.SequentialStateSpaceExplorer;
 import uk.ac.imperial.io.*;
-import uk.ac.imperial.pipe.exceptions.InvalidRateException;
-import uk.ac.imperial.pipe.io.PetriNetIOImpl;
-import uk.ac.imperial.pipe.io.PetriNetReader;
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.exceptions.InvalidRateException;
+import pipe.imperial.pipe.io.PetriNetIOImpl;
+import pipe.imperial.pipe.io.PetriNetReader;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
 import uk.ac.imperial.state.ClassifiedState;
 import uk.ac.imperial.state.Record;
 

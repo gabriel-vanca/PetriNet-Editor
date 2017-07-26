@@ -2,7 +2,7 @@ package pipe.gui.plugin.concrete;
 
 import pipe.gui.analysis.GSPNAnalysis;
 import pipe.gui.plugin.GuiModule;
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
 
 import javax.swing.*;
 import java.awt.FileDialog;

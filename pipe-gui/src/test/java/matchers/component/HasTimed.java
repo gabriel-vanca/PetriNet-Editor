@@ -1,7 +1,7 @@
 package matchers.component;
 
 
-import uk.ac.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.models.petrinet.Transition;
 
 public class HasTimed implements Has<Transition> {
     boolean timed;

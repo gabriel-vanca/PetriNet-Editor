@@ -5,7 +5,7 @@ import com.google.common.reflect.ClassPath;
 import pipe.constants.GUIConstants;
 import pipe.controllers.application.PipeApplicationController;
 import pipe.gui.plugin.GuiModule;
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
 
 import javax.swing.*;
 import javax.swing.tree.*;

@@ -3,8 +3,8 @@ package pipe.imperial.pipe.models.petrinet;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 
-import uk.ac.imperial.pipe.models.petrinet.Annotation;
-import uk.ac.imperial.pipe.visitor.component.PetriNetComponentVisitor;
+import pipe.imperial.pipe.models.petrinet.Annotation;
+import pipe.imperial.pipe.visitor.component.PetriNetComponentVisitor;
 
 public class AnnotationImpl extends AbstractPetriNetPubSub implements Annotation {
    public static final String TEXT_CHANGE_MESSAGE = "text";

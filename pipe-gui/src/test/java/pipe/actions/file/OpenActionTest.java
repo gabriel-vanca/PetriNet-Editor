@@ -8,7 +8,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 import pipe.actions.gui.OpenAction;
 import pipe.controllers.application.PipeApplicationController;
 import pipe.views.PipeApplicationView;
-import uk.ac.imperial.pipe.parsers.UnparsableException;
+import pipe.imperial.pipe.parsers.UnparsableException;
 
 import javax.swing.*;
 import java.awt.FileDialog;

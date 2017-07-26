@@ -2,11 +2,11 @@ package pipe.imperial.pipe.visitor.connectable.arc;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import uk.ac.imperial.pipe.exceptions.PetriNetComponentException;
-import uk.ac.imperial.pipe.models.petrinet.Connectable;
-import uk.ac.imperial.pipe.models.petrinet.Place;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
-import uk.ac.imperial.pipe.visitor.connectable.arc.ArcSourceVisitor;
+import pipe.imperial.pipe.exceptions.PetriNetComponentException;
+import pipe.imperial.pipe.models.petrinet.Connectable;
+import pipe.imperial.pipe.models.petrinet.Place;
+import pipe.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.visitor.connectable.arc.ArcSourceVisitor;
 
 public final class NormalArcSourceVisitor implements ArcSourceVisitor {
    private static final Logger LOGGER = Logger.getLogger(NormalArcSourceVisitor.class.getName());

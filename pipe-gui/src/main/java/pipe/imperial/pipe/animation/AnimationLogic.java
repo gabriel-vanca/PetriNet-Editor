@@ -2,7 +2,7 @@ package pipe.imperial.pipe.animation;
 
 import java.util.Map;
 import java.util.Set;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.models.petrinet.Transition;
 import pipe.imperial.state.State;
 
 public interface AnimationLogic {

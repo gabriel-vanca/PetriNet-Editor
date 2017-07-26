@@ -1,7 +1,7 @@
 package pipe.imperial.pipe.models.petrinet;
 
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
-import uk.ac.imperial.pipe.models.petrinet.Rate;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.models.petrinet.Rate;
 import pipe.imperial.state.State;
 
 public interface Transition extends Connectable {

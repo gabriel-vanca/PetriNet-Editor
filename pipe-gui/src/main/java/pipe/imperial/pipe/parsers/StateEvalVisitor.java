@@ -3,9 +3,9 @@ package pipe.imperial.pipe.parsers;
 import java.util.Iterator;
 import java.util.Map;
 import org.antlr.v4.runtime.tree.TerminalNode;
-import uk.ac.imperial.pipe.exceptions.PetriNetComponentNotFoundException;
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
-import uk.ac.imperial.pipe.models.petrinet.Place;
+import pipe.imperial.pipe.exceptions.PetriNetComponentNotFoundException;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.models.petrinet.Place;
 import pipe.imperial.state.State;
 
 public final class StateEvalVisitor extends RateGrammarBaseVisitor {

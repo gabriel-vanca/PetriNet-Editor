@@ -2,11 +2,11 @@ package pipe.imperial.pipe.dsl;
 
 import java.util.Map;
 
-import uk.ac.imperial.pipe.dsl.DSLCreator;
-import uk.ac.imperial.pipe.models.petrinet.Arc;
-import uk.ac.imperial.pipe.models.petrinet.InboundInhibitorArc;
-import uk.ac.imperial.pipe.models.petrinet.Place;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.dsl.DSLCreator;
+import pipe.imperial.pipe.models.petrinet.Arc;
+import pipe.imperial.pipe.models.petrinet.InboundInhibitorArc;
+import pipe.imperial.pipe.models.petrinet.Place;
+import pipe.imperial.pipe.models.petrinet.Transition;
 
 public final class AnInhibitorArc implements DSLCreator {
    private String source;

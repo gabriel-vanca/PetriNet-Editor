@@ -7,13 +7,13 @@ import java.util.Random;
 import java.util.Set;
 import java.util.Map.Entry;
 
-import uk.ac.imperial.pipe.animation.AnimationLogic;
-import uk.ac.imperial.pipe.animation.AnimationUtils;
-import uk.ac.imperial.pipe.animation.Animator;
-import uk.ac.imperial.pipe.models.petrinet.Arc;
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
-import uk.ac.imperial.pipe.models.petrinet.Place;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.animation.AnimationLogic;
+import pipe.imperial.pipe.animation.AnimationUtils;
+import pipe.imperial.pipe.animation.Animator;
+import pipe.imperial.pipe.models.petrinet.Arc;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.models.petrinet.Place;
+import pipe.imperial.pipe.models.petrinet.Transition;
 import pipe.imperial.state.State;
 
 public final class PetriNetAnimator implements Animator {

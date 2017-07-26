@@ -16,8 +16,8 @@ import pipe.gui.widget.GenerateResultsForm;
 import pipe.gui.widget.StateSpaceLoader;
 import pipe.gui.widget.StateSpaceLoaderException;
 import pipe.reachability.algorithm.*;
-import uk.ac.imperial.pipe.exceptions.InvalidRateException;
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.exceptions.InvalidRateException;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
 import uk.ac.imperial.state.ClassifiedState;
 import uk.ac.imperial.state.Record;
 

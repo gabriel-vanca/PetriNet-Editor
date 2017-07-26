@@ -6,8 +6,8 @@ package pipe.views;
 
 import pipe.constants.GUIConstants;
 import pipe.controllers.PetriNetController;
-import uk.ac.imperial.pipe.models.petrinet.Annotation;
-import uk.ac.imperial.pipe.models.petrinet.AnnotationImpl;
+import pipe.imperial.pipe.models.petrinet.Annotation;
+import pipe.imperial.pipe.models.petrinet.AnnotationImpl;
 
 import javax.swing.event.MouseInputAdapter;
 

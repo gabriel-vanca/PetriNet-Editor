@@ -1,6 +1,6 @@
 package pipe.imperial.pipe.naming;
 
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
 
 public final class PetriNetNamer extends AbstractUniqueNamer {
    public PetriNetNamer() {

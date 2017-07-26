@@ -9,14 +9,14 @@ import pipe.controllers.PetriNetController;
 import pipe.controllers.application.PipeApplicationController;
 import pipe.gui.PetriNetTab;
 import pipe.views.PipeApplicationView;
-import uk.ac.imperial.pipe.models.petrinet.ArcPoint;
-import uk.ac.imperial.pipe.models.petrinet.InboundArc;
-import uk.ac.imperial.pipe.models.petrinet.InboundInhibitorArc;
-import uk.ac.imperial.pipe.models.petrinet.DiscretePlace;
-import uk.ac.imperial.pipe.models.petrinet.Place;
-import uk.ac.imperial.pipe.models.petrinet.DiscreteTransition;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.models.petrinet.ArcPoint;
+import pipe.imperial.pipe.models.petrinet.InboundArc;
+import pipe.imperial.pipe.models.petrinet.InboundInhibitorArc;
+import pipe.imperial.pipe.models.petrinet.DiscretePlace;
+import pipe.imperial.pipe.models.petrinet.Place;
+import pipe.imperial.pipe.models.petrinet.DiscreteTransition;
+import pipe.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
 
 import java.util.LinkedList;
 

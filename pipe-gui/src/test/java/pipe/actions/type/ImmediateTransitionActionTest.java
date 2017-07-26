@@ -14,9 +14,9 @@ import pipe.controllers.PetriNetController;
 import pipe.actions.gui.PipeApplicationModel;
 import pipe.historyActions.component.AddPetriNetObject;
 import pipe.utilities.transformers.Contains;
-import uk.ac.imperial.pipe.models.petrinet.DiscreteTransition;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.models.petrinet.DiscreteTransition;
+import pipe.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
 
 import javax.swing.event.UndoableEditListener;
 import javax.swing.undo.UndoableEdit;

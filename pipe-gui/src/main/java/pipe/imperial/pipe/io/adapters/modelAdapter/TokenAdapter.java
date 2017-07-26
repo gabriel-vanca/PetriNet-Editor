@@ -4,9 +4,9 @@ import java.awt.Color;
 import java.util.HashMap;
 import java.util.Map;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import uk.ac.imperial.pipe.io.adapters.model.AdaptedToken;
-import uk.ac.imperial.pipe.models.petrinet.ColoredToken;
-import uk.ac.imperial.pipe.models.petrinet.Token;
+import pipe.imperial.pipe.io.adapters.model.AdaptedToken;
+import pipe.imperial.pipe.models.petrinet.ColoredToken;
+import pipe.imperial.pipe.models.petrinet.Token;
 
 public final class TokenAdapter extends XmlAdapter {
    private final Map tokens;

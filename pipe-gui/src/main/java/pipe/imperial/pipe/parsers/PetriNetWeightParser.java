@@ -10,10 +10,10 @@ import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import org.antlr.v4.runtime.tree.TerminalNode;
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
-import uk.ac.imperial.pipe.parsers.FunctionalResults;
-import uk.ac.imperial.pipe.parsers.GrammarUtils;
-import uk.ac.imperial.pipe.parsers.RateGrammarParser;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.parsers.FunctionalResults;
+import pipe.imperial.pipe.parsers.GrammarUtils;
+import pipe.imperial.pipe.parsers.RateGrammarParser;
 
 public class PetriNetWeightParser implements FunctionalWeightParser {
    private final PetriNet petriNet;

@@ -4,7 +4,7 @@
  */
 package pipe.actions;
 
-import uk.ac.imperial.pipe.models.petrinet.Annotation;
+import pipe.imperial.pipe.models.petrinet.Annotation;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

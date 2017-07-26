@@ -1,9 +1,9 @@
 package pipe.imperial.pipe.naming;
 
 import java.util.Iterator;
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
-import uk.ac.imperial.pipe.naming.ComponentNamer;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.naming.ComponentNamer;
 
 public class TransitionNamer extends ComponentNamer {
    public TransitionNamer(PetriNet petriNet) {

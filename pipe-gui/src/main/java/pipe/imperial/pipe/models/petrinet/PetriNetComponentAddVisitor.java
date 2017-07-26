@@ -1,20 +1,20 @@
 package pipe.imperial.pipe.models.petrinet;
 
-import uk.ac.imperial.pipe.exceptions.InvalidRateException;
-import uk.ac.imperial.pipe.models.petrinet.Annotation;
-import uk.ac.imperial.pipe.models.petrinet.AnnotationVisitor;
-import uk.ac.imperial.pipe.models.petrinet.ArcVisitor;
-import uk.ac.imperial.pipe.models.petrinet.FunctionalRateParameter;
-import uk.ac.imperial.pipe.models.petrinet.InboundArc;
-import uk.ac.imperial.pipe.models.petrinet.OutboundArc;
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
-import uk.ac.imperial.pipe.models.petrinet.Place;
-import uk.ac.imperial.pipe.models.petrinet.PlaceVisitor;
-import uk.ac.imperial.pipe.models.petrinet.RateParameterVisitor;
-import uk.ac.imperial.pipe.models.petrinet.Token;
-import uk.ac.imperial.pipe.models.petrinet.TokenVisitor;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
-import uk.ac.imperial.pipe.models.petrinet.TransitionVisitor;
+import pipe.imperial.pipe.exceptions.InvalidRateException;
+import pipe.imperial.pipe.models.petrinet.Annotation;
+import pipe.imperial.pipe.models.petrinet.AnnotationVisitor;
+import pipe.imperial.pipe.models.petrinet.ArcVisitor;
+import pipe.imperial.pipe.models.petrinet.FunctionalRateParameter;
+import pipe.imperial.pipe.models.petrinet.InboundArc;
+import pipe.imperial.pipe.models.petrinet.OutboundArc;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.models.petrinet.Place;
+import pipe.imperial.pipe.models.petrinet.PlaceVisitor;
+import pipe.imperial.pipe.models.petrinet.RateParameterVisitor;
+import pipe.imperial.pipe.models.petrinet.Token;
+import pipe.imperial.pipe.models.petrinet.TokenVisitor;
+import pipe.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.models.petrinet.TransitionVisitor;
 
 public final class PetriNetComponentAddVisitor implements PlaceVisitor, ArcVisitor, TransitionVisitor, TokenVisitor, AnnotationVisitor, RateParameterVisitor {
    private final uk.ac.imperial.pipe.models.petrinet.PetriNet petriNet;

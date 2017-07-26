@@ -1,6 +1,6 @@
 package pipe.imperial.pipe.models.petrinet;
 
-import uk.ac.imperial.pipe.models.petrinet.Connectable;
+import pipe.imperial.pipe.models.petrinet.Connectable;
 
 public abstract class AbstractConnectable extends AbstractPetriNetPubSub implements Connectable {
    protected double x = 0.0D;

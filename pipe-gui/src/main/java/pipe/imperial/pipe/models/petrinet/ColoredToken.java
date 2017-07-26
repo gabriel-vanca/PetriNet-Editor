@@ -1,9 +1,9 @@
 package pipe.imperial.pipe.models.petrinet;
 
 import java.awt.Color;
-import uk.ac.imperial.pipe.exceptions.PetriNetComponentException;
-import uk.ac.imperial.pipe.models.petrinet.Token;
-import uk.ac.imperial.pipe.visitor.component.PetriNetComponentVisitor;
+import pipe.imperial.pipe.exceptions.PetriNetComponentException;
+import pipe.imperial.pipe.models.petrinet.Token;
+import pipe.imperial.pipe.visitor.component.PetriNetComponentVisitor;
 
 public class ColoredToken extends AbstractPetriNetPubSub implements uk.ac.imperial.pipe.models.petrinet.Token {
    private String id;

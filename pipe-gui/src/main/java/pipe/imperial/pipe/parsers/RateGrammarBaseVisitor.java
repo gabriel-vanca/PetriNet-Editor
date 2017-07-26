@@ -1,8 +1,8 @@
 package pipe.imperial.pipe.parsers;
 
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
-import uk.ac.imperial.pipe.parsers.RateGrammarParser;
-import uk.ac.imperial.pipe.parsers.RateGrammarVisitor;
+import pipe.imperial.pipe.parsers.RateGrammarParser;
+import pipe.imperial.pipe.parsers.RateGrammarVisitor;
 
 public class RateGrammarBaseVisitor extends AbstractParseTreeVisitor implements RateGrammarVisitor {
    public Object visitProgram(uk.ac.imperial.pipe.parsers.RateGrammarParser.ProgramContext ctx) {

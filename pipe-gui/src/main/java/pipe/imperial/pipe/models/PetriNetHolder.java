@@ -5,8 +5,8 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import uk.ac.imperial.pipe.io.adapters.modelAdapter.PetriNetAdapter;
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.io.adapters.modelAdapter.PetriNetAdapter;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
 
 @XmlRootElement(
    name = "pnml"

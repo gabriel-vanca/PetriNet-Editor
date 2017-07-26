@@ -4,13 +4,13 @@ import com.google.common.base.Joiner;
 import java.util.HashMap;
 import java.util.Map;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import uk.ac.imperial.pipe.io.adapters.model.AdaptedPlace;
-import uk.ac.imperial.pipe.io.adapters.model.NameDetails;
-import uk.ac.imperial.pipe.io.adapters.model.OffsetGraphics;
-import uk.ac.imperial.pipe.io.adapters.model.Point;
-import uk.ac.imperial.pipe.io.adapters.utils.ConnectableUtils;
-import uk.ac.imperial.pipe.models.petrinet.DiscretePlace;
-import uk.ac.imperial.pipe.models.petrinet.Place;
+import pipe.imperial.pipe.io.adapters.model.AdaptedPlace;
+import pipe.imperial.pipe.io.adapters.model.NameDetails;
+import pipe.imperial.pipe.io.adapters.model.OffsetGraphics;
+import pipe.imperial.pipe.io.adapters.model.Point;
+import pipe.imperial.pipe.io.adapters.utils.ConnectableUtils;
+import pipe.imperial.pipe.models.petrinet.DiscretePlace;
+import pipe.imperial.pipe.models.petrinet.Place;
 
 public final class PlaceAdapter extends XmlAdapter {
    private final Map places;

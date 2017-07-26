@@ -6,7 +6,7 @@ import pipe.controllers.SelectionManager;
 import pipe.controllers.application.PipeApplicationController;
 import pipe.gui.PetriNetTab;
 import pipe.views.PipeApplicationView;
-import uk.ac.imperial.pipe.models.petrinet.Connectable;
+import pipe.imperial.pipe.models.petrinet.Connectable;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.InputEvent;

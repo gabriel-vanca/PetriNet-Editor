@@ -1,6 +1,6 @@
 package pipe.imperial.pipe.dsl;
 
-import uk.ac.imperial.pipe.dsl.AnAbstractTransition;
+import pipe.imperial.pipe.dsl.AnAbstractTransition;
 
 public final class AnImmediateTransition extends AnAbstractTransition {
    private AnImmediateTransition(String id) {

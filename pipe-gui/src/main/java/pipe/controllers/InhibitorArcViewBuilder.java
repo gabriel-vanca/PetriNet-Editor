@@ -3,10 +3,10 @@ package pipe.controllers;
 import pipe.actions.gui.PipeApplicationModel;
 import pipe.handlers.ArcHandler;
 import pipe.views.InhibitorArcView;
-import uk.ac.imperial.pipe.models.petrinet.Arc;
-import uk.ac.imperial.pipe.models.petrinet.Connectable;
-import uk.ac.imperial.pipe.models.petrinet.Place;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.models.petrinet.Arc;
+import pipe.imperial.pipe.models.petrinet.Connectable;
+import pipe.imperial.pipe.models.petrinet.Place;
+import pipe.imperial.pipe.models.petrinet.Transition;
 
 import java.awt.Container;
 

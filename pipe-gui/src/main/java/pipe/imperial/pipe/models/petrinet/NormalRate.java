@@ -1,7 +1,7 @@
 package pipe.imperial.pipe.models.petrinet;
 
-import uk.ac.imperial.pipe.models.petrinet.Rate;
-import uk.ac.imperial.pipe.models.petrinet.RateType;
+import pipe.imperial.pipe.models.petrinet.Rate;
+import pipe.imperial.pipe.models.petrinet.RateType;
 
 public final class NormalRate implements Rate {
    public final String rate;

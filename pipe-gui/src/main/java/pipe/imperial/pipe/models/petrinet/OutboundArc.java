@@ -2,12 +2,12 @@ package pipe.imperial.pipe.models.petrinet;
 
 import java.util.Map;
 
-import uk.ac.imperial.pipe.models.petrinet.AbstractArc;
-import uk.ac.imperial.pipe.models.petrinet.ArcType;
-import uk.ac.imperial.pipe.models.petrinet.ArcVisitor;
-import uk.ac.imperial.pipe.models.petrinet.Place;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
-import uk.ac.imperial.pipe.visitor.component.PetriNetComponentVisitor;
+import pipe.imperial.pipe.models.petrinet.AbstractArc;
+import pipe.imperial.pipe.models.petrinet.ArcType;
+import pipe.imperial.pipe.models.petrinet.ArcVisitor;
+import pipe.imperial.pipe.models.petrinet.Place;
+import pipe.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.visitor.component.PetriNetComponentVisitor;
 
 public abstract class OutboundArc extends AbstractArc {
    public OutboundArc(Transition source, Place target, Map tokenWeights, ArcType type) {

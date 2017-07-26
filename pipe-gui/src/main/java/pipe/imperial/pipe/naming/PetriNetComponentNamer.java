@@ -1,10 +1,10 @@
 package pipe.imperial.pipe.naming;
 
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
-import uk.ac.imperial.pipe.naming.MultipleNamer;
-import uk.ac.imperial.pipe.naming.PlaceNamer;
-import uk.ac.imperial.pipe.naming.TransitionNamer;
-import uk.ac.imperial.pipe.naming.UniqueNamer;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.naming.MultipleNamer;
+import pipe.imperial.pipe.naming.PlaceNamer;
+import pipe.imperial.pipe.naming.TransitionNamer;
+import pipe.imperial.pipe.naming.UniqueNamer;
 
 public final class PetriNetComponentNamer implements MultipleNamer {
    private final uk.ac.imperial.pipe.naming.UniqueNamer placeNamer;

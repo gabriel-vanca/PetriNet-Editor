@@ -1,7 +1,7 @@
 package pipe.imperial.pipe.animation;
 
 import java.util.Set;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.models.petrinet.Transition;
 
 public interface Animator {
    void saveState();

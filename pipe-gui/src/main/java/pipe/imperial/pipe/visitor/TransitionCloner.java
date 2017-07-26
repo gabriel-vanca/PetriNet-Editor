@@ -1,8 +1,8 @@
 package pipe.imperial.pipe.visitor;
 
-import uk.ac.imperial.pipe.models.petrinet.DiscreteTransition;
-import uk.ac.imperial.pipe.models.petrinet.DiscreteTransitionVisitor;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.models.petrinet.DiscreteTransition;
+import pipe.imperial.pipe.models.petrinet.DiscreteTransitionVisitor;
+import pipe.imperial.pipe.models.petrinet.Transition;
 
 public final class TransitionCloner implements DiscreteTransitionVisitor {
    public Transition cloned;

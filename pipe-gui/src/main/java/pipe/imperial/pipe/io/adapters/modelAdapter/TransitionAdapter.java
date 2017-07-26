@@ -3,14 +3,14 @@ package pipe.imperial.pipe.io.adapters.modelAdapter;
 import java.util.HashMap;
 import java.util.Map;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import uk.ac.imperial.pipe.io.adapters.model.AdaptedTransition;
-import uk.ac.imperial.pipe.io.adapters.model.NameDetails;
-import uk.ac.imperial.pipe.io.adapters.utils.ConnectableUtils;
-import uk.ac.imperial.pipe.models.petrinet.DiscreteTransition;
-import uk.ac.imperial.pipe.models.petrinet.FunctionalRateParameter;
-import uk.ac.imperial.pipe.models.petrinet.NormalRate;
-import uk.ac.imperial.pipe.models.petrinet.Rate;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.io.adapters.model.AdaptedTransition;
+import pipe.imperial.pipe.io.adapters.model.NameDetails;
+import pipe.imperial.pipe.io.adapters.utils.ConnectableUtils;
+import pipe.imperial.pipe.models.petrinet.DiscreteTransition;
+import pipe.imperial.pipe.models.petrinet.FunctionalRateParameter;
+import pipe.imperial.pipe.models.petrinet.NormalRate;
+import pipe.imperial.pipe.models.petrinet.Rate;
+import pipe.imperial.pipe.models.petrinet.Transition;
 
 public final class TransitionAdapter extends XmlAdapter {
    private final Map transitions;

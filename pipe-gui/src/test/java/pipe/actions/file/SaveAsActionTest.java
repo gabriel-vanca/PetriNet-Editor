@@ -9,10 +9,10 @@ import pipe.actions.gui.SaveAsAction;
 import pipe.controllers.PetriNetController;
 import pipe.controllers.application.PipeApplicationController;
 import pipe.views.PipeApplicationView;
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
-import uk.ac.imperial.pipe.models.petrinet.name.NormalPetriNetName;
-import uk.ac.imperial.pipe.models.petrinet.name.PetriNetFileName;
-import uk.ac.imperial.pipe.models.petrinet.name.PetriNetName;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.models.petrinet.name.NormalPetriNetName;
+import pipe.imperial.pipe.models.petrinet.name.PetriNetFileName;
+import pipe.imperial.pipe.models.petrinet.name.PetriNetName;
 
 import javax.swing.*;
 import javax.xml.parsers.ParserConfigurationException;

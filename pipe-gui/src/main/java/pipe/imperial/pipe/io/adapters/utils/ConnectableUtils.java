@@ -1,11 +1,11 @@
 package pipe.imperial.pipe.io.adapters.utils;
 
-import uk.ac.imperial.pipe.io.adapters.model.AdaptedConnectable;
-import uk.ac.imperial.pipe.io.adapters.model.NameDetails;
-import uk.ac.imperial.pipe.io.adapters.model.OffsetGraphics;
-import uk.ac.imperial.pipe.io.adapters.model.Point;
-import uk.ac.imperial.pipe.io.adapters.model.PositionGraphics;
-import uk.ac.imperial.pipe.models.petrinet.Connectable;
+import pipe.imperial.pipe.io.adapters.model.AdaptedConnectable;
+import pipe.imperial.pipe.io.adapters.model.NameDetails;
+import pipe.imperial.pipe.io.adapters.model.OffsetGraphics;
+import pipe.imperial.pipe.io.adapters.model.Point;
+import pipe.imperial.pipe.io.adapters.model.PositionGraphics;
+import pipe.imperial.pipe.models.petrinet.Connectable;
 
 public final class ConnectableUtils {
    public static void setAdaptedName(Connectable connectable, AdaptedConnectable adaptedConnectable) {

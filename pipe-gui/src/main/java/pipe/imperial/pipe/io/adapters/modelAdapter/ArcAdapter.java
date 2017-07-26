@@ -5,14 +5,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import uk.ac.imperial.pipe.io.adapters.model.AdaptedArc;
-import uk.ac.imperial.pipe.models.petrinet.Arc;
-import uk.ac.imperial.pipe.models.petrinet.ArcPoint;
-import uk.ac.imperial.pipe.models.petrinet.InboundInhibitorArc;
-import uk.ac.imperial.pipe.models.petrinet.InboundNormalArc;
-import uk.ac.imperial.pipe.models.petrinet.OutboundNormalArc;
-import uk.ac.imperial.pipe.models.petrinet.Place;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.io.adapters.model.AdaptedArc;
+import pipe.imperial.pipe.models.petrinet.Arc;
+import pipe.imperial.pipe.models.petrinet.ArcPoint;
+import pipe.imperial.pipe.models.petrinet.InboundInhibitorArc;
+import pipe.imperial.pipe.models.petrinet.InboundNormalArc;
+import pipe.imperial.pipe.models.petrinet.OutboundNormalArc;
+import pipe.imperial.pipe.models.petrinet.Place;
+import pipe.imperial.pipe.models.petrinet.Transition;
 
 public class ArcAdapter extends XmlAdapter {
    private final Map places;

@@ -2,9 +2,9 @@ package pipe.imperial.pipe.models.petrinet.name;
 
 import java.io.File;
 import org.apache.commons.io.FilenameUtils;
-import uk.ac.imperial.pipe.models.petrinet.name.FileNameVisitor;
-import uk.ac.imperial.pipe.models.petrinet.name.NameVisitor;
-import uk.ac.imperial.pipe.models.petrinet.name.PetriNetName;
+import pipe.imperial.pipe.models.petrinet.name.FileNameVisitor;
+import pipe.imperial.pipe.models.petrinet.name.NameVisitor;
+import pipe.imperial.pipe.models.petrinet.name.PetriNetName;
 
 public final class PetriNetFileName implements PetriNetName {
    private File file;

@@ -1,6 +1,6 @@
 package pipe.gui.plugin;
 
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
 
 /**
  * API for GUI modules

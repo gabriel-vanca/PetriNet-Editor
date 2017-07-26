@@ -9,8 +9,8 @@ import org.mockito.runners.MockitoJUnitRunner;
 import pipe.controllers.GUIAnimator;
 import pipe.controllers.application.PipeApplicationController;
 import pipe.historyActions.AnimationHistory;
-import uk.ac.imperial.pipe.animation.Animator;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.animation.Animator;
+import pipe.imperial.pipe.models.petrinet.Transition;
 
 import static org.mockito.Mockito.*;
 

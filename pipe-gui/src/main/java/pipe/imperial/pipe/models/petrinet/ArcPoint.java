@@ -2,7 +2,7 @@ package pipe.imperial.pipe.models.petrinet;
 
 import java.awt.geom.Point2D;
 import java.awt.geom.Point2D.Double;
-import uk.ac.imperial.pipe.visitor.component.PetriNetComponentVisitor;
+import pipe.imperial.pipe.visitor.component.PetriNetComponentVisitor;
 
 public class ArcPoint extends AbstractPetriNetPubSub implements PlaceablePetriNetComponent {
    public static final String UPDATE_CURVED_CHANGE_MESSAGE = "updateCurved";

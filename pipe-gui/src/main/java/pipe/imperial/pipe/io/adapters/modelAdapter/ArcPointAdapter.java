@@ -3,8 +3,8 @@ package pipe.imperial.pipe.io.adapters.modelAdapter;
 import java.awt.geom.Point2D;
 import java.awt.geom.Point2D.Double;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import uk.ac.imperial.pipe.io.adapters.model.AdaptedArcPoint;
-import uk.ac.imperial.pipe.models.petrinet.ArcPoint;
+import pipe.imperial.pipe.io.adapters.model.AdaptedArcPoint;
+import pipe.imperial.pipe.models.petrinet.ArcPoint;
 
 public class ArcPointAdapter extends XmlAdapter {
    public ArcPoint unmarshal(AdaptedArcPoint adaptedArcPoint) {

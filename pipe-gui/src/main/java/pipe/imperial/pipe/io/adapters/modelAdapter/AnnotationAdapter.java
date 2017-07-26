@@ -1,9 +1,9 @@
 package pipe.imperial.pipe.io.adapters.modelAdapter;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import uk.ac.imperial.pipe.io.adapters.model.AdaptedAnnotation;
-import uk.ac.imperial.pipe.models.petrinet.Annotation;
-import uk.ac.imperial.pipe.models.petrinet.AnnotationImpl;
+import pipe.imperial.pipe.io.adapters.model.AdaptedAnnotation;
+import pipe.imperial.pipe.models.petrinet.Annotation;
+import pipe.imperial.pipe.models.petrinet.AnnotationImpl;
 
 public class AnnotationAdapter extends XmlAdapter {
    public final AnnotationImpl unmarshal(AdaptedAnnotation adaptedAnnotation) {

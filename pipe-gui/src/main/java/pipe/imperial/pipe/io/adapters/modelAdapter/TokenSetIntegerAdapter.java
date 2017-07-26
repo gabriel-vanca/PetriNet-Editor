@@ -4,7 +4,7 @@ import com.google.common.base.Joiner;
 import java.util.HashMap;
 import java.util.Map;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import uk.ac.imperial.pipe.models.petrinet.Token;
+import pipe.imperial.pipe.models.petrinet.Token;
 
 public final class TokenSetIntegerAdapter extends XmlAdapter {
    private final Map tokens;

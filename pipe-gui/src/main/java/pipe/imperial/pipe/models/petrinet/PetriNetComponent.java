@@ -1,8 +1,8 @@
 package pipe.imperial.pipe.models.petrinet;
 
 import java.beans.PropertyChangeListener;
-import uk.ac.imperial.pipe.exceptions.PetriNetComponentException;
-import uk.ac.imperial.pipe.visitor.component.PetriNetComponentVisitor;
+import pipe.imperial.pipe.exceptions.PetriNetComponentException;
+import pipe.imperial.pipe.visitor.component.PetriNetComponentVisitor;
 
 public interface PetriNetComponent {
    String ID_CHANGE_MESSAGE = "id";

@@ -2,10 +2,10 @@ package pipe.imperial.pipe.io.adapters.modelAdapter;
 
 import java.util.Iterator;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import uk.ac.imperial.pipe.exceptions.PetriNetComponentException;
-import uk.ac.imperial.pipe.io.adapters.model.AdaptedPetriNet;
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
-import uk.ac.imperial.pipe.models.petrinet.PetriNetComponent;
+import pipe.imperial.pipe.exceptions.PetriNetComponentException;
+import pipe.imperial.pipe.io.adapters.model.AdaptedPetriNet;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.models.petrinet.PetriNetComponent;
 
 public class PetriNetAdapter extends XmlAdapter {
    public PetriNet unmarshal(AdaptedPetriNet v) throws PetriNetComponentException {

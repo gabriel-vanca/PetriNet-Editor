@@ -1,12 +1,12 @@
 package pipe.imperial.pipe.models.petrinet;
 
-import uk.ac.imperial.pipe.exceptions.InvalidRateException;
-import uk.ac.imperial.pipe.exceptions.PetriNetComponentException;
-import uk.ac.imperial.pipe.models.petrinet.AbstractPetriNetPubSub;
-import uk.ac.imperial.pipe.models.petrinet.RateParameter;
-import uk.ac.imperial.pipe.models.petrinet.RateParameterVisitor;
-import uk.ac.imperial.pipe.models.petrinet.RateType;
-import uk.ac.imperial.pipe.visitor.component.PetriNetComponentVisitor;
+import pipe.imperial.pipe.exceptions.InvalidRateException;
+import pipe.imperial.pipe.exceptions.PetriNetComponentException;
+import pipe.imperial.pipe.models.petrinet.AbstractPetriNetPubSub;
+import pipe.imperial.pipe.models.petrinet.RateParameter;
+import pipe.imperial.pipe.models.petrinet.RateParameterVisitor;
+import pipe.imperial.pipe.models.petrinet.RateType;
+import pipe.imperial.pipe.visitor.component.PetriNetComponentVisitor;
 
 public final class FunctionalRateParameter extends AbstractPetriNetPubSub implements RateParameter {
    private String expression;

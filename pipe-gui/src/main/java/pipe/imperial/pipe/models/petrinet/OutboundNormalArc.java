@@ -4,17 +4,17 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import uk.ac.imperial.pipe.models.petrinet.AbstractArc;
-import uk.ac.imperial.pipe.models.petrinet.ArcType;
-import uk.ac.imperial.pipe.models.petrinet.InboundArc;
-import uk.ac.imperial.pipe.models.petrinet.OutboundArc;
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
-import uk.ac.imperial.pipe.models.petrinet.Place;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
-import uk.ac.imperial.pipe.parsers.FunctionalResults;
-import uk.ac.imperial.pipe.parsers.FunctionalWeightParser;
-import uk.ac.imperial.pipe.parsers.PetriNetWeightParser;
-import uk.ac.imperial.pipe.parsers.StateEvalVisitor;
+import pipe.imperial.pipe.models.petrinet.AbstractArc;
+import pipe.imperial.pipe.models.petrinet.ArcType;
+import pipe.imperial.pipe.models.petrinet.InboundArc;
+import pipe.imperial.pipe.models.petrinet.OutboundArc;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.models.petrinet.Place;
+import pipe.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.parsers.FunctionalResults;
+import pipe.imperial.pipe.parsers.FunctionalWeightParser;
+import pipe.imperial.pipe.parsers.PetriNetWeightParser;
+import pipe.imperial.pipe.parsers.StateEvalVisitor;
 import pipe.imperial.state.State;
 
 public class OutboundNormalArc extends OutboundArc {

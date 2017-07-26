@@ -4,11 +4,11 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import uk.ac.imperial.pipe.models.petrinet.ArcType;
-import uk.ac.imperial.pipe.models.petrinet.InboundArc;
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
-import uk.ac.imperial.pipe.models.petrinet.Place;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.models.petrinet.ArcType;
+import pipe.imperial.pipe.models.petrinet.InboundArc;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.models.petrinet.Place;
+import pipe.imperial.pipe.models.petrinet.Transition;
 import pipe.imperial.state.State;
 
 public class InboundInhibitorArc extends InboundArc {

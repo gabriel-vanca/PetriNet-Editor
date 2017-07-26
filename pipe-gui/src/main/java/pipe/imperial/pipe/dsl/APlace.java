@@ -2,8 +2,8 @@ package pipe.imperial.pipe.dsl;
 
 import java.util.HashMap;
 import java.util.Map;
-import uk.ac.imperial.pipe.models.petrinet.DiscretePlace;
-import uk.ac.imperial.pipe.models.petrinet.Place;
+import pipe.imperial.pipe.models.petrinet.DiscretePlace;
+import pipe.imperial.pipe.models.petrinet.Place;
 
 public final class APlace implements DSLCreator {
    private String id;

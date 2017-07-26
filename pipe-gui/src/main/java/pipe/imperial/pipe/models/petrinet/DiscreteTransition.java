@@ -9,17 +9,17 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import uk.ac.imperial.pipe.models.petrinet.InboundArc;
-import uk.ac.imperial.pipe.models.petrinet.NormalRate;
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
-import uk.ac.imperial.pipe.models.petrinet.Place;
-import uk.ac.imperial.pipe.models.petrinet.Rate;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
-import uk.ac.imperial.pipe.models.petrinet.TransitionVisitor;
-import uk.ac.imperial.pipe.parsers.FunctionalResults;
-import uk.ac.imperial.pipe.parsers.PetriNetWeightParser;
-import uk.ac.imperial.pipe.parsers.StateEvalVisitor;
-import uk.ac.imperial.pipe.visitor.component.PetriNetComponentVisitor;
+import pipe.imperial.pipe.models.petrinet.InboundArc;
+import pipe.imperial.pipe.models.petrinet.NormalRate;
+import pipe.imperial.pipe.models.petrinet.PetriNet;
+import pipe.imperial.pipe.models.petrinet.Place;
+import pipe.imperial.pipe.models.petrinet.Rate;
+import pipe.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.models.petrinet.TransitionVisitor;
+import pipe.imperial.pipe.parsers.FunctionalResults;
+import pipe.imperial.pipe.parsers.PetriNetWeightParser;
+import pipe.imperial.pipe.parsers.StateEvalVisitor;
+import pipe.imperial.pipe.visitor.component.PetriNetComponentVisitor;
 import pipe.imperial.state.State;
 
 public final class DiscreteTransition extends AbstractConnectable implements Transition {

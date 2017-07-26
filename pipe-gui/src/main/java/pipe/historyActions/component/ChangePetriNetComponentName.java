@@ -4,7 +4,7 @@
 package pipe.historyActions.component;
 
 
-import uk.ac.imperial.pipe.models.petrinet.PetriNetComponent;
+import pipe.imperial.pipe.models.petrinet.PetriNetComponent;
 
 import javax.swing.undo.AbstractUndoableEdit;
 

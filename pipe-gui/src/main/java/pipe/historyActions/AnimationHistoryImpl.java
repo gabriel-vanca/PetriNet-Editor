@@ -1,7 +1,7 @@
 package pipe.historyActions;
 
 
-import uk.ac.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.models.petrinet.Transition;
 
 import java.util.ArrayList;
 import java.util.List;

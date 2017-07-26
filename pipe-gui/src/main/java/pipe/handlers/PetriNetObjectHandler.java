@@ -6,7 +6,7 @@ import pipe.constants.GUIConstants;
 import pipe.controllers.DragManager;
 import pipe.controllers.PetriNetController;
 import pipe.controllers.SelectionManager;
-import uk.ac.imperial.pipe.models.petrinet.PetriNetComponent;
+import pipe.imperial.pipe.models.petrinet.PetriNetComponent;
 
 import javax.swing.*;
 import java.awt.Container;

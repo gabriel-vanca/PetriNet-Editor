@@ -8,10 +8,10 @@ import org.mockito.runners.MockitoJUnitRunner;
 import pipe.historyActions.component.ChangePetriNetComponentName;
 import pipe.historyActions.transition.*;
 import pipe.utilities.transformers.Contains;
-import uk.ac.imperial.pipe.models.petrinet.FunctionalRateParameter;
-import uk.ac.imperial.pipe.models.petrinet.NormalRate;
-import uk.ac.imperial.pipe.models.petrinet.Rate;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
+import pipe.imperial.pipe.models.petrinet.FunctionalRateParameter;
+import pipe.imperial.pipe.models.petrinet.NormalRate;
+import pipe.imperial.pipe.models.petrinet.Rate;
+import pipe.imperial.pipe.models.petrinet.Transition;
 
 import javax.swing.event.UndoableEditListener;
 import javax.swing.undo.UndoableEdit;

@@ -3,9 +3,9 @@ package pipe.imperial.pipe.io.adapters.modelAdapter;
 import java.util.HashMap;
 import java.util.Map;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import uk.ac.imperial.pipe.io.adapters.model.AdaptedRateParameter;
-import uk.ac.imperial.pipe.models.petrinet.FunctionalRateParameter;
-import uk.ac.imperial.pipe.models.petrinet.RateParameter;
+import pipe.imperial.pipe.io.adapters.model.AdaptedRateParameter;
+import pipe.imperial.pipe.models.petrinet.FunctionalRateParameter;
+import pipe.imperial.pipe.models.petrinet.RateParameter;
 
 public final class RateParameterAdapter extends XmlAdapter {
    private final Map rateParameters;
