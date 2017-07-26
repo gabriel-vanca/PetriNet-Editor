@@ -2,25 +2,10 @@ package pipe.gui.imperial.pipe.models.petrinet;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeSupport;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.Set;
-import javax.xml.bind.annotation.XmlTransient;
 import org.apache.commons.collections.CollectionUtils;
 import pipe.gui.imperial.pipe.exceptions.InvalidRateException;
 import pipe.gui.imperial.pipe.exceptions.PetriNetComponentException;
 import pipe.gui.imperial.pipe.exceptions.PetriNetComponentNotFoundException;
-import pipe.gui.imperial.pipe.models.petrinet.Arc;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
-import pipe.gui.imperial.pipe.models.petrinet.Rate;
-import pipe.gui.imperial.pipe.models.petrinet.Token;
 import pipe.gui.imperial.pipe.models.petrinet.name.PetriNetName;
 import pipe.gui.imperial.pipe.parsers.EvalVisitor;
 import pipe.gui.imperial.pipe.parsers.FunctionalResults;
@@ -28,7 +13,13 @@ import pipe.gui.imperial.pipe.parsers.FunctionalWeightParser;
 import pipe.gui.imperial.pipe.parsers.PetriNetWeightParser;
 import pipe.gui.imperial.pipe.visitor.component.PetriNetComponentVisitor;
 
-public class PetriNet {
+import javax.xml.bind.annotation.XmlTransient;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+import java.util.*;
+
+public class PetriNet extends uk.ac.imperial.pipe.models.petrinet.PetriNet {
    public static final String PETRI_NET_NAME_CHANGE_MESSAGE = "nameChange";
    public static final String NEW_ANNOTATION_CHANGE_MESSAGE = "newAnnotation";
    public static final String DELETE_PLACE_CHANGE_MESSAGE = "deletePlace";
@@ -222,10 +213,10 @@ public class PetriNet {
       while(true) {
          while(i$.hasNext()) {
             pipe.gui.imperial.pipe.models.petrinet.Arc arc = (pipe.gui.imperial.pipe.models.petrinet.Arc)i$.next();
-            Iterator i$ = arc.getTokenWeights().values().iterator();
+            Iterator i$1 = arc.getTokenWeights().values().iterator();
 
-            while(i$.hasNext()) {
-               String expr = (String)i$.next();
+            while(i$1.hasNext()) {
+               String expr = (String)i$1.next();
                if (this.referencesId(expr, componentId)) {
                   results.add(arc.getId());
                   break;

@@ -1,18 +1,29 @@
 package pipe.gui.imperial.pipe.io.adapters.modelAdapter;
 
-import java.awt.Color;
-import java.util.HashMap;
-import java.util.Map;
-import javax.xml.bind.annotation.adapters.XmlAdapter;
 import pipe.gui.imperial.pipe.io.adapters.model.AdaptedToken;
 import pipe.gui.imperial.pipe.models.petrinet.ColoredToken;
 import pipe.gui.imperial.pipe.models.petrinet.Token;
+
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import java.awt.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public final class TokenAdapter extends XmlAdapter {
    private final Map tokens;
 
    public TokenAdapter() {
       this.tokens = new HashMap();
+   }
+
+   @Override
+   public Object unmarshal(Object v) throws Exception {
+      return null;
+   }
+
+   @Override
+   public Object marshal(Object v) throws Exception {
+      return null;
    }
 
    public TokenAdapter(Map tokens) {

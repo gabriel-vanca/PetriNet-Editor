@@ -235,11 +235,11 @@ public final class Expander {
    // $FF: synthetic class
    static class SyntheticClass_1 {
       // $FF: synthetic field
-      static final int[] $SwitchMap$pipe.gui.imperial.pipe$models$petrinet$ArcType = new int[ArcType.values().length];
+      static final int[] $SwitchMap$uk$ac$imperial$pipe$models$petrinet$ArcType = new int[ArcType.values().length];
 
       static {
          try {
-            $SwitchMap$pipe.gui.imperial.pipe$models$petrinet$ArcType[ArcType.INHIBITOR.ordinal()] = 1;
+            $SwitchMap$uk$ac$imperial$pipe$models$petrinet$ArcType[ArcType.INHIBITOR.ordinal()] = 1;
          } catch (NoSuchFieldError var1) {
             ;
          }

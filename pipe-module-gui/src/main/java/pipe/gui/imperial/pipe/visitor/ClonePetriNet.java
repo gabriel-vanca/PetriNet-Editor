@@ -1,5 +1,10 @@
 package pipe.gui.imperial.pipe.visitor;
 
+import pipe.gui.imperial.pipe.exceptions.InvalidRateException;
+import pipe.gui.imperial.pipe.exceptions.PetriNetComponentException;
+import pipe.gui.imperial.pipe.models.petrinet.*;
+import pipe.gui.imperial.pipe.models.petrinet.name.*;
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -7,33 +12,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import pipe.gui.imperial.pipe.exceptions.InvalidRateException;
-import pipe.gui.imperial.pipe.exceptions.PetriNetComponentException;
-import pipe.gui.imperial.pipe.models.petrinet.Annotation;
-import pipe.gui.imperial.pipe.models.petrinet.ArcPoint;
-import pipe.gui.imperial.pipe.models.petrinet.ArcType;
-import pipe.gui.imperial.pipe.models.petrinet.ColoredToken;
-import pipe.gui.imperial.pipe.models.petrinet.FunctionalRateParameter;
-import pipe.gui.imperial.pipe.models.petrinet.InboundArc;
-import pipe.gui.imperial.pipe.models.petrinet.InboundInhibitorArc;
-import pipe.gui.imperial.pipe.models.petrinet.InboundNormalArc;
-import pipe.gui.imperial.pipe.models.petrinet.OutboundArc;
-import pipe.gui.imperial.pipe.models.petrinet.OutboundNormalArc;
-import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
-import pipe.gui.imperial.pipe.models.petrinet.Rate;
-import pipe.gui.imperial.pipe.models.petrinet.RateParameter;
-import pipe.gui.imperial.pipe.models.petrinet.RateType;
-import pipe.gui.imperial.pipe.models.petrinet.Token;
-import pipe.gui.imperial.pipe.models.petrinet.Transition;
-import pipe.gui.imperial.pipe.models.petrinet.name.FileNameVisitor;
-import pipe.gui.imperial.pipe.models.petrinet.name.NormalNameVisitor;
-import pipe.gui.imperial.pipe.models.petrinet.name.NormalPetriNetName;
-import pipe.gui.imperial.pipe.models.petrinet.name.PetriNetFileName;
-import pipe.gui.imperial.pipe.models.petrinet.name.PetriNetName;
-import pipe.gui.imperial.pipe.visitor.PlaceCloner;
-
-import static pipe.gui.imperial.pipe.visitor.PasteVisitor.SyntheticClass_1.$SwitchMap$pipe;
 
 public final class ClonePetriNet {
    private static final Logger LOGGER = Logger.getLogger(ClonePetriNet.class.getName());

@@ -1,6 +1,10 @@
 package pipe.gui.analysis;
 
 import org.rendersnake.HtmlCanvas;
+import pipe.gui.imperial.pipe.exceptions.InvalidRateException;
+import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
+import pipe.gui.imperial.state.ClassifiedState;
+import pipe.gui.imperial.state.Record;
 import pipe.gui.widget.GenerateResultsForm;
 import pipe.gui.widget.HTMLPane;
 import pipe.gui.widget.StateSpaceLoader;
@@ -97,8 +101,7 @@ public class GSPNAnalysis {
         try {
             StateSpaceExplorer.StateSpaceExplorerResults results =
                     stateSpaceLoader.calculateResults(new StateSpaceLoader.ExplorerCreator() {
-                                                          @Override
-                                                          public ExplorerUtilities create(PetriNet petriNet) {
+                                                          public BoundedExplorerUtilities create(PetriNet petriNet) {
                                                               return new BoundedExplorerUtilities(petriNet, 1000000);
                                                           }
                                                       }, new StateSpaceLoader.VanishingExplorerCreator() {
@@ -153,7 +156,7 @@ public class GSPNAnalysis {
         try {
             displayStates(html, stateMappings);
             SteadyStateSolver steadyStateSolver = new ParallelGaussSeidel(8, executorService, 10);
-            Map<Integer, Double> steadyState = steadyStateSolver.solve(new ArrayList<>(records));
+            Map<Integer, Double> steadyState = steadyStateSolver.solve(String.valueOf(new ArrayList<>(records)));
 
             displaySteadyState(html, steadyState);
             displayMetrics(html, steadyState, stateMappings);

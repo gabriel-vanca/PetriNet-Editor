@@ -1,11 +1,12 @@
 package pipe.gui.imperial.pipe.io.adapters.modelAdapter;
 
-import java.util.Iterator;
-import javax.xml.bind.annotation.adapters.XmlAdapter;
 import pipe.gui.imperial.pipe.exceptions.PetriNetComponentException;
 import pipe.gui.imperial.pipe.io.adapters.model.AdaptedPetriNet;
 import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
 import pipe.gui.imperial.pipe.models.petrinet.PetriNetComponent;
+
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import java.util.Iterator;
 
 public class PetriNetAdapter extends XmlAdapter {
    public PetriNet unmarshal(AdaptedPetriNet v) throws PetriNetComponentException {
@@ -40,5 +41,15 @@ public class PetriNetAdapter extends XmlAdapter {
          }
       }
 
+   }
+
+   @Override
+   public Object unmarshal(Object v) throws Exception {
+      return null;
+   }
+
+   @Override
+   public Object marshal(Object v) throws Exception {
+      return null;
    }
 }

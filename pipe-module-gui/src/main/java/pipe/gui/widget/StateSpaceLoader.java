@@ -3,6 +3,7 @@ package pipe.gui.widget;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
 
+import pipe.gui.imperial.io.*;
 import pipe.reachability.algorithm.ExplorerUtilities;
 import pipe.reachability.algorithm.StateSpaceExplorer;
 import pipe.reachability.algorithm.TimelessTrapException;
@@ -249,7 +250,7 @@ public class StateSpaceLoader {
     public StateSpaceExplorer.StateSpaceExplorerResults calculateResults(ExplorerCreator creator,
                                                                          VanishingExplorerCreator vanishingCreator, int threads)
             throws IOException, InterruptedException, ExecutionException, InvalidRateException, TimelessTrapException,
-            StateSpaceLoaderException {
+            StateSpaceLoaderException, uk.ac.imperial.pipe.exceptions.InvalidRateException {
         if (loadFromBinariesRadio.isSelected()) {
             return loadFromBinaries();
         } else {
@@ -326,7 +327,7 @@ public class StateSpaceLoader {
                                                                             ExplorerUtilities explorerUtils,
                                                                             VanishingExplorer vanishingExplorer,
                                                                             int threads)
-            throws IOException, TimelessTrapException, ExecutionException, InvalidRateException, InterruptedException {
+            throws IOException, TimelessTrapException, ExecutionException, InvalidRateException, InterruptedException, uk.ac.imperial.pipe.exceptions.InvalidRateException {
         try (OutputStream transitionStream = Files.newOutputStream(transitions);
              OutputStream stateStream = Files.newOutputStream(states)) {
             try (Output transitionOutput = new Output(transitionStream);
@@ -383,7 +384,7 @@ public class StateSpaceLoader {
                                                                          PetriNet petriNet,
                                                                          ExplorerUtilities explorerUtilites,
                                                                          VanishingExplorer vanishingExplorer, int threads)
-            throws TimelessTrapException, ExecutionException, InterruptedException, IOException, InvalidRateException {
+            throws TimelessTrapException, ExecutionException, InterruptedException, IOException, InvalidRateException, uk.ac.imperial.pipe.exceptions.InvalidRateException {
         StateProcessor processor = new StateIOProcessor(stateWriter, transitionOutput, stateOutput);
         StateSpaceExplorer stateSpaceExplorer = getStateSpaceExplorer(explorerUtilites, vanishingExplorer, processor, threads);
         return stateSpaceExplorer.generate(explorerUtilites.getCurrentState());
@@ -391,9 +392,9 @@ public class StateSpaceLoader {
 
     private StateSpaceExplorer getStateSpaceExplorer( ExplorerUtilities explorerUtilites, VanishingExplorer vanishingExplorer, StateProcessor stateProcessor, int threads) {
         if (threads == 1) {
-            return new SequentialStateSpaceExplorer(explorerUtilites, vanishingExplorer, stateProcessor);
+            return new SequentialStateSpaceExplorer(explorerUtilites, vanishingExplorer, (uk.ac.imperial.io.StateProcessor) stateProcessor);
         }
-        return new  MassiveParallelStateSpaceExplorer(explorerUtilites, vanishingExplorer, stateProcessor, threads, STATES_PER_THREAD);
+        return new  MassiveParallelStateSpaceExplorer(explorerUtilites, vanishingExplorer, (uk.ac.imperial.io.StateProcessor) stateProcessor, threads, STATES_PER_THREAD);
     }
 
     /**
