@@ -5,9 +5,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
+import pipe.actions.gui.PipeApplicationModel;
 import pipe.controllers.PetriNetController;
 import pipe.gui.PetriNetTab;
-import pipe.actions.gui.PipeApplicationModel;
+import pipe.gui.imperial.pipe.models.petrinet.*;
 import pipe.handlers.ArcHandler;
 
 import java.awt.geom.Point2D;
@@ -31,7 +32,7 @@ public class ArcViewTest {
     ArcHandler<? extends Connectable, ? extends Connectable> handler;
 
     @Mock
-    private Arc<Place, Transition> mockArc;
+    private Arc mockArc;
     private Point2D.Double start = new Point2D.Double(50, 39);
     private Point2D.Double end = new Point2D.Double(100, 500);
 

@@ -348,7 +348,7 @@ public class PetriNetController implements Serializable {
      */
     public void updateToken(String currentTokenName, String name, Color color)
             throws PetriNetComponentNotFoundException {
-        Token token = petriNet.getComponent(currentTokenName, Token.class);
+        Token token = (Token) petriNet.getComponent(currentTokenName, Token.class);
         if (!token.getId().equals(name)) {
             token.setId(name);
         }
@@ -411,7 +411,7 @@ public class PetriNetController implements Serializable {
      */
     public RateParameterController getRateParameterController(final String rateParameter)
             throws PetriNetComponentNotFoundException {
-        RateParameter parameter = petriNet.getComponent(rateParameter, RateParameter.class);
+        RateParameter parameter = (RateParameter) petriNet.getComponent(rateParameter, RateParameter.class);
         return new RateParameterController(parameter, petriNet, undoListener);
     }
 
@@ -430,7 +430,7 @@ public class PetriNetController implements Serializable {
      * @throws PetriNetComponentNotFoundException if the token does not exist
      */
     public Token getToken(String name) throws PetriNetComponentNotFoundException {
-        return petriNet.getComponent(name, Token.class);
+        return (Token) petriNet.getComponent(name, Token.class);
     }
 
     /**

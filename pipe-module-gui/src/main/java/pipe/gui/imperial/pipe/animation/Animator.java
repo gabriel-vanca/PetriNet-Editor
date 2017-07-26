@@ -1,7 +1,8 @@
 package pipe.gui.imperial.pipe.animation;
 
-import java.util.Set;
 import pipe.gui.imperial.pipe.models.petrinet.Transition;
+
+import java.util.Set;
 
 public interface Animator {
    void saveState();
@@ -10,7 +11,7 @@ public interface Animator {
 
    Transition getRandomEnabledTransition();
 
-   Set getEnabledTransitions();
+   Set<Transition> getEnabledTransitions();
 
    void fireTransition(Transition var1);
 

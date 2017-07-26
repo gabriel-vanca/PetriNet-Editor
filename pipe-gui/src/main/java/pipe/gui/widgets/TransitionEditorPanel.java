@@ -2,10 +2,7 @@ package pipe.gui.widgets;
 
 import pipe.controllers.PetriNetController;
 import pipe.controllers.TransitionController;
-import pipe.gui.imperial.pipe.models.petrinet.PetriNetComponent;
-import pipe.gui.imperial.pipe.models.petrinet.Rate;
-import pipe.gui.imperial.pipe.models.petrinet.RateParameter;
-import pipe.gui.imperial.pipe.models.petrinet.RateType;
+import pipe.gui.imperial.pipe.models.petrinet.*;
 import pipe.gui.imperial.pipe.parsers.EvalVisitor;
 import pipe.gui.imperial.pipe.parsers.FunctionalResults;
 import pipe.gui.imperial.pipe.parsers.PetriNetWeightParser;
@@ -673,14 +670,14 @@ public class TransitionEditorPanel extends javax.swing.JPanel {
     private boolean canSetRate() {
         PetriNetWeightParser parser =
                 new PetriNetWeightParser(new EvalVisitor(netController.getPetriNet()), netController.getPetriNet());
-        FunctionalResults<Double> result = parser.evaluateExpression(weightRateTextField.getText());
+        FunctionalResults result = parser.evaluateExpression(weightRateTextField.getText());
         if (result.hasErrors()) {
             String concatenated = concatenateErrors(result.getErrors());
             showErrorMessage(
                     "Functional rate expression is invalid. Please check your function. Errors are:" + concatenated);
             return false;
         }
-        double rate = result.getResult();
+        double rate = (double) result.getResult();
 
         if (rate == -1) {
             showErrorMessage("Functional rate expression is invalid. Please check your function.");
@@ -806,7 +803,7 @@ public class TransitionEditorPanel extends javax.swing.JPanel {
     }
 
     private boolean checkIfArcsAreFunctional() {
-        for (Arc<Place, Transition> arc : transitionController.inboundArcs()) {
+        for (Arc arc : transitionController.inboundArcs()) {
             if (arc.hasFunctionalWeight()) {
                 return true;
             }

@@ -136,7 +136,7 @@ public class PetriNetChangeListener implements PropertyChangeListener {
         Arc arc = (Arc) propertyChangeEvent.getNewValue();
 
         if (arc.getType().equals(ArcType.INHIBITOR)) {
-            Arc inhibitorArc = (Arc<Place, Transition>) arc;
+            Arc inhibitorArc = (Arc) arc;
             InhibitorArcViewBuilder builder = new InhibitorArcViewBuilder(inhibitorArc, controller);
             InhibitorArcView view = builder.build(petriNetTab, applicationModel);
             petriNetTab.addNewPetriNetComponent(view);

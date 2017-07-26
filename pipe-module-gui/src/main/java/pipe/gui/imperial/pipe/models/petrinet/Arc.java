@@ -1,10 +1,11 @@
 package pipe.gui.imperial.pipe.models.petrinet;
 
+import pipe.gui.imperial.state.State;
+
 import java.awt.geom.Point2D;
 import java.awt.geom.Point2D.Double;
 import java.util.List;
 import java.util.Map;
-import pipe.gui.imperial.state.State;
 
 public interface Arc extends PetriNetComponent {
    String SOURCE_CHANGE_MESSAGE = "source";
@@ -41,7 +42,7 @@ public interface Arc extends PetriNetComponent {
 
    void addIntermediatePoint(ArcPoint var1);
 
-   List getArcPoints();
+   List<ArcPoint> getArcPoints();
 
    void removeIntermediatePoint(ArcPoint var1);
 

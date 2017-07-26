@@ -33,7 +33,7 @@ public class ArcControllerTest {
     public ExpectedException exception = ExpectedException.none();
 
     @Mock
-    Arc<Place, Transition> mockArc;
+    Arc mockArc;
 
     @Mock
     PetriNetController mockPetriNetController;
@@ -49,7 +49,7 @@ public class ArcControllerTest {
     public void setUp() {
         controller = new ArcController<>(mockArc, mockPetriNetController, listener);
 
-        FunctionalResults<Double> results = new FunctionalResults<>(1.0, new HashSet<String>());
+        FunctionalResults results = new FunctionalResults(1.0, new HashSet<String>());
         when(mockPetriNetController.parseFunctionalExpression(anyString())).thenReturn(results);
     }
 
@@ -111,7 +111,7 @@ public class ArcControllerTest {
 
     @Test
     public void throwsUnparsableExceptionForNonIntegerWeight() throws UnparsableException {
-        FunctionalResults<Double> result = new FunctionalResults<>(5.2, new HashSet<String>());
+        FunctionalResults result = new FunctionalResults(5.2, new HashSet<String>());
         when(mockPetriNetController.parseFunctionalExpression(anyString())).thenReturn(result);
         exception.expect(UnparsableException.class);
         exception.expectMessage("Value is not an integer, please surround expression with floor or ceil");
@@ -124,7 +124,7 @@ public class ArcControllerTest {
     public void throwsUnparsableExceptionForNonIntegerWeights() throws UnparsableException {
 
         Map<String, String> tokenWeights = new HashMap<>();
-        FunctionalResults<Double> result = new FunctionalResults<>(5.2, new HashSet<String>());
+        FunctionalResults result = new FunctionalResults(5.2, new HashSet<String>());
         when(mockPetriNetController.parseFunctionalExpression(anyString())).thenReturn(result);
         exception.expect(UnparsableException.class);
         exception.expectMessage("Value is not an integer, please surround expression with floor or ceil");
@@ -140,7 +140,7 @@ public class ArcControllerTest {
         List<String> errors = new LinkedList<>();
         errors.add("test error");
 
-        FunctionalResults<Double> result = new FunctionalResults<>(5.0, errors, new HashSet<String>());
+        FunctionalResults result = new FunctionalResults(5.0, errors, new HashSet<String>());
         when(mockPetriNetController.parseFunctionalExpression(anyString())).thenReturn(result);
         exception.expect(UnparsableException.class);
         exception.expectMessage("test error");
@@ -154,7 +154,7 @@ public class ArcControllerTest {
         List<String> errors = new LinkedList<>();
         errors.add("test error");
 
-        FunctionalResults<Double> result = new FunctionalResults<>(5.0, errors, new HashSet<String>());
+        FunctionalResults result = new FunctionalResults(5.0, errors, new HashSet<String>());
         when(mockPetriNetController.parseFunctionalExpression(anyString())).thenReturn(result);
         exception.expect(UnparsableException.class);
         exception.expectMessage("test error");

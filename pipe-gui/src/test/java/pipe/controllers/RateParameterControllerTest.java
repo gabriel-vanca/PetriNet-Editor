@@ -45,7 +45,7 @@ public class RateParameterControllerTest {
         String oldRate = "5";
         String newRate = "10";
         when(rateParameter.getExpression()).thenReturn(oldRate);
-        when(petriNet.parseExpression(newRate)).thenReturn(new FunctionalResults<>(10.0, new HashSet<String>()));
+        when(petriNet.parseExpression(newRate)).thenReturn(new FunctionalResults(10.0, new HashSet<String>()));
 
         rateParameterController.setRate(newRate);
         verify(rateParameter).setExpression(newRate);
@@ -56,7 +56,7 @@ public class RateParameterControllerTest {
         String oldRate = "5";
         String newRate = "10";
         when(rateParameter.getExpression()).thenReturn(oldRate);
-        when(petriNet.parseExpression(newRate)).thenReturn(new FunctionalResults<>(10.0, new HashSet<String>()));
+        when(petriNet.parseExpression(newRate)).thenReturn(new FunctionalResults(10.0, new HashSet<String>()));
 
         rateParameterController.setRate(newRate);
         verify(petriNet).parseExpression(newRate);
@@ -68,7 +68,7 @@ public class RateParameterControllerTest {
         String oldRate = "5";
         String newRate = "fhajsh";
         when(rateParameter.getExpression()).thenReturn(oldRate);
-        when(petriNet.parseExpression(newRate)).thenReturn(new FunctionalResults<Double>(-1., Arrays.asList("error"), new HashSet<String>()));
+        when(petriNet.parseExpression(newRate)).thenReturn(new FunctionalResults(-1., Arrays.asList("error"), new HashSet<String>()));
         try {
             rateParameterController.setRate(newRate);
         } catch (InvalidRateException e) {
@@ -82,7 +82,7 @@ public class RateParameterControllerTest {
         String oldRate = "5";
         String newRate = "10";
         when(rateParameter.getExpression()).thenReturn(oldRate);
-        when(petriNet.parseExpression(newRate)).thenReturn(new FunctionalResults<>(10.0, new HashSet<String>()));
+        when(petriNet.parseExpression(newRate)).thenReturn(new FunctionalResults(10.0, new HashSet<String>()));
         rateParameterController.setRate(newRate);
 
         UndoableEdit changed = new ChangeRateParameterRate(rateParameter, oldRate, newRate);

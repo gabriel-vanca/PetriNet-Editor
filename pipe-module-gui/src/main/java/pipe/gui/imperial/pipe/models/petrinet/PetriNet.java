@@ -476,7 +476,7 @@ public class PetriNet {
 
    }
 
-   public Collection getRateParameters() {
+   public Collection<RateParameter> getRateParameters() {
       return this.rateParameters.values();
    }
 

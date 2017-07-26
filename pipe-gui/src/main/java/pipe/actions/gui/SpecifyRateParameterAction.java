@@ -117,7 +117,7 @@ public class SpecifyRateParameterAction extends GuiAction {
             for (RateEditorPanel.RateModel.Datum datum : deletedData) {
                 if (rateEditorPanel.isExistingRateParameter(datum)) {
                     try {
-                        RateParameter rateParameter = petriNet.getComponent(datum.id, RateParameter.class);
+                        RateParameter rateParameter = (RateParameter) petriNet.getComponent(datum.id, RateParameter.class);
                         UndoableEdit historyItem = new DeletePetriNetObject(rateParameter, petriNet);
                         undoableEdits.add(historyItem);
                         petriNet.removeRateParameter(rateParameter);
