@@ -19,7 +19,7 @@ import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.*;
 
-public class PetriNet extends uk.ac.imperial.pipe.models.petrinet.PetriNet {
+public class PetriNet {
    public static final String PETRI_NET_NAME_CHANGE_MESSAGE = "nameChange";
    public static final String NEW_ANNOTATION_CHANGE_MESSAGE = "newAnnotation";
    public static final String DELETE_PLACE_CHANGE_MESSAGE = "deletePlace";
