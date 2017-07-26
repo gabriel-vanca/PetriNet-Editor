@@ -89,6 +89,7 @@ public class RateParameterControllerTest {
         verify(listener).undoableEditHappened(argThat(Contains.thisAction(changed)));
     }
 
+
     @Test
     public void setRateDoesNotModifiyRateIfEqual() throws InvalidRateException {
         String oldRate = "5";
