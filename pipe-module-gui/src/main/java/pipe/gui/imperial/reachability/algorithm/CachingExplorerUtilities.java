@@ -1,13 +1,5 @@
 package pipe.gui.imperial.reachability.algorithm;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.Set;
-import java.util.Map.Entry;
-import java.util.concurrent.ConcurrentHashMap;
 import pipe.gui.imperial.pipe.animation.AnimationLogic;
 import pipe.gui.imperial.pipe.animation.PetriNetAnimationLogic;
 import pipe.gui.imperial.pipe.exceptions.InvalidRateException;
@@ -23,6 +15,10 @@ import pipe.gui.imperial.state.ClassifiedState;
 import pipe.gui.imperial.state.HashedClassifiedState;
 import pipe.gui.imperial.state.HashedStateBuilder;
 import pipe.gui.imperial.state.State;
+
+import java.util.*;
+import java.util.Map.Entry;
+import java.util.concurrent.ConcurrentHashMap;
 
 public abstract class CachingExplorerUtilities implements ExplorerUtilities {
    private final PetriNet petriNet;
@@ -70,10 +66,10 @@ public abstract class CachingExplorerUtilities implements ExplorerUtilities {
 
       while(i$.hasNext()) {
          Place place = (Place)i$.next();
-         Iterator i$ = this.petriNet.getTokens().iterator();
+         Iterator i$1 = this.petriNet.getTokens().iterator();
 
-         while(i$.hasNext()) {
-            Token token = (Token)i$.next();
+         while(i$1.hasNext()) {
+            Token token = (Token)i$1.next();
             builder.placeWithToken(place.getId(), token.getId(), place.getTokenCount(token.getId()));
          }
       }

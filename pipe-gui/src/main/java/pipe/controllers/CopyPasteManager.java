@@ -3,19 +3,19 @@ package pipe.controllers;
 import pipe.constants.GUIConstants;
 import pipe.controllers.application.PipeApplicationController;
 import pipe.gui.PetriNetTab;
-import pipe.historyActions.MultipleEdit;
-import pipe.historyActions.component.AddPetriNetObject;
-import pipe.utilities.gui.GuiUtils;
 import pipe.gui.imperial.pipe.exceptions.PetriNetComponentException;
+import pipe.gui.imperial.pipe.models.petrinet.*;
 import pipe.gui.imperial.pipe.naming.MultipleNamer;
 import pipe.gui.imperial.pipe.naming.PetriNetComponentNamer;
 import pipe.gui.imperial.pipe.visitor.PasteVisitor;
 import pipe.gui.imperial.pipe.visitor.component.PetriNetComponentVisitor;
+import pipe.historyActions.MultipleEdit;
+import pipe.historyActions.component.AddPetriNetObject;
+import pipe.utilities.gui.GuiUtils;
 
 import javax.swing.event.UndoableEditEvent;
 import javax.swing.event.UndoableEditListener;
 import javax.swing.undo.UndoableEdit;
-
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
@@ -117,7 +117,7 @@ public class CopyPasteManager extends javax.swing.JComponent
 
         for (PetriNetComponent component : selectedComponents) {
             try {
-                component.accept(locationVisitor);
+                component.accept((PetriNetComponentVisitor) locationVisitor);
             } catch (PetriNetComponentException e) {
                 GuiUtils.displayErrorMessage(null, e.getMessage());
             }

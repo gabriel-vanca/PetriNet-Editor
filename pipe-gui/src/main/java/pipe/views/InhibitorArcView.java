@@ -30,7 +30,7 @@ public class InhibitorArcView extends ArcView<Place, Transition> {
      * @param handler mouse action handler when mouse events are performed on the arc
      * @param applicationModel main PIPE application model
      */
-    public InhibitorArcView(Arc<Place, Transition> model, PetriNetController controller, Container parent, MouseInputAdapter handler, PipeApplicationModel applicationModel) {
+    public InhibitorArcView(Arc model, PetriNetController controller, Container parent, MouseInputAdapter handler, PipeApplicationModel applicationModel) {
         super(model, controller, parent, handler, applicationModel);
     }
 

@@ -1,10 +1,9 @@
 package pipe.controllers;
 
-import pipe.historyActions.transition.*;
 import pipe.gui.imperial.pipe.models.petrinet.Arc;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
 import pipe.gui.imperial.pipe.models.petrinet.Rate;
 import pipe.gui.imperial.pipe.models.petrinet.Transition;
+import pipe.historyActions.transition.*;
 
 import javax.swing.event.UndoableEditListener;
 import javax.swing.undo.UndoableEdit;
@@ -119,7 +118,7 @@ public class TransitionController extends AbstractConnectableController<Transiti
      * @return the inbound arcs for the transition
      */
     //TODO: GET CURRENT PETRINET
-    public Collection<Arc<Place, Transition>> inboundArcs() {
+    public Collection<Arc> inboundArcs() {
         //        return component.inboundArcs();
         return new LinkedList<>();
     }

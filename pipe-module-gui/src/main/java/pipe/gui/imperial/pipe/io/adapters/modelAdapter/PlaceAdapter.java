@@ -1,9 +1,6 @@
 package pipe.gui.imperial.pipe.io.adapters.modelAdapter;
 
 import com.google.common.base.Joiner;
-import java.util.HashMap;
-import java.util.Map;
-import javax.xml.bind.annotation.adapters.XmlAdapter;
 import pipe.gui.imperial.pipe.io.adapters.model.AdaptedPlace;
 import pipe.gui.imperial.pipe.io.adapters.model.NameDetails;
 import pipe.gui.imperial.pipe.io.adapters.model.OffsetGraphics;
@@ -12,11 +9,25 @@ import pipe.gui.imperial.pipe.io.adapters.utils.ConnectableUtils;
 import pipe.gui.imperial.pipe.models.petrinet.DiscretePlace;
 import pipe.gui.imperial.pipe.models.petrinet.Place;
 
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import java.util.HashMap;
+import java.util.Map;
+
 public final class PlaceAdapter extends XmlAdapter {
    private final Map places;
 
    public PlaceAdapter() {
       this.places = new HashMap();
+   }
+
+   @Override
+   public Object unmarshal(Object v) throws Exception {
+      return null;
+   }
+
+   @Override
+   public Object marshal(Object v) throws Exception {
+      return null;
    }
 
    public PlaceAdapter(Map places) {

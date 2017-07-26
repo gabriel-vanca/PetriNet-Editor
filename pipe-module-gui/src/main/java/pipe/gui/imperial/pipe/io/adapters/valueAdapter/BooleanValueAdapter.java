@@ -13,6 +13,16 @@ public class BooleanValueAdapter extends XmlAdapter {
       return adapted;
    }
 
+   @Override
+   public Object unmarshal(Object v) throws Exception {
+      return null;
+   }
+
+   @Override
+   public Object marshal(Object v) throws Exception {
+      return null;
+   }
+
    public static class AdaptedBoolean {
       public boolean value;
    }

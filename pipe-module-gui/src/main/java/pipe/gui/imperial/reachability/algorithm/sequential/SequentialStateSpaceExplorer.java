@@ -1,18 +1,15 @@
 package pipe.gui.imperial.reachability.algorithm.sequential;
 
+import pipe.gui.imperial.io.StateProcessor;
+import pipe.gui.imperial.pipe.exceptions.InvalidRateException;
+import pipe.gui.imperial.reachability.algorithm.*;
+import pipe.gui.imperial.state.ClassifiedState;
+
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import pipe.gui.imperial.reachability.algorithm.AbstractStateSpaceExplorer;
-import pipe.gui.imperial.reachability.algorithm.ExplorerUtilities;
-import pipe.gui.imperial.reachability.algorithm.StateRateRecord;
-import pipe.gui.imperial.reachability.algorithm.TimelessTrapException;
-import pipe.gui.imperial.reachability.algorithm.VanishingExplorer;
-import pipe.gui.imperial.io.StateProcessor;
-import pipe.gui.imperial.pipe.exceptions.InvalidRateException;
-import pipe.gui.imperial.state.ClassifiedState;
 
 public final class SequentialStateSpaceExplorer extends AbstractStateSpaceExplorer {
    private static final Logger LOGGER = Logger.getLogger(SequentialStateSpaceExplorer.class.getName());
@@ -37,10 +34,10 @@ public final class SequentialStateSpaceExplorer extends AbstractStateSpaceExplor
                   this.registerStateTransition(successor, rate);
                } else {
                   Collection explorableStates = this.vanishingExplorer.explore(successor, rate);
-                  Iterator i$ = explorableStates.iterator();
+                  Iterator i$1 = explorableStates.iterator();
 
-                  while(i$.hasNext()) {
-                     StateRateRecord record = (StateRateRecord)i$.next();
+                  while(i$1.hasNext()) {
+                     StateRateRecord record = (StateRateRecord)i$1.next();
                      this.registerStateTransition(record.getState(), record.getRate());
                   }
                }

@@ -1,13 +1,13 @@
 package pipe.gui.imperial.state;
 
 import com.google.common.hash.HashCode;
+import pipe.gui.imperial.utils.StateUtils;
+
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
-import pipe.gui.imperial.utils.StateUtils;
-import pipe.gui.imperial.state.State;
 
 public final class HashedState implements State {
    private int hashOne;
@@ -93,10 +93,10 @@ public final class HashedState implements State {
          Entry entry = (Entry)i$.next();
          builder.append("\"").append((String)entry.getKey()).append("\"").append(": {");
          int insideCount = 0;
-         Iterator i$ = ((Map)entry.getValue()).entrySet().iterator();
+         Iterator i$1 = ((Map)entry.getValue()).entrySet().iterator();
 
-         while(i$.hasNext()) {
-            Entry entry1 = (Entry)i$.next();
+         while(i$1.hasNext()) {
+            Entry entry1 = (Entry)i$1.next();
             builder.append("\"").append((String)entry1.getKey()).append("\"").append(": ").append(entry1.getValue());
             if (insideCount < ((Map)entry.getValue()).size() - 1) {
                builder.append(", ");

@@ -1,7 +1,12 @@
 package pipe.historyActions;
 
+import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
+import pipe.gui.imperial.pipe.models.petrinet.Place;
+import pipe.gui.imperial.pipe.models.petrinet.PlaceablePetriNetComponent;
+import pipe.gui.imperial.pipe.models.petrinet.Transition;
+
 import javax.swing.undo.AbstractUndoableEdit;
-import java.awt.Point;
+import java.awt.*;
 import java.util.Map;
 
 /**

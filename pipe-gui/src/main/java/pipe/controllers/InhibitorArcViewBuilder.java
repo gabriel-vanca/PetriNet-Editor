@@ -1,14 +1,12 @@
 package pipe.controllers;
 
 import pipe.actions.gui.PipeApplicationModel;
-import pipe.handlers.ArcHandler;
-import pipe.views.InhibitorArcView;
 import pipe.gui.imperial.pipe.models.petrinet.Arc;
 import pipe.gui.imperial.pipe.models.petrinet.Connectable;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
-import pipe.gui.imperial.pipe.models.petrinet.Transition;
+import pipe.handlers.ArcHandler;
+import pipe.views.InhibitorArcView;
 
-import java.awt.Container;
+import java.awt.*;
 
 /**
  * Builds the view representation of an inhibitor arc
@@ -17,7 +15,7 @@ public class InhibitorArcViewBuilder {
     /**
      * Underlying arc model
      */
-    private final Arc<Place, Transition> arc;
+    private final Arc arc;
 
     /**
      * Controller for the Petri net the arc belongs to
@@ -29,7 +27,7 @@ public class InhibitorArcViewBuilder {
      * @param arc underlying arc model
      * @param controller controller for the Petri net the arc belongs to
      */
-    public InhibitorArcViewBuilder(Arc<Place, Transition> arc, PetriNetController controller) {
+    public InhibitorArcViewBuilder(Arc arc, PetriNetController controller) {
         this.arc = arc;
         this.controller = controller;
     }

@@ -1,19 +1,13 @@
 package pipe.gui.imperial.pipe.parsers;
 
 import com.google.common.primitives.Doubles;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import org.antlr.v4.runtime.tree.TerminalNode;
 import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
-import pipe.gui.imperial.pipe.parsers.FunctionalResults;
-import pipe.gui.imperial.pipe.parsers.GrammarUtils;
-import pipe.gui.imperial.pipe.parsers.RateGrammarParser;
+
+import java.util.*;
 
 public class PetriNetWeightParser implements pipe.gui.imperial.pipe.parsers.FunctionalWeightParser {
    private final PetriNet petriNet;

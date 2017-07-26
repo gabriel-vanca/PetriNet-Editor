@@ -176,7 +176,7 @@ public class PetriNet {
 
    }
 
-   public Collection getPlaces() {
+   public Collection<Place> getPlaces() {
       return this.places.values();
    }
 
@@ -301,7 +301,7 @@ public class PetriNet {
       this.changeSupport.firePropertyChange("deleteArc", arc, (Object)null);
    }
 
-   public Collection getTransitions() {
+   public Collection<Transition> getTransitions() {
       return this.transitions.values();
    }
 
@@ -325,7 +325,7 @@ public class PetriNet {
 
    }
 
-   public Collection getArcs() {
+   public Collection<Arc> getArcs() {
       Collection arcs = new LinkedList();
       arcs.addAll(this.getOutboundArcs());
       arcs.addAll(this.getInboundArcs());
@@ -417,7 +417,7 @@ public class PetriNet {
       return result;
    }
 
-   public Collection getTokens() {
+   public Collection<Token> getTokens() {
       return this.tokens.values();
    }
 
@@ -435,7 +435,7 @@ public class PetriNet {
       this.changeSupport.firePropertyChange("deleteAnnotation", annotation, (Object)null);
    }
 
-   public Collection getAnnotations() {
+   public Collection<Annotation> getAnnotations() {
       return this.annotations.values();
    }
 

@@ -22,7 +22,7 @@ import java.awt.event.MouseWheelEvent;
  * Class used to implement methods corresponding to mouse events on arcs.
  */
 public class ArcHandler<S extends Connectable, T extends Connectable>
-        extends PetriNetObjectHandler<Arc<S, T>> {
+        extends PetriNetObjectHandler<Arc> {
 
 
     /**
@@ -32,7 +32,7 @@ public class ArcHandler<S extends Connectable, T extends Connectable>
      * @param controller controller of the Petri net the arc belongs to
      * @param applicationModel main PIPE application model
      */
-    public ArcHandler(Container contentPane, Arc<S, T> component, PetriNetController controller,  PipeApplicationModel applicationModel) {
+    public ArcHandler(Container contentPane, Arc component, PetriNetController controller, PipeApplicationModel applicationModel) {
         super(contentPane, component, controller, applicationModel);
         enablePopup = true;
     }

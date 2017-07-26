@@ -17,7 +17,7 @@ public class AddArcPathPoint<S extends Connectable, T extends Connectable> exten
     /**
      * Arc model to add/remove the point to/from
      */
-    private final Arc<S, T> arc;
+    private final Arc arc;
 
     /**
      * Arc point
@@ -29,7 +29,7 @@ public class AddArcPathPoint<S extends Connectable, T extends Connectable> exten
      * @param arc arc the point belongs to
      * @param point arc point
      */
-    public AddArcPathPoint(Arc<S, T> arc, ArcPoint point) {
+    public AddArcPathPoint(Arc arc, ArcPoint point) {
         this.arc = arc;
         this.point = point;
     }

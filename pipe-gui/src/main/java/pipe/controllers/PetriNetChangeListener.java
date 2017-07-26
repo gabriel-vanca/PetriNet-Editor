@@ -1,7 +1,8 @@
 package pipe.controllers;
 
-import pipe.gui.PetriNetTab;
 import pipe.actions.gui.PipeApplicationModel;
+import pipe.gui.PetriNetTab;
+import pipe.gui.imperial.pipe.models.petrinet.*;
 import pipe.views.*;
 
 import java.beans.PropertyChangeEvent;
@@ -132,11 +133,10 @@ public class PetriNetChangeListener implements PropertyChangeListener {
      */
     @EventAction(PetriNet.NEW_ARC_CHANGE_MESSAGE)
     private void newArc(PropertyChangeEvent propertyChangeEvent) {
-        Arc<? extends Connectable, ? extends Connectable> arc =
-                (Arc<? extends Connectable, ? extends Connectable>) propertyChangeEvent.getNewValue();
+        Arc arc = (Arc) propertyChangeEvent.getNewValue();
 
         if (arc.getType().equals(ArcType.INHIBITOR)) {
-            Arc<Place, Transition> inhibitorArc = (Arc<Place, Transition>) arc;
+            Arc inhibitorArc = (Arc<Place, Transition>) arc;
             InhibitorArcViewBuilder builder = new InhibitorArcViewBuilder(inhibitorArc, controller);
             InhibitorArcView view = builder.build(petriNetTab, applicationModel);
             petriNetTab.addNewPetriNetComponent(view);
@@ -199,8 +199,8 @@ public class PetriNetChangeListener implements PropertyChangeListener {
      */
     @EventAction(PetriNet.DELETE_ARC_CHANGE_MESSAGE)
     private void deleteArc(PropertyChangeEvent propertyChangeEvent) {
-        Arc<? extends Connectable, ? extends Connectable> arc =
-                (Arc<? extends Connectable, ? extends Connectable>) propertyChangeEvent.getOldValue();
+        Arc  arc =
+                (Arc) propertyChangeEvent.getOldValue();
         petriNetTab.deletePetriNetComponent(arc.getId());
     }
 

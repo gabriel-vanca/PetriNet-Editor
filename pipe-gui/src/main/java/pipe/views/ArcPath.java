@@ -7,11 +7,12 @@ import pipe.actions.gui.PipeApplicationModel;
 import pipe.constants.GUIConstants;
 import pipe.controllers.ArcController;
 import pipe.controllers.PetriNetController;
+import pipe.gui.imperial.pipe.exceptions.PetriNetComponentException;
+import pipe.gui.imperial.pipe.models.petrinet.*;
+import pipe.gui.imperial.pipe.visitor.component.PetriNetComponentVisitor;
 import pipe.handlers.ArcPathPointHandler;
 import pipe.utilities.gui.GuiUtils;
 import pipe.utilities.math.Cubic;
-import pipe.gui.imperial.pipe.exceptions.PetriNetComponentException;
-import pipe.gui.imperial.pipe.visitor.component.PetriNetComponentVisitor;
 
 import java.awt.*;
 import java.awt.geom.*;

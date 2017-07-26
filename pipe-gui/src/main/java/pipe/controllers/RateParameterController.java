@@ -40,7 +40,7 @@ public class RateParameterController extends AbstractPetriNetComponentController
     public void setRate(String expression) throws InvalidRateException {
         String oldRate = component.getExpression();
         if (!oldRate.equals(expression)) {
-            FunctionalResults<Double> results = petriNet.parseExpression(expression);
+            FunctionalResults results = petriNet.parseExpression(expression);
             if (results.hasErrors()) {
                 throw new InvalidRateException(results.getErrorString("\n"));
             }

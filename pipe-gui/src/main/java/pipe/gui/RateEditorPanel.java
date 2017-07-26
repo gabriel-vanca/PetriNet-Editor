@@ -149,7 +149,7 @@ public class RateEditorPanel extends JPanel {
          * @return if rate is valid or not
          */
         private boolean isValidRate(String id, String rate) {
-            FunctionalResults<Double> results = petriNetController.parseFunctionalExpression(rate);
+            FunctionalResults results = petriNetController.parseFunctionalExpression(rate);
             if (results.hasErrors()) {
                 showWarning("Error! Invalid rate for: " + id + "\n" + "Problem is: " + results.getErrorString(", "));
                 return false;

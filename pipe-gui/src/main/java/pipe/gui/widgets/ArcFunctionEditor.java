@@ -189,8 +189,8 @@ public class ArcFunctionEditor extends JPanel {
 
             State state = AnimationUtils.getState(petriNet);
             StateEvalVisitor evalVisitor = new StateEvalVisitor(petriNet, state);
-            FunctionalWeightParser<Double> parser = new PetriNetWeightParser(evalVisitor, petriNet);
-            FunctionalResults<Double> results = parser.evaluateExpression(func);
+            FunctionalWeightParser parser = new PetriNetWeightParser(evalVisitor, petriNet);
+            FunctionalResults results = parser.evaluateExpression(func);
             if (!results.hasErrors()) {
                 weightEditorPanel.setWeight(func, token);
             } else {

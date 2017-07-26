@@ -1,24 +1,16 @@
 package pipe.gui.imperial.utils;
 
-import com.google.common.hash.Funnel;
-import com.google.common.hash.HashCode;
-import com.google.common.hash.HashFunction;
-import com.google.common.hash.Hashing;
-import com.google.common.hash.PrimitiveSink;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
+import com.google.common.hash.*;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
 import pipe.gui.imperial.state.ClassifiedState;
 import pipe.gui.imperial.state.HashedClassifiedState;
 import pipe.gui.imperial.state.HashedState;
 import pipe.gui.imperial.state.State;
+
+import java.io.IOException;
+import java.util.*;
+import java.util.Map.Entry;
 
 public final class StateUtils {
    public static State stateFromJson(String jsonState) throws IOException {
@@ -40,6 +32,11 @@ public final class StateUtils {
 
    public static Funnel getFunnel(final Collection placeOrdering) {
       return new Funnel() {
+         @Override
+         public void funnel(Object from, PrimitiveSink into) {
+
+         }
+
          public void funnel(State from, PrimitiveSink into) {
             Iterator i$ = placeOrdering.iterator();
 

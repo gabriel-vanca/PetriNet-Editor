@@ -1,18 +1,13 @@
 package pipe.gui.imperial.pipe.io.adapters.modelAdapter;
 
 import com.google.common.base.Joiner;
+import pipe.gui.imperial.pipe.io.adapters.model.AdaptedArc;
+import pipe.gui.imperial.pipe.models.petrinet.*;
+
+import javax.xml.bind.annotation.adapters.XmlAdapter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.xml.bind.annotation.adapters.XmlAdapter;
-import pipe.gui.imperial.pipe.io.adapters.model.AdaptedArc;
-import pipe.gui.imperial.pipe.models.petrinet.Arc;
-import pipe.gui.imperial.pipe.models.petrinet.ArcPoint;
-import pipe.gui.imperial.pipe.models.petrinet.InboundInhibitorArc;
-import pipe.gui.imperial.pipe.models.petrinet.InboundNormalArc;
-import pipe.gui.imperial.pipe.models.petrinet.OutboundNormalArc;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
-import pipe.gui.imperial.pipe.models.petrinet.Transition;
 
 public class ArcAdapter extends XmlAdapter {
    private final Map places;
@@ -21,6 +16,16 @@ public class ArcAdapter extends XmlAdapter {
    public ArcAdapter() {
       this.places = new HashMap();
       this.transitions = new HashMap();
+   }
+
+   @Override
+   public Object unmarshal(Object v) throws Exception {
+      return null;
+   }
+
+   @Override
+   public Object marshal(Object v) throws Exception {
+      return null;
    }
 
    public ArcAdapter(Map places, Map transitions) {

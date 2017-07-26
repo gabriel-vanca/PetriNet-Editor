@@ -1,17 +1,18 @@
 package pipe.gui.imperial.reachability.algorithm.parallel;
 
+import pipe.gui.imperial.pipe.exceptions.InvalidRateException;
+import pipe.gui.imperial.reachability.algorithm.ExplorerUtilities;
+import pipe.gui.imperial.reachability.algorithm.StateRateRecord;
+import pipe.gui.imperial.reachability.algorithm.TimelessTrapException;
+import pipe.gui.imperial.reachability.algorithm.VanishingExplorer;
+import pipe.gui.imperial.state.ClassifiedState;
+
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CountDownLatch;
-import pipe.gui.imperial.reachability.algorithm.ExplorerUtilities;
-import pipe.gui.imperial.reachability.algorithm.StateRateRecord;
-import pipe.gui.imperial.reachability.algorithm.TimelessTrapException;
-import pipe.gui.imperial.reachability.algorithm.VanishingExplorer;
-import pipe.gui.imperial.pipe.exceptions.InvalidRateException;
-import pipe.gui.imperial.state.ClassifiedState;
 
 public final class ParallelStateExplorer implements Callable {
    private final CountDownLatch latch;
@@ -42,19 +43,19 @@ public final class ParallelStateExplorer implements Callable {
                }
 
                Collection explorableStates = this.vanishingExplorer.explore(successor, rate);
-               Iterator i$ = explorableStates.iterator();
+               Iterator i$1 = explorableStates.iterator();
 
                while(true) {
-                  if (!i$.hasNext()) {
+                  if (!i$1.hasNext()) {
                      continue label54;
                   }
 
-                  StateRateRecord record = (StateRateRecord)i$.next();
+                  StateRateRecord record = (StateRateRecord)i$1.next();
                   this.registerStateRate(record.getState(), record.getRate(), stateRates);
                }
             }
 
-            HashMap var12 = stateRates;
+            Map var12 = stateRates;
             return var12;
          }
       } finally {

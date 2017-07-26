@@ -1,9 +1,9 @@
 package pipe.controllers;
 
 import pipe.gui.PetriNetTab;
-import pipe.historyActions.component.DeletePetriNetObject;
 import pipe.gui.imperial.pipe.exceptions.PetriNetComponentException;
 import pipe.gui.imperial.pipe.exceptions.PetriNetComponentNotFoundException;
+import pipe.gui.imperial.pipe.models.petrinet.*;
 import pipe.gui.imperial.pipe.naming.PlaceNamer;
 import pipe.gui.imperial.pipe.naming.TransitionNamer;
 import pipe.gui.imperial.pipe.naming.UniqueNamer;
@@ -11,18 +11,17 @@ import pipe.gui.imperial.pipe.parsers.FunctionalResults;
 import pipe.gui.imperial.pipe.visitor.ClonePetriNet;
 import pipe.gui.imperial.pipe.visitor.TranslationVisitor;
 import pipe.gui.imperial.pipe.visitor.component.PetriNetComponentVisitor;
+import pipe.historyActions.component.DeletePetriNetObject;
 
 import javax.swing.event.UndoableEditListener;
 import javax.swing.undo.UndoManager;
 import javax.swing.undo.UndoableEdit;
-
-import java.awt.Color;
-import java.awt.Point;
-import java.awt.Rectangle;
+import java.awt.*;
 import java.awt.geom.GeneralPath;
 import java.awt.geom.Point2D;
 import java.io.Serializable;
 import java.util.*;
+import java.util.List;
 
 @SuppressWarnings("serial")
 public class PetriNetController implements Serializable {
@@ -208,7 +207,7 @@ public class PetriNetController implements Serializable {
         for (Transition transition : petriNet.getTransitions()) {
             selectPlaceable(transition, selectionRectangle);
         }
-        for (Arc<? extends Connectable, ? extends Connectable> arc : petriNet.getArcs()) {
+        for (Arc arc : petriNet.getArcs()) {
             if (isArcSelected(arc, selectionRectangle)) {
                 select(arc);
                 for (ArcPoint arcPoint : arc.getArcPoints()) {
@@ -230,7 +229,7 @@ public class PetriNetController implements Serializable {
      * @param selectionRectangle bounds of selection on screen
      * @return if selectionRectangle intersects the path
      */
-    private boolean isArcSelected(Arc<? extends Connectable, ? extends Connectable> arc, Rectangle selectionRectangle) {
+    private boolean isArcSelected(Arc arc, Rectangle selectionRectangle) {
         GeneralPath path = createStraightPath(arc);
         return path.intersects(selectionRectangle);
     }
@@ -241,7 +240,7 @@ public class PetriNetController implements Serializable {
      * @param arc
      * @return Straight path for arc, ignoring Bezier curves
      */
-    private GeneralPath createStraightPath(Arc<? extends Connectable, ? extends Connectable> arc) {
+    private GeneralPath createStraightPath(Arc arc) {
         GeneralPath path = new GeneralPath();
 
         Collection<ArcPoint> arcPoints = arc.getArcPoints();
@@ -373,7 +372,7 @@ public class PetriNetController implements Serializable {
      * @param <T> target 
      * @return controller for the model
      */
-    public <S extends Connectable, T extends Connectable> ArcController<S, T> getArcController(Arc<S, T> arc) {
+    public <S extends Connectable, T extends Connectable> ArcController<S, T> getArcController(Arc arc) {
         return new ArcController<>(arc, this, undoListener);
     }
 
@@ -534,7 +533,7 @@ public class PetriNetController implements Serializable {
      * @param expr functional expression to parse 
      * @return parsed functional expression in relation to the Petri nets current state
      */
-    public FunctionalResults<Double> parseFunctionalExpression(String expr) {
+    public FunctionalResults parseFunctionalExpression(String expr) {
         return petriNet.parseExpression(expr);
     }
 

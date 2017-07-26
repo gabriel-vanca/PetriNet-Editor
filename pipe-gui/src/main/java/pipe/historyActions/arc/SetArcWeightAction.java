@@ -18,7 +18,7 @@ public class SetArcWeightAction<S extends Connectable, T extends Connectable> ex
     /**
      * Arc model
      */
-    private final Arc<S,T> arc;
+    private final Arc arc;
 
     /**
      * Token id for the weight
@@ -42,7 +42,7 @@ public class SetArcWeightAction<S extends Connectable, T extends Connectable> ex
      * @param oldWeight old arc functional weight for the token id
      * @param newWeight new arc functional weight for the token id
      */
-    public SetArcWeightAction(Arc<S, T> arc, String token, String oldWeight, String newWeight) {
+    public SetArcWeightAction(Arc arc, String token, String oldWeight, String newWeight) {
 
         this.arc = arc;
         this.token = token;

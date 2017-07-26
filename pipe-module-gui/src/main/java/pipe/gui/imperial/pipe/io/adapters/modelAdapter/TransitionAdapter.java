@@ -1,16 +1,13 @@
 package pipe.gui.imperial.pipe.io.adapters.modelAdapter;
 
-import java.util.HashMap;
-import java.util.Map;
-import javax.xml.bind.annotation.adapters.XmlAdapter;
 import pipe.gui.imperial.pipe.io.adapters.model.AdaptedTransition;
 import pipe.gui.imperial.pipe.io.adapters.model.NameDetails;
 import pipe.gui.imperial.pipe.io.adapters.utils.ConnectableUtils;
-import pipe.gui.imperial.pipe.models.petrinet.DiscreteTransition;
-import pipe.gui.imperial.pipe.models.petrinet.FunctionalRateParameter;
-import pipe.gui.imperial.pipe.models.petrinet.NormalRate;
-import pipe.gui.imperial.pipe.models.petrinet.Rate;
-import pipe.gui.imperial.pipe.models.petrinet.Transition;
+import pipe.gui.imperial.pipe.models.petrinet.*;
+
+import javax.xml.bind.annotation.adapters.XmlAdapter;
+import java.util.HashMap;
+import java.util.Map;
 
 public final class TransitionAdapter extends XmlAdapter {
    private final Map transitions;
@@ -19,6 +16,16 @@ public final class TransitionAdapter extends XmlAdapter {
    public TransitionAdapter() {
       this.transitions = new HashMap();
       this.rateParameters = new HashMap();
+   }
+
+   @Override
+   public Object unmarshal(Object v) throws Exception {
+      return null;
+   }
+
+   @Override
+   public Object marshal(Object v) throws Exception {
+      return null;
    }
 
    public TransitionAdapter(Map transitions, Map rateParameters) {

@@ -61,7 +61,7 @@ public class NormalArcView<S extends Connectable, T extends Connectable> extends
      * @param handler mouse event handler
      * @param applicationModel PIPE main appliaction model
      */
-    public NormalArcView(Arc<S, T> model, PetriNetController controller, Container parent, MouseInputAdapter handler,
+    public NormalArcView(Arc model, PetriNetController controller, Container parent, MouseInputAdapter handler,
                          PipeApplicationModel applicationModel) {
         super(model, controller, parent, handler, applicationModel);
         addConnectableListener();

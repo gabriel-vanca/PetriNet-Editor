@@ -1,12 +1,9 @@
 package pipe.gui.imperial.utils;
 
 import com.google.common.hash.HashCode;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.TreeMap;
 import pipe.gui.imperial.state.ClassifiedState;
+
+import java.util.*;
 
 public final class ExploredSet {
    private final int arraySize;
@@ -118,6 +115,11 @@ public final class ExploredSet {
       // $FF: synthetic method
       WrappedHash(HashCode x0, ExploredSet.SyntheticClass_1 x1) {
          this(x0);
+      }
+
+      @Override
+      public int compareTo(Object o) {
+         return 0;
       }
    }
 }

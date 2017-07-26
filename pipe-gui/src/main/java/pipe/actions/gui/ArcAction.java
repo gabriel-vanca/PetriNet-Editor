@@ -4,13 +4,14 @@ import pipe.controllers.PetriNetController;
 import pipe.controllers.application.PipeApplicationController;
 import pipe.controllers.arcCreator.ArcActionCreator;
 import pipe.gui.PetriNetTab;
+import pipe.gui.imperial.pipe.exceptions.PetriNetComponentException;
+import pipe.gui.imperial.pipe.models.petrinet.*;
+import pipe.gui.imperial.pipe.visitor.connectable.arc.ArcSourceVisitor;
 import pipe.historyActions.component.AddPetriNetObject;
 import pipe.views.ArcHead;
 import pipe.views.TemporaryArcView;
-import pipe.gui.imperial.pipe.exceptions.PetriNetComponentException;
-import pipe.gui.imperial.pipe.visitor.connectable.arc.ArcSourceVisitor;
 
-import java.awt.Point;
+import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
@@ -111,7 +112,7 @@ public final class ArcAction extends CreateAction {
             connectable.accept(visitor);
             PetriNetController petriNetController = controller.getActivePetriNetController();
             PetriNet net = petriNetController.getPetriNet();
-            Arc<? extends Connectable, ? extends Connectable> arc;
+            Arc arc;
             if (inbound) {
                 arc = arcCreator.createInboundArc(visitor.place, visitor.transition,
                         temporaryArcView.getIntermediatePoints());

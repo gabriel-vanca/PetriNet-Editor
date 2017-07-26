@@ -24,7 +24,7 @@ import java.beans.PropertyChangeListener;
  */
 @SuppressWarnings("serial")
 public abstract class ArcView<S extends Connectable, T extends Connectable>
-        extends AbstractPetriNetViewComponent<Arc<S, T>> {
+        extends AbstractPetriNetViewComponent<Arc> {
     /**
      * Bounds of arc need to be grown in order to avoid clipping problems.
      * This value achieves it.
@@ -36,7 +36,7 @@ public abstract class ArcView<S extends Connectable, T extends Connectable>
      */
     protected final ArcPath arcPath;
 
-    public ArcView(Arc<S, T> model, PetriNetController controller, Container parent,
+    public ArcView(Arc model, PetriNetController controller, Container parent,
                    MouseInputAdapter arcHandler,
                    PipeApplicationModel applicationModel) {
         super(model.getId(), model, controller, parent);

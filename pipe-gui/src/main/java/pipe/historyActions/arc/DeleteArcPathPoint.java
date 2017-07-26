@@ -20,7 +20,7 @@ public class DeleteArcPathPoint<S extends Connectable, T extends Connectable> ex
     /**
      * Arc model
      */
-    private final Arc<S, T> arc;
+    private final Arc arc;
 
     /**
      * Arc point to delete from the arc
@@ -33,7 +33,7 @@ public class DeleteArcPathPoint<S extends Connectable, T extends Connectable> ex
      * @param arc       model
      * @param arcPoint arc point to delete from the model
      */
-    public DeleteArcPathPoint(Arc<S, T> arc, ArcPoint arcPoint) {
+    public DeleteArcPathPoint(Arc arc, ArcPoint arcPoint) {
         this.arc = arc;
         this.point = arcPoint;
     }

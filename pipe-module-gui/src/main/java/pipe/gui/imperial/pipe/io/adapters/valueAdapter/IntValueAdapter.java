@@ -13,6 +13,16 @@ public final class IntValueAdapter extends XmlAdapter {
       return adapter;
    }
 
+   @Override
+   public Object unmarshal(Object v) throws Exception {
+      return null;
+   }
+
+   @Override
+   public Object marshal(Object v) throws Exception {
+      return null;
+   }
+
    public static class IntAdapter {
       public int value;
    }

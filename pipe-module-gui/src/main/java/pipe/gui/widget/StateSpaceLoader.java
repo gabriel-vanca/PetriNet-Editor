@@ -4,10 +4,7 @@ import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
 
 import pipe.gui.imperial.io.*;
-import pipe.gui.imperial.reachability.algorithm.ExplorerUtilities;
-import pipe.gui.imperial.reachability.algorithm.StateSpaceExplorer;
-import pipe.gui.imperial.reachability.algorithm.TimelessTrapException;
-import pipe.gui.imperial.reachability.algorithm.VanishingExplorer;
+import pipe.gui.imperial.reachability.algorithm.*;
 import pipe.gui.imperial.reachability.algorithm.parallel.MassiveParallelStateSpaceExplorer;
 import pipe.gui.imperial.reachability.algorithm.sequential.SequentialStateSpaceExplorer;
 import pipe.gui.imperial.pipe.exceptions.InvalidRateException;
@@ -384,17 +381,17 @@ public class StateSpaceLoader {
                                                                          PetriNet petriNet,
                                                                          ExplorerUtilities explorerUtilites,
                                                                          VanishingExplorer vanishingExplorer, int threads)
-            throws TimelessTrapException, ExecutionException, InterruptedException, IOException, InvalidRateException, pipe.gui.imperial.pipe.exceptions.InvalidRateException {
+            throws TimelessTrapException, ExecutionException, InterruptedException, IOException, pipe.gui.imperial.pipe.exceptions.InvalidRateException {
         StateProcessor processor = new StateIOProcessor(stateWriter, transitionOutput, stateOutput);
         StateSpaceExplorer stateSpaceExplorer = getStateSpaceExplorer(explorerUtilites, vanishingExplorer, processor, threads);
         return stateSpaceExplorer.generate(explorerUtilites.getCurrentState());
     }
 
-    private MassiveParallelStateSpaceExplorer getStateSpaceExplorer(ExplorerUtilities explorerUtilites, VanishingExplorer vanishingExplorer, StateProcessor stateProcessor, int threads) {
+    private AbstractStateSpaceExplorer getStateSpaceExplorer(ExplorerUtilities explorerUtilites, VanishingExplorer vanishingExplorer, StateProcessor stateProcessor, int threads) {
         if (threads == 1) {
-            return new SequentialStateSpaceExplorer(explorerUtilites, vanishingExplorer, (pipe.gui.imperial.io.StateProcessor) stateProcessor);
+            return new SequentialStateSpaceExplorer(explorerUtilites, vanishingExplorer, stateProcessor);
         }
-        return new  MassiveParallelStateSpaceExplorer(explorerUtilites, vanishingExplorer, (pipe.gui.imperial.io.StateProcessor) stateProcessor, threads, STATES_PER_THREAD);
+        return new  MassiveParallelStateSpaceExplorer(explorerUtilites, vanishingExplorer, stateProcessor, threads, STATES_PER_THREAD);
     }
 
     /**

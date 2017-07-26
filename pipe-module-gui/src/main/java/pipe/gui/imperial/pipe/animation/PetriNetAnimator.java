@@ -1,20 +1,13 @@
 package pipe.gui.imperial.pipe.animation;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Random;
-import java.util.Set;
-import java.util.Map.Entry;
-
-import pipe.gui.imperial.pipe.animation.AnimationLogic;
-import pipe.gui.imperial.pipe.animation.AnimationUtils;
-import pipe.gui.imperial.pipe.animation.Animator;
 import pipe.gui.imperial.pipe.models.petrinet.Arc;
 import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
 import pipe.gui.imperial.pipe.models.petrinet.Place;
 import pipe.gui.imperial.pipe.models.petrinet.Transition;
 import pipe.gui.imperial.state.State;
+
+import java.util.*;
+import java.util.Map.Entry;
 
 public final class PetriNetAnimator implements Animator {
    private static final String ERROR_NO_TRANSITIONS_TO_FIRE = "Error - no transitions to fire!";
@@ -82,7 +75,7 @@ public final class PetriNetAnimator implements Animator {
 
       Arc arc;
       Place place;
-      Iterator i$;
+      Iterator i$1;
       Entry entry;
       String tokenId;
       String functionalWeight;
@@ -92,10 +85,10 @@ public final class PetriNetAnimator implements Animator {
       while(i$.hasNext()) {
          arc = (Arc)i$.next();
          place = (Place)arc.getSource();
-         i$ = arc.getTokenWeights().entrySet().iterator();
+         i$1 = arc.getTokenWeights().entrySet().iterator();
 
-         while(i$.hasNext()) {
-            entry = (Entry)i$.next();
+         while(i$1.hasNext()) {
+            entry = (Entry)i$1.next();
             tokenId = (String)entry.getKey();
             functionalWeight = (String)entry.getValue();
             weight = this.animationLogic.getArcWeight(state, functionalWeight);

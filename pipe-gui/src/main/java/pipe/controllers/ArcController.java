@@ -23,12 +23,12 @@ import java.util.Map;
  * @param <S> source model
  * @param <T> target model
  */
-public class ArcController<S extends Connectable, T extends Connectable> extends AbstractPetriNetComponentController<Arc<S, T>>
+public class ArcController<S extends Connectable, T extends Connectable> extends AbstractPetriNetComponentController<Arc>
 {
     /**
      * Underlying model
      */
-    private final Arc<S, T> arc;
+    private final Arc arc;
 
     /**
      * PetriNetController in order to determine if arc expressions are valid
@@ -43,7 +43,7 @@ public class ArcController<S extends Connectable, T extends Connectable> extends
      * @param petriNetController Petri net controller for the Petri net the arc is housed in
      * @param listener undo event listener
      */
-    ArcController(Arc<S, T> arc, PetriNetController petriNetController, UndoableEditListener listener) {
+    ArcController(Arc arc, PetriNetController petriNetController, UndoableEditListener listener) {
         super(arc, listener);
         this.arc = arc;
         this.petriNetController = petriNetController;
@@ -66,14 +66,14 @@ public class ArcController<S extends Connectable, T extends Connectable> extends
      * @throws UnparsableException if the weight could not be parsed or is not an integer
      */
     private void throwExceptionIfWeightNotValid(String expr) throws UnparsableException {
-        FunctionalResults<Double> result = petriNetController.parseFunctionalExpression(expr);
+        FunctionalResults result = petriNetController.parseFunctionalExpression(expr);
         if (result.hasErrors()) {
             StringBuilder errorMessage = new StringBuilder();
             for (String error : result.getErrors()) {
                 errorMessage.append(error).append("\n");
             }
             throw new UnparsableException(errorMessage.toString());
-        } else if (valueIsNotInteger(result.getResult())) {
+        } else if (valueIsNotInteger((Double) result.getResult())) {
             throw new UnparsableException("Value is not an integer, please surround expression with floor or ceil");
         }
     }

@@ -1,16 +1,27 @@
 package pipe.gui.imperial.pipe.io.adapters.modelAdapter;
 
 import com.google.common.base.Joiner;
+import pipe.gui.imperial.pipe.models.petrinet.Token;
+
+import javax.xml.bind.annotation.adapters.XmlAdapter;
 import java.util.HashMap;
 import java.util.Map;
-import javax.xml.bind.annotation.adapters.XmlAdapter;
-import pipe.gui.imperial.pipe.models.petrinet.Token;
 
 public final class TokenSetIntegerAdapter extends XmlAdapter {
    private final Map tokens;
 
    public TokenSetIntegerAdapter() {
       this.tokens = new HashMap();
+   }
+
+   @Override
+   public Object unmarshal(Object v) throws Exception {
+      return null;
+   }
+
+   @Override
+   public Object marshal(Object v) throws Exception {
+      return null;
    }
 
    public TokenSetIntegerAdapter(Map tokens) {

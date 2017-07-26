@@ -1,9 +1,9 @@
 package pipe.gui.imperial.pipe.io.adapters.modelAdapter;
 
-import java.awt.geom.Point2D;
-import java.awt.geom.Point2D.Double;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
+import java.awt.geom.Point2D;
+import java.awt.geom.Point2D.Double;
 
 public final class PointAdapter extends XmlAdapter {
    public Point2D unmarshal(PointAdapter.AdaptedPoint adaptedPoint) {
@@ -15,6 +15,16 @@ public final class PointAdapter extends XmlAdapter {
       adaptedPoint.x = point2D.getX();
       adaptedPoint.y = point2D.getY();
       return adaptedPoint;
+   }
+
+   @Override
+   public Object unmarshal(Object v) throws Exception {
+      return null;
+   }
+
+   @Override
+   public Object marshal(Object v) throws Exception {
+      return null;
    }
 
    public static class AdaptedPoint {

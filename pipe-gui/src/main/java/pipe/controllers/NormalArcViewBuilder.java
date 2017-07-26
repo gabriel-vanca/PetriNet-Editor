@@ -15,7 +15,7 @@ public class NormalArcViewBuilder {
     /**
      * Underlying arc model
      */
-    private final Arc<? extends Connectable, ? extends Connectable> arc;
+    private final Arc arc;
 
     /**
      * Petri net controller for the Petri net the arc belongs to
@@ -27,7 +27,7 @@ public class NormalArcViewBuilder {
      * @param arc underlying arc model
      * @param controller Petri net controller for the Petri net the arc belongs to
      */
-    public NormalArcViewBuilder(Arc<? extends Connectable, ? extends Connectable> arc, PetriNetController controller) {
+    public NormalArcViewBuilder(Arc arc, PetriNetController controller) {
         this.arc = arc;
         this.controller = controller;
     }
@@ -44,7 +44,7 @@ public class NormalArcViewBuilder {
         ArcHandler<? extends Connectable, ? extends Connectable> handler =
                 new ArcHandler<>(parent, arc, controller, model);
         NormalArcView<Connectable, Connectable> view =
-                new NormalArcView<>((Arc<Connectable, Connectable>) arc, controller, parent, handler, model);
+                new NormalArcView<>(arc, controller, parent, handler, model);
         return view;
 
     }

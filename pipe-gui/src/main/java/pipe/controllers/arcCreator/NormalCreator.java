@@ -2,9 +2,7 @@ package pipe.controllers.arcCreator;
 
 import pipe.controllers.PetriNetController;
 import pipe.controllers.application.PipeApplicationController;
-import pipe.gui.imperial.pipe.models.petrinet.Connectable;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
-import pipe.gui.imperial.pipe.models.petrinet.Transition;
+import pipe.gui.imperial.pipe.models.petrinet.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -49,6 +47,11 @@ public class NormalCreator implements ArcActionCreator {
         outboundArc.addIntermediatePoints(arcPoints);
         return outboundArc;
     }
+
+//    @Override
+//    public InboundArc createInboundArc(Place source, Transition target, List<ArcPoint> arcPoints) {
+//        return null;
+//    }
 
     @Override
     public <S extends Connectable, T extends Connectable> boolean canCreate(S source, T target) {

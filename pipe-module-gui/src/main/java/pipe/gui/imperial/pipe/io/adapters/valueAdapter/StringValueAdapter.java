@@ -13,6 +13,16 @@ public final class StringValueAdapter extends XmlAdapter {
       return adaptedString;
    }
 
+   @Override
+   public Object unmarshal(Object v) throws Exception {
+      return null;
+   }
+
+   @Override
+   public Object marshal(Object v) throws Exception {
+      return null;
+   }
+
    public static class AdaptedString {
       public String value;
    }

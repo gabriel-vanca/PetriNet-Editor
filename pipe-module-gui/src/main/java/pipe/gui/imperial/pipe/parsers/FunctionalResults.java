@@ -7,14 +7,14 @@ import java.util.Set;
 
 public final class FunctionalResults {
    private final Set components;
-   private List errors;
+   private List<String> errors;
    private Number result;
 
    public FunctionalResults(Number result, Set components) {
       this(result, new LinkedList(), components);
    }
 
-   public FunctionalResults(Number result, List errors, Set components) {
+   public FunctionalResults(Number result, List<String> errors, Set components) {
       this.result = result;
       this.errors = errors;
       this.components = components;
@@ -24,7 +24,7 @@ public final class FunctionalResults {
       return !this.errors.isEmpty();
    }
 
-   public List getErrors() {
+   public List<String> getErrors() {
       return this.errors;
    }
 

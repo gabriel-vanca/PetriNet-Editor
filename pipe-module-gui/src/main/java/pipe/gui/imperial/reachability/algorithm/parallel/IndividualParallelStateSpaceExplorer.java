@@ -1,20 +1,17 @@
 package pipe.gui.imperial.reachability.algorithm.parallel;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import pipe.gui.imperial.io.StateProcessor;
 import pipe.gui.imperial.reachability.algorithm.AbstractStateSpaceExplorer;
 import pipe.gui.imperial.reachability.algorithm.ExplorerUtilities;
 import pipe.gui.imperial.reachability.algorithm.TimelessTrapException;
 import pipe.gui.imperial.reachability.algorithm.VanishingExplorer;
-import pipe.gui.imperial.io.StateProcessor;
 import pipe.gui.imperial.state.ClassifiedState;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.concurrent.*;
 
 public final class IndividualParallelStateSpaceExplorer extends AbstractStateSpaceExplorer {
    private static final int THREADS = 8;
@@ -50,10 +47,10 @@ public final class IndividualParallelStateSpaceExplorer extends AbstractStateSpa
 
             try {
                Map successors = (Map)future.get();
-               Iterator i$ = successors.entrySet().iterator();
+               Iterator i$1 = successors.entrySet().iterator();
 
-               while(i$.hasNext()) {
-                  Entry successorEntry = (Entry)i$.next();
+               while(i$1.hasNext()) {
+                  Entry successorEntry = (Entry)i$1.next();
                   ClassifiedState successor = (ClassifiedState)successorEntry.getKey();
                   double rate = ((Double)successorEntry.getValue()).doubleValue();
                   this.registerStateRate(successor, rate);

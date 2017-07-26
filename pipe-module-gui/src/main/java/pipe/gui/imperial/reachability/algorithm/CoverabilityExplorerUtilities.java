@@ -2,19 +2,13 @@ package pipe.gui.imperial.reachability.algorithm;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import java.util.ArrayDeque;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Queue;
-import java.util.Set;
-import java.util.Map.Entry;
 import pipe.gui.imperial.pipe.exceptions.InvalidRateException;
 import pipe.gui.imperial.state.ClassifiedState;
 import pipe.gui.imperial.state.HashedClassifiedState;
 import pipe.gui.imperial.state.HashedStateBuilder;
+
+import java.util.*;
+import java.util.Map.Entry;
 
 public final class CoverabilityExplorerUtilities implements ExplorerUtilities {
    private final ExplorerUtilities explorerUtilities;
@@ -75,10 +69,10 @@ public final class CoverabilityExplorerUtilities implements ExplorerUtilities {
 
       while(i$.hasNext()) {
          String place = (String)i$.next();
-         Iterator i$ = state.getTokens(place).entrySet().iterator();
+         Iterator i$1 = state.getTokens(place).entrySet().iterator();
 
-         while(i$.hasNext()) {
-            Entry entry = (Entry)i$.next();
+         while(i$1.hasNext()) {
+            Entry entry = (Entry)i$1.next();
             String token = (String)entry.getKey();
             int stateCount = ((Integer)entry.getValue()).intValue();
             int ancestorCount = ((Integer)ancestor.getTokens(place).get(token)).intValue();
@@ -97,10 +91,10 @@ public final class CoverabilityExplorerUtilities implements ExplorerUtilities {
 
       while(i$.hasNext()) {
          String place = (String)i$.next();
-         Iterator i$ = state.getTokens(place).entrySet().iterator();
+         Iterator i$1 = state.getTokens(place).entrySet().iterator();
 
-         while(i$.hasNext()) {
-            Entry entry = (Entry)i$.next();
+         while(i$1.hasNext()) {
+            Entry entry = (Entry)i$1.next();
             String token = (String)entry.getKey();
             int stateCount = ((Integer)entry.getValue()).intValue();
             int ancestorCount = ((Integer)ancestor.getTokens(place).get(token)).intValue();

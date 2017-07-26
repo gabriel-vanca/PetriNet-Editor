@@ -3,10 +3,11 @@ package pipe.gui;
 import pipe.constants.GUIConstants;
 import pipe.controllers.SelectionManager;
 import pipe.controllers.ZoomController;
+import pipe.gui.imperial.pipe.exceptions.PetriNetComponentException;
+import pipe.gui.imperial.pipe.models.petrinet.*;
+import pipe.gui.imperial.pipe.visitor.component.PetriNetComponentVisitor;
 import pipe.views.AbstractPetriNetViewComponent;
 import pipe.views.PetriNetViewComponent;
-import pipe.gui.imperial.pipe.exceptions.PetriNetComponentException;
-import pipe.gui.imperial.pipe.visitor.component.PetriNetComponentVisitor;
 
 import javax.swing.*;
 import javax.swing.event.MouseInputAdapter;

@@ -3,11 +3,12 @@ package pipe.controllers.application;
 import pipe.actions.gui.PipeApplicationModel;
 import pipe.controllers.*;
 import pipe.gui.PetriNetTab;
-import pipe.historyActions.AnimationHistoryImpl;
 import pipe.gui.imperial.pipe.animation.PetriNetAnimator;
 import pipe.gui.imperial.pipe.models.manager.PetriNetManager;
 import pipe.gui.imperial.pipe.models.manager.PetriNetManagerImpl;
+import pipe.gui.imperial.pipe.models.petrinet.*;
 import pipe.gui.imperial.pipe.parsers.UnparsableException;
+import pipe.historyActions.AnimationHistoryImpl;
 
 import javax.swing.event.UndoableEditListener;
 import javax.xml.bind.JAXBException;
@@ -139,7 +140,7 @@ public class PipeApplicationController {
             propertyChangeListener.propertyChange(changeEvent);
         }
 
-        for (Arc<? extends Connectable, ? extends Connectable> arc : net.getArcs()) {
+        for (Arc arc : net.getArcs()) {
             PropertyChangeEvent changeEvent = new PropertyChangeEvent(net, PetriNet.NEW_ARC_CHANGE_MESSAGE, null, arc);
             propertyChangeListener.propertyChange(changeEvent);
         }

@@ -2,10 +2,14 @@ package pipe.gui.widgets;
 
 import pipe.controllers.PetriNetController;
 import pipe.controllers.TransitionController;
-import pipe.utilities.gui.GuiUtils;
+import pipe.gui.imperial.pipe.models.petrinet.PetriNetComponent;
+import pipe.gui.imperial.pipe.models.petrinet.Rate;
+import pipe.gui.imperial.pipe.models.petrinet.RateParameter;
+import pipe.gui.imperial.pipe.models.petrinet.RateType;
 import pipe.gui.imperial.pipe.parsers.EvalVisitor;
 import pipe.gui.imperial.pipe.parsers.FunctionalResults;
 import pipe.gui.imperial.pipe.parsers.PetriNetWeightParser;
+import pipe.utilities.gui.GuiUtils;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

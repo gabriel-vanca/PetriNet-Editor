@@ -1,16 +1,5 @@
 package pipe.gui.imperial.pipe.animation;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.Set;
-import java.util.Map.Entry;
-import java.util.concurrent.ConcurrentHashMap;
-
-import pipe.gui.imperial.pipe.animation.AnimationLogic;
 import pipe.gui.imperial.pipe.models.petrinet.Arc;
 import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
 import pipe.gui.imperial.pipe.models.petrinet.Place;
@@ -20,6 +9,10 @@ import pipe.gui.imperial.pipe.parsers.PetriNetWeightParser;
 import pipe.gui.imperial.pipe.parsers.StateEvalVisitor;
 import pipe.gui.imperial.state.HashedStateBuilder;
 import pipe.gui.imperial.state.State;
+
+import java.util.*;
+import java.util.Map.Entry;
+import java.util.concurrent.ConcurrentHashMap;
 
 public final class PetriNetAnimationLogic implements AnimationLogic {
    private final PetriNet petriNet;
@@ -74,37 +67,37 @@ public final class PetriNetAnimationLogic implements AnimationLogic {
 
       Set enabled = this.getEnabledTransitions(state);
       if (enabled.contains(transition)) {
-         Iterator i$ = this.petriNet.inboundArcs(transition).iterator();
+         Iterator i$1 = this.petriNet.inboundArcs(transition).iterator();
 
          int currentCount;
-         while(i$.hasNext()) {
-            Arc arc = (Arc)i$.next();
-            String placeId = ((Place)arc.getSource()).getId();
+         while(i$1.hasNext()) {
+            Arc arc = (Arc)i$1.next();
+            String placeId = arc.getSource().getId();
             Map arcWeights = arc.getTokenWeights();
-            Iterator i$ = state.getTokens(placeId).entrySet().iterator();
+            Iterator i$2 = state.getTokens(placeId).entrySet().iterator();
 
-            while(i$.hasNext()) {
-               Entry entry = (Entry)i$.next();
+            while(i$2.hasNext()) {
+               Entry entry = (Entry)i$2.next();
                String tokenId = (String)entry.getKey();
                if (arcWeights.containsKey(tokenId)) {
-                  int currentCount = ((Integer)entry.getValue()).intValue();
+                  int currentCount1 = ((Integer)entry.getValue()).intValue();
                   currentCount = (int)this.getArcWeight(state, (String)arcWeights.get(tokenId));
-                  builder.placeWithToken(placeId, tokenId, this.subtractWeight(currentCount, currentCount));
+                  builder.placeWithToken(placeId, tokenId, this.subtractWeight(currentCount, currentCount1));
                }
             }
          }
 
          State temporaryState = builder.build();
-         Iterator i$ = this.petriNet.outboundArcs(transition).iterator();
+         Iterator i$3 = this.petriNet.outboundArcs(transition).iterator();
 
-         while(i$.hasNext()) {
-            Arc arc = (Arc)i$.next();
+         while(i$3.hasNext()) {
+            Arc arc = (Arc)i$3.next();
             String placeId = ((Place)arc.getTarget()).getId();
             Map arcWeights = arc.getTokenWeights();
-            Iterator i$ = arcWeights.entrySet().iterator();
+            Iterator i$4 = arcWeights.entrySet().iterator();
 
-            while(i$.hasNext()) {
-               Entry entry = (Entry)i$.next();
+            while(i$4.hasNext()) {
+               Entry entry = (Entry)i$4.next();
                String tokenId = (String)entry.getKey();
                currentCount = ((Integer)temporaryState.getTokens(placeId).get(tokenId)).intValue();
                int arcWeight = (int)this.getArcWeight(state, (String)entry.getValue());

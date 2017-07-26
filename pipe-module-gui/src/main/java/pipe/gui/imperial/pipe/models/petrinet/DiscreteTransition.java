@@ -1,5 +1,11 @@
 package pipe.gui.imperial.pipe.models.petrinet;
 
+import pipe.gui.imperial.pipe.parsers.FunctionalResults;
+import pipe.gui.imperial.pipe.parsers.PetriNetWeightParser;
+import pipe.gui.imperial.pipe.parsers.StateEvalVisitor;
+import pipe.gui.imperial.pipe.visitor.component.PetriNetComponentVisitor;
+import pipe.gui.imperial.state.State;
+
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Point2D;
 import java.awt.geom.Point2D.Double;
@@ -8,19 +14,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
-
-import pipe.gui.imperial.pipe.models.petrinet.InboundArc;
-import pipe.gui.imperial.pipe.models.petrinet.NormalRate;
-import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
-import pipe.gui.imperial.pipe.models.petrinet.Rate;
-import pipe.gui.imperial.pipe.models.petrinet.Transition;
-import pipe.gui.imperial.pipe.models.petrinet.TransitionVisitor;
-import pipe.gui.imperial.pipe.parsers.FunctionalResults;
-import pipe.gui.imperial.pipe.parsers.PetriNetWeightParser;
-import pipe.gui.imperial.pipe.parsers.StateEvalVisitor;
-import pipe.gui.imperial.pipe.visitor.component.PetriNetComponentVisitor;
-import pipe.gui.imperial.state.State;
 
 public final class DiscreteTransition extends AbstractConnectable implements Transition {
    public static final int DEGREES_135 = 135;
@@ -214,10 +207,10 @@ public final class DiscreteTransition extends AbstractConnectable implements Tra
          Entry entry = (Entry)i$.next();
          String placeId = (String)entry.getKey();
          Map weights = (Map)entry.getValue();
-         Iterator i$ = weights.entrySet().iterator();
+         Iterator i$1 = weights.entrySet().iterator();
 
-         while(i$.hasNext()) {
-            Entry weightEntry = (Entry)i$.next();
+         while(i$1.hasNext()) {
+            Entry weightEntry = (Entry)i$1.next();
             String tokenId = (String)weightEntry.getKey();
             java.lang.Double weight = (java.lang.Double)weightEntry.getValue();
             int requiredTokenCount = (int)Math.floor(weight.doubleValue());
