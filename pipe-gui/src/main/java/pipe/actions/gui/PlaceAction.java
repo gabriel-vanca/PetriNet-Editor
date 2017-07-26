@@ -36,6 +36,13 @@ public class PlaceAction extends CreateAction {
 
     }
 
+    public void doConstructorAction(Point point, PetriNetController petriNetController) {
+            Place place = newPlace(point, petriNetController);
+            PetriNet net = petriNetController.getPetriNet();
+
+//            registerUndoEvent(new AddPetriNetObject(place, net));
+    }
+
     @Override
     public void doConnectableAction(Connectable connectable, PetriNetController petriNetController) {
         // Do nothing if clicked on existing connectable
