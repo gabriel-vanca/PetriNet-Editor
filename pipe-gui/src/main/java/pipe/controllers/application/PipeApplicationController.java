@@ -4,11 +4,10 @@ import pipe.actions.gui.PipeApplicationModel;
 import pipe.controllers.*;
 import pipe.gui.PetriNetTab;
 import pipe.historyActions.AnimationHistoryImpl;
-import pipe.imperial.pipe.animation.PetriNetAnimator;
-import pipe.imperial.pipe.models.manager.PetriNetManager;
-import pipe.imperial.pipe.models.manager.PetriNetManagerImpl;
-import pipe.imperial.pipe.models.petrinet.*;
-import pipe.imperial.pipe.parsers.UnparsableException;
+import pipe.gui.imperial.pipe.animation.PetriNetAnimator;
+import pipe.gui.imperial.pipe.models.manager.PetriNetManager;
+import pipe.gui.imperial.pipe.models.manager.PetriNetManagerImpl;
+import pipe.gui.imperial.pipe.parsers.UnparsableException;
 
 import javax.swing.event.UndoableEditListener;
 import javax.xml.bind.JAXBException;

@@ -11,8 +11,8 @@ import pipe.controllers.PlaceViewBuilder;
 import pipe.gui.PetriNetTab;
 import pipe.actions.gui.PipeApplicationModel;
 import pipe.views.PlaceView;
-import pipe.imperial.pipe.models.petrinet.DiscretePlace;
-import pipe.imperial.pipe.models.petrinet.Place;
+import pipe.gui.imperial.pipe.models.petrinet.DiscretePlace;
+import pipe.gui.imperial.pipe.models.petrinet.Place;
 
 import static org.junit.Assert.assertEquals;
 

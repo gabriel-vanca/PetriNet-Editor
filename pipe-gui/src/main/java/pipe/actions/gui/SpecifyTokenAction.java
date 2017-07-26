@@ -11,11 +11,11 @@ import pipe.historyActions.component.DeletePetriNetObject;
 import pipe.historyActions.token.ChangeTokenColor;
 import pipe.utilities.gui.GuiUtils;
 import pipe.views.PipeApplicationView;
-import pipe.imperial.pipe.exceptions.PetriNetComponentException;
-import pipe.imperial.pipe.exceptions.PetriNetComponentNotFoundException;
-import pipe.imperial.pipe.models.petrinet.PetriNet;
-import pipe.imperial.pipe.models.petrinet.PetriNetComponent;
-import pipe.imperial.pipe.models.petrinet.Token;
+import pipe.gui.imperial.pipe.exceptions.PetriNetComponentException;
+import pipe.gui.imperial.pipe.exceptions.PetriNetComponentNotFoundException;
+import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
+import pipe.gui.imperial.pipe.models.petrinet.PetriNetComponent;
+import pipe.gui.imperial.pipe.models.petrinet.Token;
 
 import javax.swing.*;
 import javax.swing.undo.UndoableEdit;

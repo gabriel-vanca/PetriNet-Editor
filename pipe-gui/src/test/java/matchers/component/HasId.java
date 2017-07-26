@@ -1,7 +1,7 @@
 package matchers.component;
 
 
-import pipe.imperial.pipe.models.petrinet.Connectable;
+import pipe.gui.imperial.pipe.models.petrinet.Connectable;
 
 public class HasId<T extends Connectable> implements Has<T> {
     String id;

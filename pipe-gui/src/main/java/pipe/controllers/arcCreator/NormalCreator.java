@@ -2,10 +2,9 @@ package pipe.controllers.arcCreator;
 
 import pipe.controllers.PetriNetController;
 import pipe.controllers.application.PipeApplicationController;
-import pipe.imperial.pipe.models.petrinet.Connectable;
-import pipe.imperial.pipe.models.petrinet.*;
-import pipe.imperial.pipe.models.petrinet.Place;
-import pipe.imperial.pipe.models.petrinet.Transition;
+import pipe.gui.imperial.pipe.models.petrinet.Connectable;
+import pipe.gui.imperial.pipe.models.petrinet.Place;
+import pipe.gui.imperial.pipe.models.petrinet.Transition;
 
 import java.util.HashMap;
 import java.util.List;

@@ -1,10 +1,10 @@
 package pipe.controllers;
 
 import pipe.historyActions.rateparameter.ChangeRateParameterRate;
-import pipe.imperial.pipe.exceptions.InvalidRateException;
-import pipe.imperial.pipe.models.petrinet.PetriNet;
-import pipe.imperial.pipe.models.petrinet.RateParameter;
-import pipe.imperial.pipe.parsers.FunctionalResults;
+import pipe.gui.imperial.pipe.exceptions.InvalidRateException;
+import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
+import pipe.gui.imperial.pipe.models.petrinet.RateParameter;
+import pipe.gui.imperial.pipe.parsers.FunctionalResults;
 
 import javax.swing.event.UndoableEditListener;
 import javax.swing.undo.UndoableEdit;

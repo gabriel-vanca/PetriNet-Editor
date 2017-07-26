@@ -6,8 +6,8 @@
 package pipe.actions.petrinet;
 
 import pipe.controllers.ArcController;
-import pipe.imperial.pipe.models.petrinet.Connectable;
-import pipe.imperial.pipe.models.petrinet.ArcPoint;
+import pipe.gui.imperial.pipe.models.petrinet.Connectable;
+import pipe.gui.imperial.pipe.models.petrinet.ArcPoint;
 
 import java.awt.event.ActionEvent;
 

@@ -3,7 +3,7 @@ package pipe.historyActions;
 import org.junit.Before;
 import org.junit.Test;
 import pipe.historyActions.arc.ArcPathPointType;
-import pipe.imperial.pipe.models.petrinet.ArcPoint;
+import pipe.gui.imperial.pipe.models.petrinet.ArcPoint;
 
 import static org.mockito.Mockito.*;
 

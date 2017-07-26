@@ -2,9 +2,9 @@ package pipe.views;
 
 import org.junit.Before;
 import org.junit.Test;
-import pipe.imperial.pipe.models.petrinet.ArcPoint;
-import pipe.imperial.pipe.models.petrinet.DiscretePlace;
-import pipe.imperial.pipe.models.petrinet.Place;
+import pipe.gui.imperial.pipe.models.petrinet.ArcPoint;
+import pipe.gui.imperial.pipe.models.petrinet.DiscretePlace;
+import pipe.gui.imperial.pipe.models.petrinet.Place;
 
 import java.awt.Rectangle;
 import java.awt.geom.Point2D;

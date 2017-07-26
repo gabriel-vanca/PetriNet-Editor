@@ -2,8 +2,8 @@ package pipe.actions.gui;
 
 import pipe.controllers.PetriNetController;
 import pipe.controllers.PlaceController;
-import pipe.imperial.pipe.models.petrinet.Connectable;
-import pipe.imperial.pipe.models.petrinet.Place;
+import pipe.gui.imperial.pipe.models.petrinet.Connectable;
+import pipe.gui.imperial.pipe.models.petrinet.Place;
 
 import java.awt.event.MouseEvent;
 import java.util.Map;

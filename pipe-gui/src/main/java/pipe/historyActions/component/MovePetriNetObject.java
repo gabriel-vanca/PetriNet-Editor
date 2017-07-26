@@ -4,7 +4,7 @@
 
 package pipe.historyActions.component;
 
-import pipe.imperial.pipe.models.petrinet.PlaceablePetriNetComponent;
+import pipe.gui.imperial.pipe.models.petrinet.PlaceablePetriNetComponent;
 
 import javax.swing.undo.AbstractUndoableEdit;
 import java.awt.geom.Point2D;

@@ -4,7 +4,7 @@ import pipe.controllers.PetriNetController;
 import pipe.actions.gui.PipeApplicationModel;
 import pipe.gui.widgets.EscapableDialog;
 import pipe.gui.widgets.PlaceEditorPanel;
-import pipe.imperial.pipe.models.petrinet.Place;
+import pipe.gui.imperial.pipe.models.petrinet.Place;
 
 import javax.swing.*;
 import java.awt.Container;

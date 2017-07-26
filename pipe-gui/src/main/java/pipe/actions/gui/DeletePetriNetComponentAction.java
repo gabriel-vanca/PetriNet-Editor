@@ -7,8 +7,8 @@ package pipe.actions.gui;
 
 import pipe.controllers.PetriNetController;
 import pipe.utilities.gui.GuiUtils;
-import pipe.imperial.pipe.exceptions.PetriNetComponentException;
-import pipe.imperial.pipe.models.petrinet.PetriNetComponent;
+import pipe.gui.imperial.pipe.exceptions.PetriNetComponentException;
+import pipe.gui.imperial.pipe.models.petrinet.PetriNetComponent;
 
 import java.awt.event.ActionEvent;
 

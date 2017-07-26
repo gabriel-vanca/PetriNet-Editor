@@ -5,9 +5,9 @@ import pipe.controllers.PetriNetController;
 import pipe.actions.gui.PipeApplicationModel;
 import pipe.gui.widgets.ArcWeightEditorPanel;
 import pipe.gui.widgets.EscapableDialog;
-import pipe.imperial.pipe.models.petrinet.Arc;
-import pipe.imperial.pipe.models.petrinet.ArcType;
-import pipe.imperial.pipe.models.petrinet.Connectable;
+import pipe.gui.imperial.pipe.models.petrinet.Arc;
+import pipe.gui.imperial.pipe.models.petrinet.ArcType;
+import pipe.gui.imperial.pipe.models.petrinet.Connectable;
 
 import javax.swing.*;
 import java.awt.Container;

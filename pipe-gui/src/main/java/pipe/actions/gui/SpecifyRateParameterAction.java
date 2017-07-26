@@ -9,12 +9,12 @@ import pipe.historyActions.MultipleEdit;
 import pipe.historyActions.component.AddPetriNetObject;
 import pipe.historyActions.component.DeletePetriNetObject;
 import pipe.utilities.gui.GuiUtils;
-import pipe.imperial.pipe.exceptions.InvalidRateException;
-import pipe.imperial.pipe.exceptions.PetriNetComponentException;
-import pipe.imperial.pipe.exceptions.PetriNetComponentNotFoundException;
-import pipe.imperial.pipe.models.petrinet.FunctionalRateParameter;
-import pipe.imperial.pipe.models.petrinet.PetriNet;
-import pipe.imperial.pipe.models.petrinet.RateParameter;
+import pipe.gui.imperial.pipe.exceptions.InvalidRateException;
+import pipe.gui.imperial.pipe.exceptions.PetriNetComponentException;
+import pipe.gui.imperial.pipe.exceptions.PetriNetComponentNotFoundException;
+import pipe.gui.imperial.pipe.models.petrinet.FunctionalRateParameter;
+import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
+import pipe.gui.imperial.pipe.models.petrinet.RateParameter;
 
 import javax.swing.*;
 import javax.swing.undo.UndoableEdit;

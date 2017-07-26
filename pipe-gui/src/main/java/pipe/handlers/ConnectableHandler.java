@@ -3,7 +3,7 @@ package pipe.handlers;
 import pipe.actions.gui.CreateAction;
 import pipe.controllers.PetriNetController;
 import pipe.actions.gui.PipeApplicationModel;
-import pipe.imperial.pipe.models.petrinet.Connectable;
+import pipe.gui.imperial.pipe.models.petrinet.Connectable;
 
 import javax.swing.*;
 import java.awt.Container;

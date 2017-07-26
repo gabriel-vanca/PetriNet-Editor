@@ -3,7 +3,7 @@ package pipe.actions.gui;
 import pipe.controllers.PetriNetController;
 import pipe.controllers.application.PipeApplicationController;
 import pipe.views.PipeApplicationView;
-import pipe.imperial.pipe.exceptions.PetriNetComponentNotFoundException;
+import pipe.gui.imperial.pipe.exceptions.PetriNetComponentNotFoundException;
 
 import java.awt.event.ActionEvent;
 import java.util.logging.Level;

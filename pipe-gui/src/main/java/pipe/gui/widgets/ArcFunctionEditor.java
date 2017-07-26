@@ -1,14 +1,14 @@
 package pipe.gui.widgets;
 
 import pipe.controllers.ArcController;
-import pipe.imperial.pipe.animation.AnimationUtils;
-import pipe.imperial.pipe.models.petrinet.PetriNet;
-import pipe.imperial.pipe.models.petrinet.Place;
-import pipe.imperial.pipe.parsers.FunctionalResults;
-import pipe.imperial.pipe.parsers.FunctionalWeightParser;
-import pipe.imperial.pipe.parsers.PetriNetWeightParser;
-import pipe.imperial.pipe.parsers.StateEvalVisitor;
-import pipe.imperial.state.State;
+import pipe.gui.imperial.pipe.animation.AnimationUtils;
+import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
+import pipe.gui.imperial.pipe.models.petrinet.Place;
+import pipe.gui.imperial.pipe.parsers.FunctionalResults;
+import pipe.gui.imperial.pipe.parsers.FunctionalWeightParser;
+import pipe.gui.imperial.pipe.parsers.PetriNetWeightParser;
+import pipe.gui.imperial.pipe.parsers.StateEvalVisitor;
+import pipe.gui.imperial.state.State;
 
 import javax.swing.*;
 

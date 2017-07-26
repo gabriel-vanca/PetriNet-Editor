@@ -2,7 +2,7 @@ package pipe.gui.plugin.concrete;
 
 import pipe.gui.reachability.ReachabilityGraph;
 import pipe.gui.plugin.GuiModule;
-import pipe.imperial.pipe.models.petrinet.PetriNet;
+import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
 
 import javax.swing.*;
 import java.awt.FileDialog;

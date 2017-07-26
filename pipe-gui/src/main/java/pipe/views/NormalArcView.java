@@ -3,11 +3,11 @@ package pipe.views;
 import pipe.actions.gui.PipeApplicationModel;
 import pipe.constants.GUIConstants;
 import pipe.controllers.PetriNetController;
-import pipe.imperial.pipe.exceptions.PetriNetComponentNotFoundException;
-import pipe.imperial.pipe.models.petrinet.Arc;
-import pipe.imperial.pipe.models.petrinet.ArcPoint;
-import pipe.imperial.pipe.models.petrinet.Connectable;
-import pipe.imperial.pipe.models.petrinet.Token;
+import pipe.gui.imperial.pipe.exceptions.PetriNetComponentNotFoundException;
+import pipe.gui.imperial.pipe.models.petrinet.Arc;
+import pipe.gui.imperial.pipe.models.petrinet.ArcPoint;
+import pipe.gui.imperial.pipe.models.petrinet.Connectable;
+import pipe.gui.imperial.pipe.models.petrinet.Token;
 
 import javax.swing.event.MouseInputAdapter;
 import java.awt.*;

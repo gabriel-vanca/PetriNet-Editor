@@ -1,7 +1,7 @@
 package matchers.component;
 
 
-import pipe.imperial.pipe.models.petrinet.Annotation;
+import pipe.gui.imperial.pipe.models.petrinet.Annotation;
 
 public class HasAnnotationFields implements Has<Annotation> {
     private String text;

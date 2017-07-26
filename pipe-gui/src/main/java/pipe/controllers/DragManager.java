@@ -3,8 +3,7 @@ package pipe.controllers;
 import pipe.historyActions.MultipleEdit;
 import pipe.historyActions.component.MovePetriNetObject;
 import pipe.utilities.gui.GuiUtils;
-import pipe.imperial.pipe.exceptions.PetriNetComponentException;
-import pipe.imperial.pipe.models.petrinet.*;
+import pipe.gui.imperial.pipe.exceptions.PetriNetComponentException;
 
 import javax.swing.event.UndoableEditEvent;
 import javax.swing.undo.UndoableEdit;

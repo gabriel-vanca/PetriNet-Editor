@@ -1,6 +1,6 @@
 package pipe.historyActions;
 
-import pipe.imperial.pipe.models.petrinet.Transition;
+import pipe.gui.imperial.pipe.models.petrinet.Transition;
 
 import java.util.List;
 

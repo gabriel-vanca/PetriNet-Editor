@@ -1,8 +1,7 @@
 package pipe.controllers.arcCreator;
 
 
-import pipe.imperial.pipe.exceptions.PetriNetComponentException;
-import pipe.imperial.pipe.models.petrinet.*;
+import pipe.gui.imperial.pipe.exceptions.PetriNetComponentException;
 
 import java.util.List;
 import java.util.logging.Level;

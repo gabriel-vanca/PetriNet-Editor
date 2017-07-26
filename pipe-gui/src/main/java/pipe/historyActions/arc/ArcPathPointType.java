@@ -5,7 +5,7 @@
 package pipe.historyActions.arc;
 
 
-import pipe.imperial.pipe.models.petrinet.ArcPoint;
+import pipe.gui.imperial.pipe.models.petrinet.ArcPoint;
 
 import javax.swing.undo.AbstractUndoableEdit;
 

@@ -8,7 +8,7 @@ package pipe.views;
 
 import pipe.constants.GUIConstants;
 import pipe.controllers.PetriNetController;
-import pipe.imperial.pipe.models.petrinet.ArcPoint;
+import pipe.gui.imperial.pipe.models.petrinet.ArcPoint;
 
 import java.awt.Container;
 import java.awt.Graphics;

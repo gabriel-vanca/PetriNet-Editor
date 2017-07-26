@@ -9,11 +9,11 @@ import pipe.controllers.application.PipeApplicationController;
 import pipe.gui.*;
 import pipe.handlers.PetriNetMouseHandler;
 import pipe.utilities.gui.GuiUtils;
-import pipe.imperial.pipe.exceptions.PetriNetComponentNotFoundException;
-import pipe.imperial.pipe.models.manager.PetriNetManagerImpl;
-import pipe.imperial.pipe.models.petrinet.PetriNet;
-import pipe.imperial.pipe.models.petrinet.Token;
-import pipe.imperial.pipe.models.petrinet.name.PetriNetName;
+import pipe.gui.imperial.pipe.exceptions.PetriNetComponentNotFoundException;
+import pipe.gui.imperial.pipe.models.manager.PetriNetManagerImpl;
+import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
+import pipe.gui.imperial.pipe.models.petrinet.Token;
+import pipe.gui.imperial.pipe.models.petrinet.name.PetriNetName;
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;

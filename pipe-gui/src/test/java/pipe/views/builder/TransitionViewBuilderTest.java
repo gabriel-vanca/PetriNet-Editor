@@ -10,8 +10,8 @@ import pipe.controllers.PetriNetController;
 import pipe.controllers.TransitionViewBuilder;
 import pipe.gui.PetriNetTab;
 import pipe.views.TransitionView;
-import pipe.imperial.pipe.models.petrinet.DiscreteTransition;
-import pipe.imperial.pipe.models.petrinet.Transition;
+import pipe.gui.imperial.pipe.models.petrinet.DiscreteTransition;
+import pipe.gui.imperial.pipe.models.petrinet.Transition;
 
 import static org.junit.Assert.assertEquals;
 

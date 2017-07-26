@@ -4,9 +4,9 @@
 package pipe.historyActions.component;
 
 
-import pipe.imperial.pipe.exceptions.PetriNetComponentException;
-import pipe.imperial.pipe.models.petrinet.PetriNet;
-import pipe.imperial.pipe.models.petrinet.PetriNetComponent;
+import pipe.gui.imperial.pipe.exceptions.PetriNetComponentException;
+import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
+import pipe.gui.imperial.pipe.models.petrinet.PetriNetComponent;
 
 import javax.swing.undo.AbstractUndoableEdit;
 import java.util.logging.Level;

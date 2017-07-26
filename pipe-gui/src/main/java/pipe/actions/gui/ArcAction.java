@@ -7,9 +7,8 @@ import pipe.gui.PetriNetTab;
 import pipe.historyActions.component.AddPetriNetObject;
 import pipe.views.ArcHead;
 import pipe.views.TemporaryArcView;
-import pipe.imperial.pipe.exceptions.PetriNetComponentException;
-import pipe.imperial.pipe.models.petrinet.*;
-import pipe.imperial.pipe.visitor.connectable.arc.ArcSourceVisitor;
+import pipe.gui.imperial.pipe.exceptions.PetriNetComponentException;
+import pipe.gui.imperial.pipe.visitor.connectable.arc.ArcSourceVisitor;
 
 import java.awt.Point;
 import java.awt.event.KeyEvent;

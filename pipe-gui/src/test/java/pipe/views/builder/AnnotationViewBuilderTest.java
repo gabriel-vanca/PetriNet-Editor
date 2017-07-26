@@ -10,8 +10,8 @@ import pipe.controllers.PetriNetController;
 import pipe.gui.PetriNetTab;
 import pipe.actions.gui.PipeApplicationModel;
 import pipe.views.AnnotationView;
-import pipe.imperial.pipe.models.petrinet.Annotation;
-import pipe.imperial.pipe.models.petrinet.AnnotationImpl;
+import pipe.gui.imperial.pipe.models.petrinet.Annotation;
+import pipe.gui.imperial.pipe.models.petrinet.AnnotationImpl;
 
 import static org.junit.Assert.assertEquals;
 

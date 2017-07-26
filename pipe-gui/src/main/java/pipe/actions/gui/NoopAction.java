@@ -1,7 +1,7 @@
 package pipe.actions.gui;
 
 import pipe.controllers.PetriNetController;
-import pipe.imperial.pipe.models.petrinet.Connectable;
+import pipe.gui.imperial.pipe.models.petrinet.Connectable;
 
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;

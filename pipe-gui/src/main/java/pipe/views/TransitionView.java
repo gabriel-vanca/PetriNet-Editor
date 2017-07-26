@@ -4,7 +4,7 @@ import org.jfree.util.ShapeUtilities;
 
 import pipe.constants.GUIConstants;
 import pipe.controllers.PetriNetController;
-import pipe.imperial.pipe.models.petrinet.Transition;
+import pipe.gui.imperial.pipe.models.petrinet.Transition;
 
 import javax.swing.event.MouseInputAdapter;
 

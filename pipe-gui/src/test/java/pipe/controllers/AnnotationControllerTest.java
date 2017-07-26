@@ -7,7 +7,7 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 import pipe.historyActions.annotation.ChangeAnnotationText;
 import pipe.utilities.transformers.Contains;
-import pipe.imperial.pipe.models.petrinet.Annotation;
+import pipe.gui.imperial.pipe.models.petrinet.Annotation;
 
 import javax.swing.event.UndoableEditListener;
 import javax.swing.undo.UndoableEdit;

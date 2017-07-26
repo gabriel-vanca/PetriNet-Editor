@@ -27,9 +27,9 @@ import pipe.actions.gui.TransitionAction;
 import pipe.controllers.PetriNetController;
 import pipe.historyActions.component.AddPetriNetObject;
 import pipe.utilities.transformers.Contains;
-import pipe.imperial.pipe.models.petrinet.DiscreteTransition;
-import pipe.imperial.pipe.models.petrinet.PetriNet;
-import pipe.imperial.pipe.models.petrinet.Transition;
+import pipe.gui.imperial.pipe.models.petrinet.DiscreteTransition;
+import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
+import pipe.gui.imperial.pipe.models.petrinet.Transition;
 
 @RunWith(MockitoJUnitRunner.class)
 public class TimedTransactionActionTest {

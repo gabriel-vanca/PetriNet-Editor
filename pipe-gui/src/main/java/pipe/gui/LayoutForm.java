@@ -1,7 +1,7 @@
 package pipe.gui;
 
-import pipe.imperial.pipe.layout.Layout;
-import pipe.imperial.pipe.models.petrinet.PetriNet;
+import pipe.gui.imperial.pipe.layout.Layout;
+import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
 
 import javax.swing.*;
 import java.awt.Component;

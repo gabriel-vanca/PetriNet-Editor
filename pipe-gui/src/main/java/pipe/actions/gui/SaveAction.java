@@ -1,11 +1,11 @@
 package pipe.actions.gui;
 
 import pipe.controllers.application.PipeApplicationController;
-import pipe.imperial.pipe.models.petrinet.PetriNet;
-import pipe.imperial.pipe.models.petrinet.name.FileNameVisitor;
-import pipe.imperial.pipe.models.petrinet.name.NormalNameVisitor;
-import pipe.imperial.pipe.models.petrinet.name.NormalPetriNetName;
-import pipe.imperial.pipe.models.petrinet.name.PetriNetFileName;
+import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
+import pipe.gui.imperial.pipe.models.petrinet.name.FileNameVisitor;
+import pipe.gui.imperial.pipe.models.petrinet.name.NormalNameVisitor;
+import pipe.gui.imperial.pipe.models.petrinet.name.NormalPetriNetName;
+import pipe.gui.imperial.pipe.models.petrinet.name.PetriNetFileName;
 
 import java.awt.FileDialog;
 import java.awt.event.ActionEvent;

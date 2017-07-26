@@ -1,12 +1,12 @@
 package pipe.controllers.arcCreator;
 
 
-import pipe.imperial.pipe.models.petrinet.Connectable;
-import pipe.imperial.pipe.models.petrinet.ArcPoint;
-import pipe.imperial.pipe.models.petrinet.InboundArc;
-import pipe.imperial.pipe.models.petrinet.OutboundArc;
-import pipe.imperial.pipe.models.petrinet.Place;
-import pipe.imperial.pipe.models.petrinet.Transition;
+import pipe.gui.imperial.pipe.models.petrinet.Connectable;
+import pipe.gui.imperial.pipe.models.petrinet.ArcPoint;
+import pipe.gui.imperial.pipe.models.petrinet.InboundArc;
+import pipe.gui.imperial.pipe.models.petrinet.OutboundArc;
+import pipe.gui.imperial.pipe.models.petrinet.Place;
+import pipe.gui.imperial.pipe.models.petrinet.Transition;
 
 import java.util.List;
 

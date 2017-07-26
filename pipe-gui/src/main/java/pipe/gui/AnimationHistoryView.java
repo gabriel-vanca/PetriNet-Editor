@@ -2,7 +2,7 @@ package pipe.gui;
 
 import pipe.historyActions.AnimationHistory;
 import pipe.historyActions.AnimationHistoryImpl;
-import pipe.imperial.pipe.models.petrinet.Transition;
+import pipe.gui.imperial.pipe.models.petrinet.Transition;
 
 import javax.swing.*;
 import javax.swing.text.*;

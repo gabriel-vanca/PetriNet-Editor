@@ -3,7 +3,7 @@ package pipe.handlers;
 import pipe.controllers.AbstractConnectableController;
 import pipe.views.ConnectableView;
 import pipe.views.TextLabel;
-import pipe.imperial.pipe.models.petrinet.Connectable;
+import pipe.gui.imperial.pipe.models.petrinet.Connectable;
 
 import javax.swing.*;
 import java.awt.Point;

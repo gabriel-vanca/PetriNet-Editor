@@ -3,8 +3,8 @@ package pipe.controllers;
 import pipe.actions.gui.PipeApplicationModel;
 import pipe.handlers.ArcHandler;
 import pipe.views.NormalArcView;
-import pipe.imperial.pipe.models.petrinet.Arc;
-import pipe.imperial.pipe.models.petrinet.Connectable;
+import pipe.gui.imperial.pipe.models.petrinet.Arc;
+import pipe.gui.imperial.pipe.models.petrinet.Connectable;
 
 import java.awt.Container;
 

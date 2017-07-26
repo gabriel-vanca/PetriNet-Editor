@@ -3,7 +3,6 @@ package pipe.controllers;
 import pipe.gui.PetriNetTab;
 import pipe.actions.gui.PipeApplicationModel;
 import pipe.views.*;
-import pipe.imperial.pipe.models.petrinet.*;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;

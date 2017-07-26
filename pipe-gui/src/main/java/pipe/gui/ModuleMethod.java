@@ -1,7 +1,7 @@
 package pipe.gui;
 
 import pipe.gui.plugin.GuiModule;
-import pipe.imperial.pipe.models.petrinet.PetriNet;
+import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;

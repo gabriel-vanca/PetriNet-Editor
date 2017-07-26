@@ -11,7 +11,7 @@ import pipe.controllers.application.PipeApplicationController;
 import pipe.gui.PipeResourceLocator;
 import pipe.utilities.gui.GuiUtils;
 import pipe.utilities.io.JarUtilities;
-import pipe.imperial.pipe.parsers.UnparsableException;
+import pipe.gui.imperial.pipe.parsers.UnparsableException;
 
 /**
  * Class responsible for loading the specified example file in the PIPE petri net example menu

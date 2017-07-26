@@ -1,13 +1,11 @@
 package pipe.ucl.constructor;
 
-import pipe.actions.gui.CreateAction;
 import pipe.actions.gui.PipeApplicationModel;
 import pipe.controllers.PetriNetController;
 import pipe.controllers.application.PipeApplicationController;
-import pipe.historyActions.component.AddPetriNetObject;
-import pipe.imperial.pipe.models.petrinet.DiscretePlace;
-import pipe.imperial.pipe.models.petrinet.PetriNet;
-import pipe.imperial.pipe.models.petrinet.Place;
+import pipe.gui.imperial.pipe.models.petrinet.DiscretePlace;
+import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
+import pipe.gui.imperial.pipe.models.petrinet.Place;
 
 import java.awt.*;
 
