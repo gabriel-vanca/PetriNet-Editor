@@ -1,5 +1,6 @@
 package pipe.gui.imperial.pipe.models.petrinet;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import pipe.gui.imperial.pipe.parsers.FunctionalResults;
 import pipe.gui.imperial.pipe.parsers.PetriNetWeightParser;
 import pipe.gui.imperial.pipe.parsers.StateEvalVisitor;
@@ -26,6 +27,9 @@ public final class DiscreteTransition extends AbstractConnectable implements Tra
    private boolean infiniteServer = false;
    private int angle = 0;
    private boolean enabled = false;
+   private String author;
+   private String action;
+   private Bool sign;
 
    public DiscreteTransition(String id, String name) {
       super(id, name);
@@ -35,11 +39,27 @@ public final class DiscreteTransition extends AbstractConnectable implements Tra
       super(id, id);
    }
 
-   public DiscreteTransition(String id, String name, pipe.gui.imperial.pipe.models.petrinet.Rate rate, int priority) {
+   public DiscreteTransition(String id, String name, String author, String action, Bool sign) {
       super(id, name);
-      this.rate = rate;
-      this.priority = priority;
+      this.author = author;
+      this.action = action;
+      this.sign = sign;
    }
+
+   public DiscreteTransition(String id, String name, pipe.gui.imperial.pipe.models.petrinet.Rate rate, int priority) {
+        super(id, name);
+        this.rate = rate;
+        this.priority = priority;
+    }
+
+    public DiscreteTransition(String id, String name, pipe.gui.imperial.pipe.models.petrinet.Rate rate, int priority, String author, String action, Bool sign) {
+        super(id, name);
+        this.rate = rate;
+        this.priority = priority;
+        this.author = author;
+        this.action = action;
+        this.sign = sign;
+    }
 
    public DiscreteTransition(DiscreteTransition transition) {
       super(transition);
@@ -48,6 +68,9 @@ public final class DiscreteTransition extends AbstractConnectable implements Tra
       this.timed = transition.timed;
       this.rate = transition.rate;
       this.priority = transition.priority;
+      this.author = transition.author;
+      this.action = transition.action;
+      this.sign = transition.sign;
    }
 
    public boolean equals(Object o) {
@@ -310,5 +333,29 @@ public final class DiscreteTransition extends AbstractConnectable implements Tra
 
    public boolean isEnabled() {
       return this.enabled;
+   }
+
+   public String getAuthor() {
+      return author;
+   }
+
+   public void setAuthor(String author) {
+      this.author = author;
+   }
+
+   public String getAction() {
+      return action;
+   }
+
+   public void setAction(String action) {
+      this.action = action;
+   }
+
+   public Bool getSign() {
+      return sign;
+   }
+
+   public void setSign(Bool sign) {
+      this.sign = sign;
    }
 }

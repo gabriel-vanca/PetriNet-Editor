@@ -1,25 +1,33 @@
 package pipe.gui.imperial.pipe.models.petrinet;
 
+import pipe.gui.imperial.pipe.exceptions.PetriNetComponentException;
+import pipe.gui.imperial.pipe.visitor.component.PetriNetComponentVisitor;
+import pipe.gui.imperial.state.StateType;
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import pipe.gui.imperial.pipe.exceptions.PetriNetComponentException;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
-import pipe.gui.imperial.pipe.models.petrinet.PlaceVisitor;
-import pipe.gui.imperial.pipe.visitor.component.PetriNetComponentVisitor;
 
 public final class DiscretePlace extends AbstractConnectable implements Place {
    private double markingXOffset = 0.0D;
    private double markingYOffset = 0.0D;
+   protected StateType stateType;
    private int capacity = 0;
    private Map tokenCounts = new HashMap();
 
-   public DiscretePlace(String id, String name) {
-      super(id, name);
+   public DiscretePlace(String id, String name, String time, StateType stateType) {
+      super(id, name, time);
+      this.stateType = stateType;
    }
 
    public DiscretePlace(String id) {
       super(id, id);
+      this.stateType = null;
+   }
+
+   public DiscretePlace(String id, String name) {
+      super(id, name);
+      this.stateType = null;
    }
 
    public DiscretePlace(DiscretePlace place) {

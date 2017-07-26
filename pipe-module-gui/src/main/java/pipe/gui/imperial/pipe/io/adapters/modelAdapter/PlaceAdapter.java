@@ -22,19 +22,19 @@ public final class PlaceAdapter extends XmlAdapter {
 
    @Override
    public Object unmarshal(Object v) throws Exception {
-      return null;
+      return unmarshal((AdaptedPlace) v);
    }
 
    @Override
    public Object marshal(Object v) throws Exception {
-      return null;
+      return marshal((Place) v);
    }
 
    public PlaceAdapter(Map places) {
       this.places = places;
    }
 
-   public Place unmarshal(AdaptedPlace adaptedPlace) {
+   public Place unmarshal(AdaptedPlace adaptedPlace) throws Exception {
       NameDetails nameDetails = adaptedPlace.getName();
       Place place = new DiscretePlace(adaptedPlace.getId(), nameDetails.getName());
       place.setCapacity(adaptedPlace.getCapacity().intValue());

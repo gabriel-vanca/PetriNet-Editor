@@ -6,6 +6,7 @@ import pipe.controllers.application.PipeApplicationController;
 import pipe.gui.imperial.pipe.models.petrinet.DiscretePlace;
 import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
 import pipe.gui.imperial.pipe.models.petrinet.Place;
+import pipe.gui.imperial.state.StateType;
 
 import java.awt.*;
 
@@ -22,19 +23,19 @@ public class Constructor {
 
         InputParser inputParser = new InputParser();
 
-        AddState(new Point(150, 150));
-        AddState(new Point(350, 350));
-        AddState(new Point(150, 350));
-        AddState(new Point(350, 150));
-        AddState(new Point(550, 350));
+        AddState("State 1", "now", StateType.START, new Point(150, 150));
+//        AddState(new Point(350, 350));
+//        AddState(new Point(150, 350));
+//        AddState(new Point(350, 150));
+//        AddState(new Point(550, 350));
     }
 
-    private void AddState(Point point) {
+    private void AddState(String name, String time, StateType stateType, Point point) {
        // Point point =
 
 
         String id = getNewPetriNetName(petriNetController);
-        Place place = new DiscretePlace(id, id);
+        Place place = new DiscretePlace(id, name, time, stateType);
         place.setX(point.x);
         place.setY(point.y);
 
