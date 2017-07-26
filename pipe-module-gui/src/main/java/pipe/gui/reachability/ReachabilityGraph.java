@@ -12,25 +12,21 @@ import net.sourceforge.jpowergraph.swing.SwingJGraphPane;
 import net.sourceforge.jpowergraph.swing.SwingJGraphScrollPane;
 import net.sourceforge.jpowergraph.swing.manipulator.SwingPopupDisplayer;
 import net.sourceforge.jpowergraph.swtswinginteraction.color.JPowerGraphColor;
-import pipe.gui.widget.GenerateResultsForm;
-import pipe.gui.widget.StateSpaceLoader;
-import pipe.gui.widget.StateSpaceLoaderException;
-import pipe.reachability.algorithm.*;
 import pipe.gui.imperial.pipe.exceptions.InvalidRateException;
 import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
 import pipe.gui.imperial.state.ClassifiedState;
 import pipe.gui.imperial.state.Record;
+import pipe.gui.widget.GenerateResultsForm;
+import pipe.gui.widget.StateSpaceLoader;
+import pipe.gui.widget.StateSpaceLoaderException;
+import pipe.reachability.algorithm.*;
 
 import javax.swing.*;
-import java.awt.Container;
-import java.awt.FileDialog;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -304,7 +300,8 @@ public class ReachabilityGraph {
         Collection<Edge> edges = new ArrayList<>();
         for (Record record : records) {
             int state = record.state;
-            for (Map.Entry<Integer, Double> entry : record.successors.entrySet()) {
+            Set<Map.Entry<Integer, Double>> entrySet = record.successors.entrySet();
+            for (Map.Entry<Integer, Double> entry : entrySet) {
                 int succ = entry.getKey();
                 edges.add(new DirectedTextEdge(nodes.get(state), nodes.get(succ),
                         String.format("%.2f", entry.getValue())));
