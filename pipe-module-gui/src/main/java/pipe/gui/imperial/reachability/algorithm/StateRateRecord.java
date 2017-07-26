@@ -1,6 +1,6 @@
 package pipe.gui.imperial.reachability.algorithm;
 
-import uk.ac.imperial.state.ClassifiedState;
+import pipe.gui.imperial.state.ClassifiedState;
 
 public final class StateRateRecord {
    private final ClassifiedState state;

@@ -1,22 +1,19 @@
 package pipe.gui.imperial.steadystate.algorithm;
 
 import com.esotericsoftware.kryo.io.Input;
+import pipe.gui.imperial.io.EntireStateReader;
+import pipe.gui.imperial.io.KryoStateIO;
+import pipe.gui.imperial.io.MultiStateReader;
+import pipe.gui.imperial.state.Record;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import uk.ac.imperial.io.EntireStateReader;
-import uk.ac.imperial.io.KryoStateIO;
-import uk.ac.imperial.io.MultiStateReader;
-import uk.ac.imperial.state.Record;
 
 public abstract class AbstractSteadyStateSolver implements SteadyStateSolver {
    protected static final double EPSILON = 1.0E-6D;
@@ -29,10 +26,10 @@ public abstract class AbstractSteadyStateSolver implements SteadyStateSolver {
          Record record = (Record)i$.next();
          Integer state = record.state;
          this.createAndGet(transpose, state);
-         Iterator i$ = record.successors.entrySet().iterator();
+         Iterator i$1 = record.successors.entrySet().iterator();
 
-         while(i$.hasNext()) {
-            Entry entry = (Entry)i$.next();
+         while(i$1.hasNext()) {
+            Entry entry = (Entry)i$1.next();
             Integer successor = (Integer)entry.getKey();
             Double rate = (Double)entry.getValue();
             Map successors = this.createAndGet(transpose, successor);
@@ -186,8 +183,8 @@ public abstract class AbstractSteadyStateSolver implements SteadyStateSolver {
          double rowSum = 0.0D;
 
          Double rate;
-         for(Iterator i$ = record.successors.values().iterator(); i$.hasNext(); rowSum += rate.doubleValue()) {
-            rate = (Double)i$.next();
+         for(Iterator i$1 = record.successors.values().iterator(); i$.hasNext(); rowSum += rate.doubleValue()) {
+            rate = (Double)i$1.next();
          }
 
          diagonals.put(record.state, -rowSum);

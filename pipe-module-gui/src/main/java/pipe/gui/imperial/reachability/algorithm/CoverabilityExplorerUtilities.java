@@ -11,10 +11,10 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
 import java.util.Map.Entry;
-import uk.ac.imperial.pipe.exceptions.InvalidRateException;
-import uk.ac.imperial.state.ClassifiedState;
-import uk.ac.imperial.state.HashedClassifiedState;
-import uk.ac.imperial.state.HashedStateBuilder;
+import pipe.gui.imperial.pipe.exceptions.InvalidRateException;
+import pipe.gui.imperial.state.ClassifiedState;
+import pipe.gui.imperial.state.HashedClassifiedState;
+import pipe.gui.imperial.state.HashedStateBuilder;
 
 public final class CoverabilityExplorerUtilities implements ExplorerUtilities {
    private final ExplorerUtilities explorerUtilities;

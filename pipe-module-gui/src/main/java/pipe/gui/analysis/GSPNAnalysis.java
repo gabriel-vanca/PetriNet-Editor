@@ -3,26 +3,23 @@ package pipe.gui.analysis;
 import org.rendersnake.HtmlCanvas;
 import pipe.gui.imperial.pipe.exceptions.InvalidRateException;
 import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
+import pipe.gui.imperial.reachability.algorithm.*;
 import pipe.gui.imperial.state.ClassifiedState;
 import pipe.gui.imperial.state.Record;
+import pipe.gui.imperial.steadystate.algorithm.ParallelGaussSeidel;
+import pipe.gui.imperial.steadystate.algorithm.SteadyStateSolver;
+import pipe.gui.imperial.steadystate.metrics.TokenMetrics;
+import pipe.gui.imperial.steadystate.metrics.TransitionMetrics;
 import pipe.gui.widget.GenerateResultsForm;
 import pipe.gui.widget.HTMLPane;
 import pipe.gui.widget.StateSpaceLoader;
 import pipe.gui.widget.StateSpaceLoaderException;
-import pipe.reachability.algorithm.*;
-import pipe.steadystate.algorithm.ParallelGaussSeidel;
-import pipe.steadystate.algorithm.SteadyStateSolver;
-import pipe.steadystate.metrics.TokenMetrics;
-import pipe.steadystate.metrics.TransitionMetrics;
-//import pipe.gui.imperial.pipe.exceptions.InvalidRateException;
-//import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
-//import pipe.gui.imperial.state.ClassifiedState;
-//import pipe.gui.imperial.state.Record;
 
 import javax.swing.*;
-import java.awt.FileDialog;
+import java.awt.*;
 import java.io.IOException;
 import java.util.*;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -256,7 +253,7 @@ public class GSPNAnalysis {
             ClassifiedState state = stateMappings.get(id);
             TableRow row = new TableRow(id.toString());
             for (String place : places) {
-                Integer count = state.getTokens(place).get(token);
+                Integer count = (Integer) state.getTokens(place).get(token);
                 row.addCell(count.toString());
             }
             rows.add(row);

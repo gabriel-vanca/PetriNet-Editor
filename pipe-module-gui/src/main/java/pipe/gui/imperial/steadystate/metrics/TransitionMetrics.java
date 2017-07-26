@@ -4,11 +4,11 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
-import uk.ac.imperial.pipe.animation.AnimationLogic;
-import uk.ac.imperial.pipe.animation.PetriNetAnimationLogic;
-import uk.ac.imperial.pipe.models.petrinet.PetriNet;
-import uk.ac.imperial.pipe.models.petrinet.Transition;
-import uk.ac.imperial.state.ClassifiedState;
+import pipe.gui.imperial.pipe.animation.AnimationLogic;
+import pipe.gui.imperial.pipe.animation.PetriNetAnimationLogic;
+import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
+import pipe.gui.imperial.pipe.models.petrinet.Transition;
+import pipe.gui.imperial.state.ClassifiedState;
 
 public final class TransitionMetrics {
    public static Map getTransitionThroughput(Map stateSpace, Map steadyState, PetriNet petriNet) {

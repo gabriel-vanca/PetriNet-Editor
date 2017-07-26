@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
-import uk.ac.imperial.state.ClassifiedState;
+import pipe.gui.imperial.state.ClassifiedState;
 
 public final class TokenMetrics {
    public static Map averageTokensOnPlace(Map stateSpace, Map steadyState) {

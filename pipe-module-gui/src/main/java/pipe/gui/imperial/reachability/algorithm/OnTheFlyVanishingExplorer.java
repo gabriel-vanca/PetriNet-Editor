@@ -5,8 +5,8 @@ import java.util.Collection;
 import java.util.Deque;
 import java.util.Iterator;
 import java.util.LinkedList;
-import uk.ac.imperial.pipe.exceptions.InvalidRateException;
-import uk.ac.imperial.state.ClassifiedState;
+import pipe.gui.imperial.pipe.exceptions.InvalidRateException;
+import pipe.gui.imperial.state.ClassifiedState;
 
 public final class OnTheFlyVanishingExplorer implements VanishingExplorer {
    private static final int ALLOWED_ITERATIONS = 1000;

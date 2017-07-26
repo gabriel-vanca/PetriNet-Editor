@@ -19,7 +19,7 @@ import pipe.gui.imperial.state.Record;
 import pipe.gui.widget.GenerateResultsForm;
 import pipe.gui.widget.StateSpaceLoader;
 import pipe.gui.widget.StateSpaceLoaderException;
-import pipe.reachability.algorithm.*;
+import pipe.gui.imperial.reachability.algorithm.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -236,8 +236,8 @@ public class ReachabilityGraph {
     }
 
     /**
-     * Vanishing explorer is either a {@link pipe.reachability.algorithm.SimpleVanishingExplorer} if
-     * vanishing states are to be included in the graph, else it is {@link pipe.reachability.algorithm.OnTheFlyVanishingExplorer}
+     * Vanishing explorer is either a {@link pipe.gui.imperial.reachability.algorithm.SimpleVanishingExplorer} if
+     * vanishing states are to be included in the graph, else it is {@link pipe.gui.imperial.reachability.algorithm.OnTheFlyVanishingExplorer}
      *
      * @param explorerUtilities utilities for analysis 
      * @return vanishing explorer

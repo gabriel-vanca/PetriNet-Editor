@@ -1,21 +1,17 @@
 package pipe.gui.imperial.reachability.algorithm;
 
+import pipe.gui.imperial.io.StateProcessor;
+import pipe.gui.imperial.pipe.exceptions.InvalidRateException;
+import pipe.gui.imperial.state.ClassifiedState;
+import pipe.gui.imperial.steadystate.algorithm.AbstractSteadyStateSolver;
+import pipe.gui.imperial.utils.ExploredSet;
+
 import java.io.IOException;
-import java.util.ArrayDeque;
-import java.util.Collection;
-import java.util.Deque;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import pipe.steadystate.algorithm.AbstractSteadyStateSolver;
-import uk.ac.imperial.io.StateProcessor;
-import uk.ac.imperial.pipe.exceptions.InvalidRateException;
-import uk.ac.imperial.state.ClassifiedState;
-import uk.ac.imperial.utils.ExploredSet;
 
 public abstract class AbstractStateSpaceExplorer implements StateSpaceExplorer {
    private static final int EXPLORED_SET_SIZE = 358591;

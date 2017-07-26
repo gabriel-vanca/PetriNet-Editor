@@ -10,8 +10,8 @@ import pipe.gui.imperial.reachability.algorithm.ExplorerUtilities;
 import pipe.gui.imperial.reachability.algorithm.StateRateRecord;
 import pipe.gui.imperial.reachability.algorithm.TimelessTrapException;
 import pipe.gui.imperial.reachability.algorithm.VanishingExplorer;
-import uk.ac.imperial.pipe.exceptions.InvalidRateException;
-import uk.ac.imperial.state.ClassifiedState;
+import pipe.gui.imperial.pipe.exceptions.InvalidRateException;
+import pipe.gui.imperial.state.ClassifiedState;
 
 public final class ParallelStateExplorer implements Callable {
    private final CountDownLatch latch;
