@@ -18,8 +18,8 @@ import pipe.gui.widget.StateSpaceLoaderException;
 import pipe.reachability.algorithm.*;
 import pipe.imperial.pipe.exceptions.InvalidRateException;
 import pipe.imperial.pipe.models.petrinet.PetriNet;
-import uk.ac.imperial.state.ClassifiedState;
-import uk.ac.imperial.state.Record;
+import pipe.imperial.state.ClassifiedState;
+import pipe.imperial.state.Record;
 
 import javax.swing.*;
 import java.awt.Container;

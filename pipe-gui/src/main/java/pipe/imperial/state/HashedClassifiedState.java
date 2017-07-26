@@ -1,8 +1,8 @@
 package pipe.imperial.state;
 
 import com.google.common.hash.HashCode;
-import uk.ac.imperial.state.ClassifiedState;
-import uk.ac.imperial.state.State;
+import pipe.imperial.state.ClassifiedState;
+import pipe.imperial.state.State;
 
 import java.util.Collection;
 import java.util.Map;

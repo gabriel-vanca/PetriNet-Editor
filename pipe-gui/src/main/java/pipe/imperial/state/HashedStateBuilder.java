@@ -1,6 +1,6 @@
 package pipe.imperial.state;
 
-import uk.ac.imperial.state.HashedState;
+import pipe.imperial.state.HashedState;
 
 import java.util.HashMap;
 import java.util.Map;

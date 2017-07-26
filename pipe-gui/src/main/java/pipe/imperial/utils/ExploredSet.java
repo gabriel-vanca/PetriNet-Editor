@@ -6,7 +6,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.TreeMap;
-import uk.ac.imperial.state.ClassifiedState;
+import pipe.imperial.state.ClassifiedState;
 
 public final class ExploredSet {
    private final int arraySize;

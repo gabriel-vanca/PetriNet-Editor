@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import pipe.imperial.utils.StateUtils;
-import uk.ac.imperial.state.State;
+import pipe.imperial.state.State;
 
 public final class HashedState implements State {
    private int hashOne;

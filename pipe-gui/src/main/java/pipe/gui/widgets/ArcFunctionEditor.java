@@ -8,7 +8,7 @@ import pipe.imperial.pipe.parsers.FunctionalResults;
 import pipe.imperial.pipe.parsers.FunctionalWeightParser;
 import pipe.imperial.pipe.parsers.PetriNetWeightParser;
 import pipe.imperial.pipe.parsers.StateEvalVisitor;
-import uk.ac.imperial.state.State;
+import pipe.imperial.state.State;
 
 import javax.swing.*;
 

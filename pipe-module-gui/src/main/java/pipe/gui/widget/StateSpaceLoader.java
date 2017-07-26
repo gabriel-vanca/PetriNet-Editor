@@ -9,13 +9,13 @@ import pipe.reachability.algorithm.TimelessTrapException;
 import pipe.reachability.algorithm.VanishingExplorer;
 import pipe.reachability.algorithm.parallel.MassiveParallelStateSpaceExplorer;
 import pipe.reachability.algorithm.sequential.SequentialStateSpaceExplorer;
-import uk.ac.imperial.io.*;
+import pipe.imperial.io.*;
 import pipe.imperial.pipe.exceptions.InvalidRateException;
 import pipe.imperial.pipe.io.PetriNetIOImpl;
 import pipe.imperial.pipe.io.PetriNetReader;
 import pipe.imperial.pipe.models.petrinet.PetriNet;
-import uk.ac.imperial.state.ClassifiedState;
-import uk.ac.imperial.state.Record;
+import pipe.imperial.state.ClassifiedState;
+import pipe.imperial.state.Record;
 
 import javax.swing.*;
 import javax.xml.bind.JAXBException;

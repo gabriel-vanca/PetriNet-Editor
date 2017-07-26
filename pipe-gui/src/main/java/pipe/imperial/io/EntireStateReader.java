@@ -7,9 +7,9 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import pipe.imperial.state.Record;
-import uk.ac.imperial.io.MultiStateReader;
-import uk.ac.imperial.io.StateMapping;
-import uk.ac.imperial.io.StateReader;
+import pipe.imperial.io.MultiStateReader;
+import pipe.imperial.io.StateMapping;
+import pipe.imperial.io.StateReader;
 
 public final class EntireStateReader implements MultiStateReader {
    private final uk.ac.imperial.io.StateReader reader;

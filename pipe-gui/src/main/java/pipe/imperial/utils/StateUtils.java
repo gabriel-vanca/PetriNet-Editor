@@ -15,10 +15,10 @@ import java.util.Map;
 import java.util.Map.Entry;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
-import uk.ac.imperial.state.ClassifiedState;
-import uk.ac.imperial.state.HashedClassifiedState;
-import uk.ac.imperial.state.HashedState;
-import uk.ac.imperial.state.State;
+import pipe.imperial.state.ClassifiedState;
+import pipe.imperial.state.HashedClassifiedState;
+import pipe.imperial.state.HashedState;
+import pipe.imperial.state.State;
 
 public final class StateUtils {
    public static State stateFromJson(String jsonState) throws IOException {
