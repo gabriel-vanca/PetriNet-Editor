@@ -53,27 +53,49 @@ public class InputParser {
 
         try {
             //.replaceAll("\\s", "")
+
+            /* Initialisations */
             transAssertion = transAssertion.replace("'", "");
             String[] tranAssertionSplit = transAssertion.split(Pattern.quote("("));
+            String[] currentSubsectionSplit;
+            String[] currentUnderSubSectionSplit;
+            String function;
+            int currentSectionIndex = 2;
 
-            for (String partSPlit : tranAssertionSplit) {
-                System.out.println(partSPlit);
+            function = null;
+            if(tranAssertionSplit[currentSectionIndex].toLowerCase().contains("default")) {
+                function = "default";
+                currentSectionIndex++;
             }
-            ;
 
-            String[] section2 = tranAssertionSplit[2].split(Pattern.quote(","));
-            newTransAssertion.setStartStateName(section2[0]);
-            newTransAssertion.setStartStateDate(section2[1].substring(0, section2[1].lastIndexOf(")")));
+            currentSubsectionSplit = tranAssertionSplit[currentSectionIndex].split(Pattern.quote(","));
+            if(function != null) {
+                newTransAssertion.setStartStateName(function + "( " + currentSubsectionSplit[0]);
+            } else {
+                newTransAssertion.setStartStateName(currentSubsectionSplit[0]);
+            }
+            newTransAssertion.setStartStateDate(currentSubsectionSplit[1].substring(0, currentSubsectionSplit[1].lastIndexOf(")")));
+            currentSectionIndex++;
 
-            String[] section3 = tranAssertionSplit[3].split(Pattern.quote(","));
-            newTransAssertion.setEndStateName(section3[0]);
-            newTransAssertion.setEndStateDate(section3[1].substring(0, section3[1].lastIndexOf(")")));
-            String[] section3_section2 = section3[2].split(Pattern.quote(":"));
-            if (section3_section2.length == 1) {
-                if (section3_section2[0].toLowerCase().contains("true")) {
+            function = null;
+            if(tranAssertionSplit[currentSectionIndex].toLowerCase().contains("default")) {
+                function = "default";
+                currentSectionIndex++;
+            }
+
+            currentSubsectionSplit = tranAssertionSplit[currentSectionIndex].split(Pattern.quote(","));
+            if(function != null) {
+                newTransAssertion.setEndStateName(function + "( " + currentSubsectionSplit[0]);
+            } else {
+                newTransAssertion.setEndStateName(currentSubsectionSplit[0]);
+            }
+            newTransAssertion.setEndStateDate(currentSubsectionSplit[1].substring(0, currentSubsectionSplit[1].lastIndexOf(")")));
+            currentUnderSubSectionSplit= currentSubsectionSplit[2].split(Pattern.quote(":"));
+            if (currentUnderSubSectionSplit.length == 1) {
+                if (currentUnderSubSectionSplit[0].toLowerCase().contains("true")) {
                     newTransAssertion.setSign(Boolean.TRUE);
                 } else {
-                    if (section3_section2[0].toLowerCase().contains("false")) {
+                    if (currentUnderSubSectionSplit[0].toLowerCase().contains("false")) {
                         newTransAssertion.setSign(Boolean.FALSE);
                     } else {
                         throw new NotImplementedException();
@@ -81,29 +103,31 @@ public class InputParser {
                 }
             }
             else {
-                newTransAssertion.setAuthor(section3_section2[0]);
-                String time = section3_section2[1] + " ((";
+                newTransAssertion.setAuthor(currentUnderSubSectionSplit[0]);
+                String time = currentUnderSubSectionSplit[1] + " ((";
 
-                String[] section5 = tranAssertionSplit[5].split(Pattern.quote(":"));
-                time += section5[0];
+                currentSectionIndex+=2;
+
+                currentSubsectionSplit = tranAssertionSplit[currentSectionIndex].split(Pattern.quote(":"));
+                time += currentSubsectionSplit[0];
                 newTransAssertion.setTime(time);
-                String action;
-                int indexOfSign = section5[1].indexOf("~");
+                function = null;
+                int indexOfSign = currentSubsectionSplit[1].indexOf("~");
                 if (indexOfSign == -1) {
                     newTransAssertion.setSign(Boolean.FALSE);
-                    action = section5[1].substring(indexOfSign + 1);
+                    function = currentSubsectionSplit[1].substring(indexOfSign + 1);
                 } else {
                     newTransAssertion.setSign(Boolean.TRUE);
-                    action = section5[1];
+                    function = currentSubsectionSplit[1];
                 }
 
-                action += " (";
-                action += tranAssertionSplit[6].substring(0, tranAssertionSplit[6].lastIndexOf(")"));
-                newTransAssertion.setAction(action);
+                function += " (";
+                function += tranAssertionSplit[currentSectionIndex].substring(0, tranAssertionSplit[currentSectionIndex].lastIndexOf(")"));
+                newTransAssertion.setAction(function);
             }
 
         } catch (Exception e) {
-            System.out.println("ERROR: e");
+            System.out.println("ERROR: " + e.toString());
             return null;
         }
 
