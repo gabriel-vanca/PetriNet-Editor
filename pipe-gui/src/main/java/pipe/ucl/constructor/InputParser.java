@@ -67,6 +67,8 @@ public class InputParser {
 
             /* Initialisations */
             transAssertionString = transAssertionString.replace("'", "");
+            transAssertionString = transAssertionString.replace("’", "");
+
             String[] tranAssertionSplit = transAssertionString.split(Pattern.quote("("));
             String[] currentSubsectionSplit;
             String[] currentUnderSubSectionSplit;

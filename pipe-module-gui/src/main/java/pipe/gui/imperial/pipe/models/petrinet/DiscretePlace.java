@@ -46,7 +46,7 @@ public final class DiscretePlace extends AbstractConnectable implements Place {
            string += ":" + this.name;
        if(this.time != null && this.time.length() > 0)
            string += ":" + this.time;
-       
+
        return string;
    }
 
