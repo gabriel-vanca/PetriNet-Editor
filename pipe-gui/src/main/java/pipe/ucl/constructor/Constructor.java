@@ -7,8 +7,10 @@ import pipe.gui.imperial.pipe.models.petrinet.DiscretePlace;
 import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
 import pipe.gui.imperial.pipe.models.petrinet.Place;
 import pipe.gui.imperial.state.StateType;
+import pipe.ucl.models.TransAssertion;
 
-import java.awt.*;
+import java.util.ArrayList;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Constructor {
 
@@ -16,26 +18,41 @@ public class Constructor {
     PetriNetController petriNetController;
     PipeApplicationModel applicationModel;
 
+    private ArrayList<TransAssertion> TransAssertionList;
+
     public Constructor(PipeApplicationController applicationController, PipeApplicationModel applicationModel) {
         this.applicationController = applicationController;
         this.applicationModel = applicationModel;
         this.petriNetController = applicationController.getActivePetriNetController();
 
         InputParser inputParser = new InputParser();
+        TransAssertionList = inputParser.getTransAssertionList();
 
-        AddState("State 1", null, StateType.START, new Point(150, 150));
-        AddState("State 2", null, StateType.START, new Point(150, 150));
+        for (TransAssertion transAssertion:TransAssertionList) {
+
+            AddState(transAssertion.getStartStateName(), transAssertion.getStartStateDate(), StateType.INTERMEDIARY);
+            AddState(transAssertion.getEndStateName(), transAssertion.getEndStateDate(), StateType.INTERMEDIARY);
+        }
     }
 
-    private void AddState(String name, String time, StateType stateType, Point point) {
+    private void AddState(String name, String time, StateType stateType) {
 
-        String id = petriNetController.getUniquePlaceName();
-        Place place = new DiscretePlace(id, name, time, stateType);
-        place.setX(point.x);
-        place.setY(point.y);
+        try {
+            int randomX, randomY;
 
-        PetriNet petriNet = petriNetController.getPetriNet();
-        petriNet.addPlace(place);
+            randomX = ThreadLocalRandom.current ().nextInt (10, 1270);
+            randomY = ThreadLocalRandom.current ().nextInt (10, 675);
+
+            String id = petriNetController.getUniquePlaceName ();
+            Place place = new DiscretePlace (id, name, time, stateType);
+            place.setX (randomX);
+            place.setY (randomY);
+
+            PetriNet petriNet = petriNetController.getPetriNet ();
+            petriNet.addPlace (place);
+        } catch(Exception e) {
+            System.out.println ("ERROR: Could not add new state due to following error: " + e.toString ());
+        }
 
     }
 }

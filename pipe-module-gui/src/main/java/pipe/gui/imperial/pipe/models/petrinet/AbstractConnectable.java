@@ -5,26 +5,18 @@ public abstract class AbstractConnectable extends AbstractPetriNetPubSub impleme
    protected double y = 0.0D;
    protected String id;
    protected String name = null;
-   protected String time = null;
    protected double nameXOffset = -5.0D;
    protected double nameYOffset = 35.0D;
-
-   protected AbstractConnectable(String id, String name, String time) {
-      this.id = id;
-      this.name = name;
-      this.time = time;
-   }
 
    protected AbstractConnectable(String id, String name) {
       this.id = id;
       this.name = name;
-      this.time = null;
    }
+
 
    protected AbstractConnectable(AbstractConnectable connectable) {
       this.id = connectable.id;
       this.name = connectable.name;
-      this.time = connectable.time;
       this.x = connectable.x;
       this.y = connectable.y;
       this.nameXOffset = connectable.nameXOffset;
@@ -72,8 +64,6 @@ public abstract class AbstractConnectable extends AbstractPetriNetPubSub impleme
       String string = this.id;
       if(this.name != null && this.name.length() > 0)
          string += ":" + this.name;
-      if(this.time != null && this.time.length() > 0)
-         time += ":" + this.time;
 
       return string;
    }

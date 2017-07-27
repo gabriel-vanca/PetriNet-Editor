@@ -14,9 +14,11 @@ public final class DiscretePlace extends AbstractConnectable implements Place {
    protected StateType stateType;
    private int capacity = 0;
    private Map tokenCounts = new HashMap();
+   private String time;
 
    public DiscretePlace(String id, String name, String time, StateType stateType) {
-      super(id, name, time);
+      super(id, name);
+      this.time = time;
       this.stateType = stateType;
    }
 
@@ -35,6 +37,25 @@ public final class DiscretePlace extends AbstractConnectable implements Place {
       this.capacity = place.capacity;
       this.markingXOffset = place.markingXOffset;
       this.markingYOffset = place.markingYOffset;
+   }
+
+   @Override
+   public String toString() {
+       String string = this.id;
+       if(this.name != null && this.name.length() > 0)
+           string += ":" + this.name;
+       if(this.time != null && this.time.length() > 0)
+           string += ":" + this.time;
+       
+       return string;
+   }
+
+   public String getTime(){
+       return this.time;
+   }
+
+   public void SetTime(String time) {
+       this.time = time;
    }
 
    public boolean isSelectable() {
