@@ -1,9 +1,10 @@
 package pipe.gui.imperial.pipe.naming;
 
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
 import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
 import pipe.gui.imperial.pipe.models.petrinet.PetriNetComponent;
+
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 
 public class ComponentNamer extends AbstractUniqueNamer {
    protected final PetriNet petriNet;

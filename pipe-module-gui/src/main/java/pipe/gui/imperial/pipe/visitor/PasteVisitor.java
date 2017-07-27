@@ -1,31 +1,12 @@
 package pipe.gui.imperial.pipe.visitor;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import pipe.gui.imperial.pipe.exceptions.PetriNetComponentException;
+import pipe.gui.imperial.pipe.models.petrinet.*;
+import pipe.gui.imperial.pipe.naming.MultipleNamer;
+
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import pipe.gui.imperial.pipe.exceptions.PetriNetComponentException;
-import pipe.gui.imperial.pipe.models.petrinet.Arc;
-import pipe.gui.imperial.pipe.models.petrinet.ArcPoint;
-import pipe.gui.imperial.pipe.models.petrinet.ArcType;
-import pipe.gui.imperial.pipe.models.petrinet.ArcVisitor;
-import pipe.gui.imperial.pipe.models.petrinet.Connectable;
-import pipe.gui.imperial.pipe.models.petrinet.DiscretePlace;
-import pipe.gui.imperial.pipe.models.petrinet.DiscretePlaceVisitor;
-import pipe.gui.imperial.pipe.models.petrinet.InboundArc;
-import pipe.gui.imperial.pipe.models.petrinet.InboundInhibitorArc;
-import pipe.gui.imperial.pipe.models.petrinet.InboundNormalArc;
-import pipe.gui.imperial.pipe.models.petrinet.OutboundArc;
-import pipe.gui.imperial.pipe.models.petrinet.OutboundNormalArc;
-import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
-import pipe.gui.imperial.pipe.models.petrinet.Transition;
-import pipe.gui.imperial.pipe.models.petrinet.TransitionVisitor;
-import pipe.gui.imperial.pipe.naming.MultipleNamer;
 
 public final class PasteVisitor implements TransitionVisitor, ArcVisitor, DiscretePlaceVisitor {
    private static final Logger LOGGER = Logger.getLogger(PasteVisitor.class.getName());
@@ -64,7 +45,7 @@ public final class PasteVisitor implements TransitionVisitor, ArcVisitor, Discre
       this.setName((Place)newPlace);
       this.setOffset(newPlace);
       this.petriNet.addPlace(newPlace);
-      this.createdPlaces.put(place.getId(), newPlace);
+      this.createdPlaces.put(place.toString(), newPlace);
       this.createdComponents.add(newPlace);
    }
 

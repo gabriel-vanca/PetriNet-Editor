@@ -23,53 +23,19 @@ public class Constructor {
 
         InputParser inputParser = new InputParser();
 
-        AddState("State 1", "now", StateType.START, new Point(150, 150));
-//        AddState(new Point(350, 350));
-//        AddState(new Point(150, 350));
-//        AddState(new Point(350, 150));
-//        AddState(new Point(550, 350));
+        AddState("State 1", null, StateType.START, new Point(150, 150));
+        AddState("State 2", null, StateType.START, new Point(150, 150));
     }
 
     private void AddState(String name, String time, StateType stateType, Point point) {
-       // Point point =
 
-
-        String id = getNewPetriNetName(petriNetController);
+        String id = petriNetController.getUniquePlaceName();
         Place place = new DiscretePlace(id, name, time, stateType);
         place.setX(point.x);
         place.setY(point.y);
 
         PetriNet petriNet = petriNetController.getPetriNet();
         petriNet.addPlace(place);
-//        PetriNet net = petriNetController.getPetriNet();
 
-        //            registerUndoEvent(new AddPetriNetObject(place, net));
-
-
-//            action.doAction(event, petriNetController);
-//        }
-
-//        Place place = newPlace(point, petriNetController);
-//        PetriNet net = petriNetController.getPetriNet();
-//
-//
-//        registerUndoEvent(new AddPetriNetObject(place, net));
     }
-
-//    private Place newPlace(Point point, PetriNetController petriNetController) {
-//        String id = getNewPetriNetName(petriNetController);
-//        Place place = new DiscretePlace(id, id);
-//        place.setX(point.x);
-//        place.setY(point.y);
-//
-//        PetriNet petriNet = petriNetController.getPetriNet();
-//        petriNet.addPlace(place);
-//
-//        return place;
-//    }
-
-    private String getNewPetriNetName(PetriNetController petriNetController) {
-        return petriNetController.getUniquePlaceName();
-    }
-
 }

@@ -15,11 +15,22 @@ import java.util.stream.Stream;
 
 public class InputParser {
 
+    private ArrayList<TransAssertion> TransAssertionList = new ArrayList<>();
+
+    public ArrayList<TransAssertion> getTransAssertionList() {
+        return TransAssertionList;
+    }
+
+    public void emptyTransAssertionList() {
+        TransAssertionList = new ArrayList<>();
+    }
+
     public InputParser() {
 
         List<String> tranAssertionList =  ReadFile();
-        for (String tranAssertion:tranAssertionList) {
-            ParseTranAssertion(tranAssertion);
+        for (String tranAssertionString:tranAssertionList) {
+            TransAssertion transAssertion = ParseTranAssertion(tranAssertionString);
+            TransAssertionList.add(transAssertion);
         }
     }
 
@@ -45,7 +56,7 @@ public class InputParser {
         return tranAssertionList;
     }
 
-    private TransAssertion ParseTranAssertion(String transAssertion) {
+    private TransAssertion ParseTranAssertion(String transAssertionString) {
 
         /* Note: String instructions on input should be made */
 
@@ -55,8 +66,8 @@ public class InputParser {
             //.replaceAll("\\s", "")
 
             /* Initialisations */
-            transAssertion = transAssertion.replace("'", "");
-            String[] tranAssertionSplit = transAssertion.split(Pattern.quote("("));
+            transAssertionString = transAssertionString.replace("'", "");
+            String[] tranAssertionSplit = transAssertionString.split(Pattern.quote("("));
             String[] currentSubsectionSplit;
             String[] currentUnderSubSectionSplit;
             String function;

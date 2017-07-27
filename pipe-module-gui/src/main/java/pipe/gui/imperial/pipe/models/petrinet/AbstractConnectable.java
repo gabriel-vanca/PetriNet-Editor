@@ -4,8 +4,8 @@ public abstract class AbstractConnectable extends AbstractPetriNetPubSub impleme
    protected double x = 0.0D;
    protected double y = 0.0D;
    protected String id;
-   protected String name;
-   protected String time;
+   protected String name = null;
+   protected String time = null;
    protected double nameXOffset = -5.0D;
    protected double nameYOffset = 35.0D;
 
@@ -68,8 +68,14 @@ public abstract class AbstractConnectable extends AbstractPetriNetPubSub impleme
       }
    }
 
-   public final String toString() {
-      return this.id;
+   public String toString() {
+      String string = this.id;
+      if(this.name != null && this.name.length() > 0)
+         string += ":" + this.name;
+      if(this.time != null && this.time.length() > 0)
+         time += ":" + this.time;
+
+      return string;
    }
 
    public final double getNameXOffset() {
