@@ -2,6 +2,7 @@ package pipe.views;
 
 import pipe.actions.gui.PipeApplicationModel;
 import pipe.actions.gui.ZoomManager;
+import pipe.actions.manager.ComponentCreatorManager;
 import pipe.constants.GUIConstants;
 import pipe.controllers.PetriNetController;
 import pipe.controllers.SelectionManager;
@@ -60,6 +61,8 @@ public class PipeApplicationView extends JFrame implements ActionListener, Obser
      */
     private final ZoomManager zoomManager;
 
+    ComponentCreatorManager componentCreatorManager;
+
     private final JSplitPane moduleAndAnimationHistoryFrame;
 
     private final JTabbedPane frameForPetriNetTabs = new JTabbedPane();
@@ -81,7 +84,6 @@ public class PipeApplicationView extends JFrame implements ActionListener, Obser
     private List<JLayer<JComponent>> wrappedPetrinetTabs = new ArrayList<>();
 
     private Map<PetriNetTab, AnimationHistoryView> histories = new HashMap<>();
-
 
     public PipeApplicationView(ZoomManager zoomManager, final PipeApplicationController applicationController,
                                PipeApplicationModel applicationModel) {
@@ -497,6 +499,14 @@ public class PipeApplicationView extends JFrame implements ActionListener, Obser
 
     public void registerZoom(JComboBox<String> zoomComboBox) {
         this.zoomComboBox = zoomComboBox;
+    }
+
+    public void setComponentCreatorManager(ComponentCreatorManager componentCreatorManager) {
+        this.componentCreatorManager = componentCreatorManager;
+    }
+
+    public ComponentCreatorManager getComponentCreatorManager() {
+        return this.componentCreatorManager;
     }
 }
 

@@ -116,7 +116,15 @@ public class InputParser {
                 }
             }
             else {
-                newTransAssertion.setAuthor(currentUnderSubSectionSplit[0]);
+                int indexOfSign = currentUnderSubSectionSplit[0].indexOf("~");
+                if (indexOfSign == -1) {
+                    newTransAssertion.setAuthor (currentUnderSubSectionSplit[0]);
+                    newTransAssertion.setSign(Boolean.TRUE);
+                } else
+                    {
+                        newTransAssertion.setAuthor (currentUnderSubSectionSplit[0].substring(indexOfSign + 1));
+                        newTransAssertion.setSign(Boolean.FALSE);
+                    }
                 String time = currentUnderSubSectionSplit[1] + " ((";
 
                 currentSectionIndex+=2;
@@ -124,17 +132,9 @@ public class InputParser {
                 currentSubsectionSplit = tranAssertionSplit[currentSectionIndex].split(Pattern.quote(":"));
                 time += currentSubsectionSplit[0];
                 newTransAssertion.setTime(time);
-                function = null;
-                int indexOfSign = currentSubsectionSplit[1].indexOf("~");
-                if (indexOfSign == -1) {
-                    newTransAssertion.setSign(Boolean.FALSE);
-                    function = currentSubsectionSplit[1].substring(indexOfSign + 1);
-                } else {
-                    newTransAssertion.setSign(Boolean.TRUE);
-                    function = currentSubsectionSplit[1];
-                }
+                function = currentSubsectionSplit[1]+ " (";
 
-                function += " (";
+                currentSectionIndex++;
                 function += tranAssertionSplit[currentSectionIndex].substring(0, tranAssertionSplit[currentSectionIndex].lastIndexOf(")"));
                 newTransAssertion.setAction(function);
             }

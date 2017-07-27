@@ -82,4 +82,7 @@ public class ComponentCreatorManager implements ActionManager {
         }
     }
 
+    public CreateAction getArcAction() {
+        return arcAction;
+    }
 }
