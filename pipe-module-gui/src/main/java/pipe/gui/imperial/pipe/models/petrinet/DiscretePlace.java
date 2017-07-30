@@ -15,6 +15,7 @@ public final class DiscretePlace extends AbstractConnectable implements Place {
    private int capacity = 0;
    private Map tokenCounts = new HashMap();
    private String time;
+   
 
    public DiscretePlace(String id, String name, String time, StateType stateType) {
       super(id, name);
