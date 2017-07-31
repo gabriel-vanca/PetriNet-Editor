@@ -1,18 +1,19 @@
 package pipe.gui.imperial.pipe.layout;
 
-import com.mxgraph.layout.mxFastOrganicLayout;
 import com.mxgraph.layout.hierarchical.mxHierarchicalLayout;
+import com.mxgraph.layout.mxFastOrganicLayout;
 import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxGeometry;
 import com.mxgraph.view.mxGraph;
-import java.awt.Point;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
 import pipe.gui.imperial.pipe.models.petrinet.Arc;
 import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
 import pipe.gui.imperial.pipe.models.petrinet.Place;
 import pipe.gui.imperial.pipe.models.petrinet.Transition;
+
+import java.awt.*;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 public class Layout {
    private static final int LAYOUT_OFFSET = 20;
@@ -91,8 +92,8 @@ public class Layout {
       while(i$.hasNext()) {
          Transition transition = (Transition)i$.next();
          point = (Point)points.get(transition.getId());
-         transition.setX((int)(point.getX() + Math.abs(minX) + 20.0D));
-         transition.setY((int)(point.getY() + Math.abs(minY) + 20.0D));
+         transition.setX((int)(point.getX() + Math.abs(minX) + 400.0D));
+         transition.setY((int)(point.getY() + Math.abs(minY) + 40.0D));
       }
 
       i$ = petriNet.getPlaces().iterator();
@@ -100,8 +101,8 @@ public class Layout {
       while(i$.hasNext()) {
          Place place = (Place)i$.next();
          point = (Point)points.get(place.getId());
-         place.setX((int)(point.getX() + Math.abs(minX) + 20.0D));
-         place.setY((int)(point.getY() + Math.abs(minY) + 20.0D));
+         place.setX((int)(point.getX() + Math.abs(minX) + 400.0D));
+         place.setY((int)(point.getY() + Math.abs(minY) + 40.0D));
       }
 
    }

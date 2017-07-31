@@ -13,7 +13,7 @@
     <colspec value="fill:764px:noGrow"/>
     <colspec value="left:4dlu:noGrow"/>
     <constraints>
-      <xy x="20" y="20" width="772" height="490"/>
+      <xy x="20" y="20" width="773" height="490"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -63,21 +63,6 @@
             </constraints>
             <properties>
               <text value="inter hierarchy spacing"/>
-            </properties>
-          </component>
-          <component id="72791" class="javax.swing.JSlider" binding="rankSpacingSlider">
-            <constraints>
-              <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-              <forms defaultalign-horz="false"/>
-            </constraints>
-            <properties>
-              <majorTickSpacing value="20"/>
-              <maximum value="100"/>
-              <minorTickSpacing value="5"/>
-              <paintLabels value="true"/>
-              <paintTicks value="true"/>
-              <snapToTicks value="true"/>
-              <value value="40"/>
             </properties>
           </component>
           <component id="2effe" class="javax.swing.JSlider" binding="interHierarchySlider">
@@ -142,7 +127,7 @@
                   <forms/>
                 </constraints>
                 <properties>
-                  <selected value="true"/>
+                  <selected value="false"/>
                   <text value="horizontal"/>
                 </properties>
               </component>
@@ -152,7 +137,7 @@
                   <forms/>
                 </constraints>
                 <properties>
-                  <selected value="false"/>
+                  <selected value="true"/>
                   <text value="vertical"/>
                 </properties>
               </component>
@@ -180,7 +165,22 @@
               <paintLabels value="true"/>
               <paintTicks value="true"/>
               <snapToTicks value="true"/>
-              <value value="100"/>
+              <value value="150"/>
+            </properties>
+          </component>
+          <component id="72791" class="javax.swing.JSlider" binding="rankSpacingSlider">
+            <constraints>
+              <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+              <forms defaultalign-horz="false"/>
+            </constraints>
+            <properties>
+              <majorTickSpacing value="20"/>
+              <maximum value="100"/>
+              <minorTickSpacing value="5"/>
+              <paintLabels value="true"/>
+              <paintTicks value="true"/>
+              <snapToTicks value="true"/>
+              <value value="40"/>
             </properties>
           </component>
         </children>

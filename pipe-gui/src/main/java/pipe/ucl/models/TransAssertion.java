@@ -1,8 +1,10 @@
 package pipe.ucl.models;
 
 public class TransAssertion {
+    private String startStateId;
     private String startStateName;
     private String startStateDate;
+    private String endStateId;
     private String endStateName;
     private String endStateDate;
     private String author;
@@ -72,5 +74,21 @@ public class TransAssertion {
 
     public void setSign(Boolean sign) {
         Sign = sign;
+    }
+
+    public void setStartStateId(String startStateId) {
+        this.startStateId = startStateId;
+    }
+
+    public String getStartStateId() {
+        return startStateId;
+    }
+
+    public String getEndStateId() {
+        return endStateId;
+    }
+
+    public void setEndStateId(String endStateId) {
+        this.endStateId = endStateId;
     }
 }

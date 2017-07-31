@@ -173,7 +173,13 @@ public class PetriNet {
          place.addPropertyChangeListener(new PetriNet.NameChangeListener(place, this.places));
          this.changeSupport.firePropertyChange("newPlace", (Object)null, place);
       }
+   }
 
+   public Place getPlace(String id) {
+      if (this.places.containsKey (id)) {
+         return (Place) places.get (id);
+      }
+      return null;
    }
 
    public Collection<Place> getPlaces() {

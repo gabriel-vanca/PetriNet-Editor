@@ -5,12 +5,14 @@ import pipe.actions.gui.PipeApplicationModel;
 import pipe.actions.manager.ComponentCreatorManager;
 import pipe.controllers.PetriNetController;
 import pipe.controllers.application.PipeApplicationController;
+import pipe.gui.imperial.pipe.layout.Layout;
 import pipe.gui.imperial.pipe.models.petrinet.*;
 import pipe.gui.imperial.state.StateType;
 import pipe.ucl.models.TransAssertion;
 import pipe.views.PipeApplicationBuilder;
 import pipe.views.PipeApplicationView;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -38,33 +40,58 @@ public class Constructor {
 
         for (TransAssertion transAssertion : TransAssertionList) {
 
-            Place startState = AddState (transAssertion.getStartStateName (), transAssertion.getStartStateDate (), StateType.INTERMEDIARY);
-            Place endState = AddState (transAssertion.getEndStateName (), transAssertion.getEndStateDate (), StateType.INTERMEDIARY);
+            Place startState = GetState (transAssertion.getStartStateId (), transAssertion.getStartStateName (), transAssertion.getStartStateDate (), StateType.INTERMEDIARY);
+            Place endState = GetState (transAssertion.getEndStateId (), transAssertion.getEndStateName (), transAssertion.getEndStateDate (), StateType.INTERMEDIARY);
             Transition gate = AddGate ("name", transAssertion.getTime (), transAssertion.getSign (), transAssertion.getAction (), transAssertion.getAuthor ());
             AddArc (startState, gate);
             AddArc (gate, endState);
         }
+
+        Layout ();
     }
 
-    private Place AddState(String name, String time, StateType stateType) {
+    private void Layout() {
+        Layout.layoutHierarchical (petriNetController.getPetriNet (), 40,
+                50,50, 150, SwingConstants.NORTH);
+//        componentCreatorManager..changed(petriNet);
+    }
+
+    private Place GetState(String id, String name, String time, StateType stateType) {
+        Place place = null;
+
+        try {
+            place = petriNetController.getPetriNet ().getPlace (id);
+        } catch (Exception e) {
+            System.out.println ("ERROR: Could not get existing state due to following error: " + e.toString ());
+        }
+
+        if(place == null) {
+            place = AddState (id, name, time, stateType);
+        }
+
+        return place;
+    }
+
+    private Place AddState(String id, String name, String time, StateType stateType) {
+        Place place = null;
+
         try {
             int randomX, randomY;
             randomX = ThreadLocalRandom.current ().nextInt (10, 1270);
             randomY = ThreadLocalRandom.current ().nextInt (10, 675);
 
-            String id = petriNetController.getUniquePlaceName ();
-            Place place = new DiscretePlace (id, name, time, stateType);
+//            String id = petriNetController.getUniquePlaceName ();
+            place = new DiscretePlace (id, name, time, stateType);
             place.setX (randomX);
             place.setY (randomY);
 
             PetriNet petriNet = petriNetController.getPetriNet ();
             petriNet.addPlace (place);
-            return place;
-        } catch(Exception e) {
+        } catch (Exception e) {
             System.out.println ("ERROR: Could not add new state due to following error: " + e.toString ());
         }
 
-        return null;
+        return place;
     }
 
     private Transition AddGate(String name, String time, Boolean sign, String action, String author) {
