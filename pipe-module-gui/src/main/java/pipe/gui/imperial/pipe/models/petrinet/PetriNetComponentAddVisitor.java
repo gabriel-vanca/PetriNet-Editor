@@ -1,20 +1,6 @@
 package pipe.gui.imperial.pipe.models.petrinet;
 
 import pipe.gui.imperial.pipe.exceptions.InvalidRateException;
-import pipe.gui.imperial.pipe.models.petrinet.Annotation;
-import pipe.gui.imperial.pipe.models.petrinet.AnnotationVisitor;
-import pipe.gui.imperial.pipe.models.petrinet.ArcVisitor;
-import pipe.gui.imperial.pipe.models.petrinet.FunctionalRateParameter;
-import pipe.gui.imperial.pipe.models.petrinet.InboundArc;
-import pipe.gui.imperial.pipe.models.petrinet.OutboundArc;
-import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
-import pipe.gui.imperial.pipe.models.petrinet.PlaceVisitor;
-import pipe.gui.imperial.pipe.models.petrinet.RateParameterVisitor;
-import pipe.gui.imperial.pipe.models.petrinet.Token;
-import pipe.gui.imperial.pipe.models.petrinet.TokenVisitor;
-import pipe.gui.imperial.pipe.models.petrinet.Transition;
-import pipe.gui.imperial.pipe.models.petrinet.TransitionVisitor;
 
 public final class PetriNetComponentAddVisitor implements PlaceVisitor, ArcVisitor, TransitionVisitor, TokenVisitor, AnnotationVisitor, RateParameterVisitor {
    private final pipe.gui.imperial.pipe.models.petrinet.PetriNet petriNet;
@@ -23,11 +9,11 @@ public final class PetriNetComponentAddVisitor implements PlaceVisitor, ArcVisit
       this.petriNet = petriNet;
    }
 
-   public void visit(Place place) {
+   public void visit(DiscretePlace place) {
       this.petriNet.addPlace(place);
    }
 
-   public void visit(Transition transition) {
+   public void visit(DiscreteTransition transition) {
       this.petriNet.addTransition(transition);
    }
 

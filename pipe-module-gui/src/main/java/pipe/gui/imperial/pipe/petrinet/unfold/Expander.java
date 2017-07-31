@@ -1,27 +1,19 @@
 package pipe.gui.imperial.pipe.petrinet.unfold;
 
-import java.awt.Color;
+import pipe.gui.imperial.pipe.exceptions.PetriNetComponentException;
+import pipe.gui.imperial.pipe.exceptions.PetriNetComponentNotFoundException;
+import pipe.gui.imperial.pipe.models.petrinet.*;
+import pipe.gui.imperial.pipe.visitor.PlaceCloner;
+import pipe.gui.imperial.pipe.visitor.TransitionCloner;
+
+import java.awt.*;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.TreeMap;
 import java.util.Map.Entry;
+import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import pipe.gui.imperial.pipe.exceptions.PetriNetComponentException;
-import pipe.gui.imperial.pipe.exceptions.PetriNetComponentNotFoundException;
-import pipe.gui.imperial.pipe.models.petrinet.Arc;
-import pipe.gui.imperial.pipe.models.petrinet.ArcType;
-import pipe.gui.imperial.pipe.models.petrinet.ColoredToken;
-import pipe.gui.imperial.pipe.models.petrinet.InboundInhibitorArc;
-import pipe.gui.imperial.pipe.models.petrinet.InboundNormalArc;
-import pipe.gui.imperial.pipe.models.petrinet.OutboundNormalArc;
-import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
-import pipe.gui.imperial.pipe.models.petrinet.Token;
-import pipe.gui.imperial.pipe.models.petrinet.Transition;
-import pipe.gui.imperial.pipe.visitor.PlaceCloner;
-import pipe.gui.imperial.pipe.visitor.TransitionCloner;
 
 public final class Expander {
    private static final Logger LOGGER = Logger.getLogger(Expander.class.getName());
@@ -85,16 +77,16 @@ public final class Expander {
       Iterator i$ = this.petriNet.getTransitions().iterator();
 
       while(i$.hasNext()) {
-         Transition transition = (Transition)i$.next();
+         DiscreteTransition transition = (DiscreteTransition)i$.next();
          TransitionCloner cloner = new TransitionCloner();
 
          try {
             transition.accept(cloner);
-         } catch (PetriNetComponentException var5) {
+         } catch (Exception var5) {
             LOGGER.log(Level.SEVERE, var5.getMessage());
          }
 
-         Transition newTransition = cloner.cloned;
+         DiscreteTransition newTransition = cloner.cloned;
          this.newTransitions.put(newTransition.getId(), newTransition);
          this.analyseOutboundArcs(newTransition, this.petriNet.outboundArcs(transition));
          this.analyseInboundArcs(newTransition, this.petriNet.inboundArcs(transition));
@@ -108,14 +100,14 @@ public final class Expander {
       Iterator i$ = this.newPlaces.values().iterator();
 
       while(i$.hasNext()) {
-         Place place = (Place)i$.next();
+         DiscretePlace place = (DiscretePlace)i$.next();
          petriNet.addPlace(place);
       }
 
       i$ = this.newTransitions.values().iterator();
 
       while(i$.hasNext()) {
-         Transition transition = (Transition)i$.next();
+         DiscreteTransition transition = (DiscreteTransition)i$.next();
          petriNet.addTransition(transition);
       }
 
@@ -134,27 +126,27 @@ public final class Expander {
       return petriNet;
    }
 
-   public void analyseOutboundArcs(Transition newTransition, Iterable arcs) {
+   public void analyseOutboundArcs(DiscreteTransition newTransition, Iterable arcs) {
       Iterator i$ = arcs.iterator();
 
       while(i$.hasNext()) {
          Arc arc = (Arc)i$.next();
-         Place place = (Place)arc.getTarget();
+         DiscretePlace place = (DiscretePlace)arc.getTarget();
          Expander.Data data = this.getPlaceData(arc, place);
-         Place newPlace = this.getNewPlace(place, newTransition.getX(), newTransition.getY(), data.placeTokenCount, data.name);
+         DiscretePlace newPlace = this.getNewPlace(place, newTransition.getX(), newTransition.getY(), data.placeTokenCount, data.name);
          this.createArc(newTransition, newPlace, data.arcWeight, arc.getType());
       }
 
    }
 
-   public void analyseInboundArcs(Transition newTransition, Iterable arcs) {
+   public void analyseInboundArcs(DiscreteTransition newTransition, Iterable arcs) {
       Iterator i$ = arcs.iterator();
 
       while(i$.hasNext()) {
          Arc arc = (Arc)i$.next();
-         Place place = (Place)arc.getSource();
+         DiscretePlace place = (DiscretePlace)arc.getSource();
          Expander.Data data = this.getPlaceData(arc, place);
-         Place newPlace = this.getNewPlace(place, newTransition.getX(), newTransition.getY(), data.placeTokenCount, data.name);
+         DiscretePlace newPlace = this.getNewPlace(place, newTransition.getX(), newTransition.getY(), data.placeTokenCount, data.name);
          this.createArc(newPlace, newTransition, data.arcWeight, arc.getType());
       }
 
@@ -180,9 +172,9 @@ public final class Expander {
       return new Expander.Data(placeTokenCount, arcWeight, newNameBuilder.toString());
    }
 
-   private Place getNewPlace(Place original, int newX, int newY, int tokenCount, String id) {
+   private DiscretePlace getNewPlace(DiscretePlace original, int newX, int newY, int tokenCount, String id) {
       if (this.newPlaces.containsKey(id)) {
-         return (Place)this.newPlaces.get(id);
+         return (DiscretePlace)this.newPlaces.get(id);
       } else {
          PlaceCloner cloner = new PlaceCloner();
 
@@ -192,7 +184,7 @@ public final class Expander {
             LOGGER.log(Level.SEVERE, var9.getMessage());
          }
 
-         Place place = cloner.cloned;
+         DiscretePlace place = cloner.cloned;
          Map newTokenCounts = new HashMap();
          if (tokenCount > 0) {
             newTokenCounts.put(this.unfoldToken.getId(), tokenCount);
@@ -208,12 +200,12 @@ public final class Expander {
       }
    }
 
-   private void createArc(Transition source, Place target, int arcWeight, ArcType type) {
+   private void createArc(DiscreteTransition source, DiscretePlace target, int arcWeight, ArcType type) {
       Arc newArc = new OutboundNormalArc(source, target, this.getNewArcWeight(arcWeight));
       this.newArcs.put(newArc.getId(), newArc);
    }
 
-   private void createArc(Place source, Transition target, int arcWeight, ArcType type) {
+   private void createArc(DiscretePlace source, DiscreteTransition target, int arcWeight, ArcType type) {
       Object newArc;
       switch(type) {
       case INHIBITOR:

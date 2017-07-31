@@ -80,9 +80,9 @@ public final class DiscreteTransition extends AbstractConnectable implements Tra
         String string = this.id;
         if (this.name != null && this.name.length () > 0)
             string += ":" + this.name;
-        string += ":";
+//        string += ":";
         if (this.sign == Boolean.FALSE)
-            string += "!";
+            string += ":!";
         if (this.author != null && this.author.length () > 0)
             string += ":" + this.author;
         if (this.action != null && this.action.length () > 0)

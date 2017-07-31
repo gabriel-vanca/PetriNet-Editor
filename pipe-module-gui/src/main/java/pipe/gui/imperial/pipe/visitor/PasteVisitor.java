@@ -40,20 +40,20 @@ public final class PasteVisitor implements TransitionVisitor, ArcVisitor, Discre
    }
 
    public void visit(DiscretePlace place) {
-      Place newPlace = new DiscretePlace(place);
-      this.setId((Place)newPlace);
-      this.setName((Place)newPlace);
+      DiscretePlace newPlace = new DiscretePlace(place);
+      this.setId(newPlace);
+      this.setName(newPlace);
       this.setOffset(newPlace);
       this.petriNet.addPlace(newPlace);
       this.createdPlaces.put(place.toString(), newPlace);
       this.createdComponents.add(newPlace);
    }
 
-   private void setId(Place place) {
+   private void setId(DiscretePlace place) {
       place.setId(this.multipleNamer.getPlaceName());
    }
 
-   private void setName(Place place) {
+   private void setName(DiscretePlace place) {
       place.setName(this.multipleNamer.getPlaceName());
    }
 
@@ -62,16 +62,16 @@ public final class PasteVisitor implements TransitionVisitor, ArcVisitor, Discre
       connectable.setY(connectable.getY() + this.yOffset);
    }
 
-   public void visit(Transition transition) {
+   public void visit(DiscreteTransition transition) {
       TransitionCloner cloner = new TransitionCloner();
 
       try {
          transition.accept(cloner);
-      } catch (PetriNetComponentException var4) {
+      } catch (Exception var4) {
          LOGGER.log(Level.SEVERE, var4.getMessage());
       }
 
-      Transition newTransition = cloner.cloned;
+      DiscreteTransition newTransition = cloner.cloned;
       this.setId(newTransition);
       this.setName(newTransition);
       this.setOffset(newTransition);
@@ -89,14 +89,14 @@ public final class PasteVisitor implements TransitionVisitor, ArcVisitor, Discre
    }
 
    public void visit(InboundArc inboundArc) {
-      Place source = (Place)inboundArc.getSource();
-      Transition target = (Transition)inboundArc.getTarget();
+      DiscretePlace source = (DiscretePlace)inboundArc.getSource();
+      DiscreteTransition target = (DiscreteTransition)inboundArc.getTarget();
       if (this.components.contains(source)) {
-         source = (Place)this.createdPlaces.get(source.getId());
+         source = (DiscretePlace)this.createdPlaces.get(source.getId());
       }
 
       if (this.components.contains(target)) {
-         target = (Transition)this.createdTransitions.get(target.getId());
+         target = (DiscreteTransition)this.createdTransitions.get(target.getId());
       }
 
       Object newArc;
@@ -124,19 +124,19 @@ public final class PasteVisitor implements TransitionVisitor, ArcVisitor, Discre
    }
 
    public void visit(OutboundArc outboundArc) {
-      Transition source = (Transition)outboundArc.getSource();
-      Place target = (Place)outboundArc.getTarget();
+      DiscreteTransition source = (DiscreteTransition)outboundArc.getSource();
+      DiscretePlace target = (DiscretePlace)outboundArc.getTarget();
       if (this.components.contains(source)) {
-         source = (Transition)this.createdTransitions.get(source.getId());
+         source = (DiscreteTransition)this.createdTransitions.get(source.getId());
       }
 
       if (this.components.contains(target)) {
-         target = (Place)this.createdPlaces.get(target.getId());
+         target = (DiscretePlace)this.createdPlaces.get(target.getId());
       }
 
       OutboundArc newArc = new OutboundNormalArc(source, target, outboundArc.getTokenWeights());
       this.copyIntermediatePoints(outboundArc, newArc);
-      this.petriNet.addArc((OutboundArc)newArc);
+      this.petriNet.addArc(newArc);
       this.createdComponents.add(newArc);
    }
 
@@ -149,7 +149,6 @@ public final class PasteVisitor implements TransitionVisitor, ArcVisitor, Discre
          try {
             $SwitchMap$uk$ac$imperial$pipe$models$petrinet$ArcType[ArcType.INHIBITOR.ordinal()] = 1;
          } catch (NoSuchFieldError var1) {
-            ;
          }
 
       }

@@ -1,13 +1,12 @@
 package pipe.actions.gui;
 
 import pipe.controllers.PetriNetController;
-import pipe.historyActions.component.AddPetriNetObject;
 import pipe.gui.imperial.pipe.models.petrinet.Connectable;
 import pipe.gui.imperial.pipe.models.petrinet.DiscretePlace;
 import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
+import pipe.historyActions.component.AddPetriNetObject;
 
-import java.awt.Point;
+import java.awt.*;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
@@ -26,7 +25,7 @@ public class PlaceAction extends CreateAction {
     public void doAction(MouseEvent event, PetriNetController petriNetController) {
         if (event.getClickCount() > 0) {
             Point point = event.getPoint();
-            Place place = newPlace(point, petriNetController);
+            DiscretePlace place = newPlace(point, petriNetController);
             PetriNet net = petriNetController.getPetriNet();
 
 
@@ -37,7 +36,7 @@ public class PlaceAction extends CreateAction {
     }
 
     public void doConstructorAction(Point point, PetriNetController petriNetController) {
-            Place place = newPlace(point, petriNetController);
+        DiscretePlace place = newPlace(point, petriNetController);
             PetriNet net = petriNetController.getPetriNet();
 
 //            registerUndoEvent(new AddPetriNetObject(place, net));
@@ -48,9 +47,9 @@ public class PlaceAction extends CreateAction {
         // Do nothing if clicked on existing connectable
     }
 
-    private Place newPlace(Point point, PetriNetController petriNetController) {
+    private DiscretePlace newPlace(Point point, PetriNetController petriNetController) {
         String id = getNewPetriNetName(petriNetController);
-        Place place = new DiscretePlace(id, id);
+        DiscretePlace place = new DiscretePlace(id, id);
         place.setX(point.x);
         place.setY(point.y);
 

@@ -3,6 +3,7 @@ package pipe.actions.gui;
 import pipe.controllers.PetriNetController;
 import pipe.controllers.PlaceController;
 import pipe.gui.imperial.pipe.models.petrinet.Connectable;
+import pipe.gui.imperial.pipe.models.petrinet.DiscretePlace;
 import pipe.gui.imperial.pipe.models.petrinet.Place;
 
 import java.awt.event.MouseEvent;
@@ -46,7 +47,7 @@ public abstract class TokenAction extends CreateAction {
     public void doConnectableAction(Connectable connectable, PetriNetController petriNetController) {
         //TODO: Maybe a method, connectable.containsTokens()  or visitor pattern
         if (connectable instanceof Place) {
-            Place place = (Place) connectable;
+            DiscretePlace place = (DiscretePlace) connectable;
             String token = petriNetController.getSelectedToken();
             performTokenAction(petriNetController.getPlaceController(place), token);
         }

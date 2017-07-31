@@ -25,7 +25,7 @@ public class InhibitorCreator implements ArcActionCreator {
      * @return inbound arc from the place to the transition
      */
     @Override
-    public InboundArc createInboundArc(Place source, Transition target, List<ArcPoint> arcPoints) {
+    public InboundArc createInboundArc(DiscretePlace source, DiscreteTransition target, List<ArcPoint> arcPoints) {
         InboundArc arc = new InboundInhibitorArc(source, target);
         arc.addIntermediatePoints(arcPoints);
         return arc;
@@ -38,7 +38,7 @@ public class InhibitorCreator implements ArcActionCreator {
      * @return null since no arc can exist
      */
     @Override
-    public OutboundArc createOutboundArc(Place target, Transition source, List<ArcPoint> arcPoints) {
+    public OutboundArc createOutboundArc(DiscretePlace target, DiscreteTransition source, List<ArcPoint> arcPoints) {
         return null;
     }
 
@@ -80,13 +80,13 @@ public class InhibitorCreator implements ArcActionCreator {
         public boolean isTransition = false;
 
         @Override
-        public void visit(Place place) throws PetriNetComponentException {
+        public void visit(DiscretePlace place) throws PetriNetComponentException {
             isPlace = true;
             isTransition = false;
         }
 
         @Override
-        public void visit(Transition transition) {
+        public void visit(DiscreteTransition transition) {
             isPlace = false;
             isTransition = true;
         }

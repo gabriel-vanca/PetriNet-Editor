@@ -1,22 +1,17 @@
 package pipe.gui.imperial.pipe.models.petrinet;
 
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Map.Entry;
-
-import pipe.gui.imperial.pipe.models.petrinet.ArcType;
-import pipe.gui.imperial.pipe.models.petrinet.InboundArc;
-import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
-import pipe.gui.imperial.pipe.models.petrinet.Transition;
 import pipe.gui.imperial.pipe.parsers.FunctionalResults;
 import pipe.gui.imperial.pipe.parsers.FunctionalWeightParser;
 import pipe.gui.imperial.pipe.parsers.PetriNetWeightParser;
 import pipe.gui.imperial.pipe.parsers.StateEvalVisitor;
 import pipe.gui.imperial.state.State;
 
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+
 public class InboundNormalArc extends InboundArc {
-   public InboundNormalArc(pipe.gui.imperial.pipe.models.petrinet.Place source, Transition target, Map tokenWeights) {
+   public InboundNormalArc(DiscretePlace source, DiscreteTransition target, Map tokenWeights) {
       super(source, target, tokenWeights, ArcType.NORMAL);
    }
 

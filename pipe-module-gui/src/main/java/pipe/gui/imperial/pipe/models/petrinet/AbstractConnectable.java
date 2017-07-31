@@ -1,5 +1,7 @@
 package pipe.gui.imperial.pipe.models.petrinet;
 
+import java.util.HashMap;
+
 public abstract class AbstractConnectable extends AbstractPetriNetPubSub implements Connectable {
    protected double x = 0.0D;
    protected double y = 0.0D;
@@ -8,11 +10,13 @@ public abstract class AbstractConnectable extends AbstractPetriNetPubSub impleme
    protected double nameXOffset = -5.0D;
    protected double nameYOffset = 35.0D;
 
+   protected HashMap<Connectable, AbstractArc> InboundConnectables = new HashMap<> ();
+   protected HashMap<Connectable, AbstractArc> OutboundConnectables = new HashMap<> ();
+
    protected AbstractConnectable(String id, String name) {
       this.id = id;
       this.name = name;
    }
-
 
    protected AbstractConnectable(AbstractConnectable connectable) {
       this.id = connectable.id;
@@ -21,6 +25,22 @@ public abstract class AbstractConnectable extends AbstractPetriNetPubSub impleme
       this.y = connectable.y;
       this.nameXOffset = connectable.nameXOffset;
       this.nameYOffset = connectable.nameYOffset;
+   }
+
+   public void AddInboundConnectable(Connectable inboundConnectable, AbstractArc arc) {
+      InboundConnectables.put(inboundConnectable, arc);
+   }
+
+   public HashMap<Connectable, AbstractArc> GetInboundConnectables() {
+      return InboundConnectables;
+   }
+
+   public void AddOutboundConnectable(Connectable outboundConnectable, AbstractArc arc) {
+      OutboundConnectables.put (outboundConnectable, arc);
+   }
+
+   public HashMap<Connectable, AbstractArc> GetOutboundConnectables() {
+      return OutboundConnectables;
    }
 
    public int hashCode() {

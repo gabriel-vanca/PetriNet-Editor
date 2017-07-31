@@ -311,7 +311,7 @@ public class PetriNetTab extends JLayeredPane implements Observer, Printable {
          * @param place for which to add listener
          */
         @Override
-        public void visit(Place place) {
+        public void visit(DiscretePlace place) {
             place.addPropertyChangeListener(updateListener);
         }
 
@@ -320,7 +320,7 @@ public class PetriNetTab extends JLayeredPane implements Observer, Printable {
          * @param transition for which to add listener
          */
         @Override
-        public void visit(Transition transition) {
+        public void visit(DiscreteTransition transition) {
             transition.addPropertyChangeListener(updateListener);
         }
     }

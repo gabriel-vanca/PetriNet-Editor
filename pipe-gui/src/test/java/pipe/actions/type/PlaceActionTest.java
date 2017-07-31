@@ -7,18 +7,17 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
+import pipe.actions.gui.PipeApplicationModel;
 import pipe.actions.gui.PlaceAction;
 import pipe.controllers.PetriNetController;
-import pipe.actions.gui.PipeApplicationModel;
+import pipe.gui.imperial.pipe.models.petrinet.DiscretePlace;
+import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
 import pipe.historyActions.component.AddPetriNetObject;
 import pipe.utilities.transformers.Contains;
-import pipe.gui.imperial.pipe.models.petrinet.DiscretePlace;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
-import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
 
 import javax.swing.event.UndoableEditListener;
 import javax.swing.undo.UndoableEdit;
-import java.awt.Point;
+import java.awt.*;
 import java.awt.event.MouseEvent;
 
 import static org.mockito.Matchers.argThat;
@@ -59,7 +58,7 @@ public class PlaceActionTest {
 
         action.doAction(mockEvent, mockController);
 
-        verify(mockNet).addPlace(argThat(new HasMultiple<Place>(new HasXY(point.getX(), point.getY()))));
+        verify(mockNet).addPlace(argThat(new HasMultiple<DiscretePlace>(new HasXY(point.getX(), point.getY()))));
     }
 
     @Test
@@ -70,7 +69,7 @@ public class PlaceActionTest {
         when(mockEvent.getPoint()).thenReturn(point);
 
         action.doAction(mockEvent, mockController);
-        Place place = new DiscretePlace("P0", "P0");
+        DiscretePlace place = new DiscretePlace("P0", "P0");
         place.setX(10);
         place.setY(20);
 

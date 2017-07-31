@@ -38,19 +38,19 @@ public class ArcAdapter extends XmlAdapter {
       String target = adaptedArc.getTarget();
       Map weights = this.stringToWeights(adaptedArc.getInscription().getTokenCounts());
       Object arc;
-      Place place;
-      Transition transition;
+      DiscretePlace place;
+      DiscreteTransition transition;
       if (adaptedArc.getType().equals("inhibitor")) {
-         place = (Place)this.places.get(source);
-         transition = (Transition)this.transitions.get(target);
+         place = (DiscretePlace)this.places.get(source);
+         transition = (DiscreteTransition)this.transitions.get(target);
          arc = new InboundInhibitorArc(place, transition);
       } else if (this.places.containsKey(source)) {
-         place = (Place)this.places.get(source);
-         transition = (Transition)this.transitions.get(target);
+         place = (DiscretePlace)this.places.get(source);
+         transition = (DiscreteTransition)this.transitions.get(target);
          arc = new InboundNormalArc(place, transition, weights);
       } else {
-         place = (Place)this.places.get(target);
-         transition = (Transition)this.transitions.get(source);
+         place = (DiscretePlace)this.places.get(target);
+         transition = (DiscreteTransition)this.transitions.get(source);
          arc = new OutboundNormalArc(transition, place, weights);
       }
 

@@ -1,9 +1,9 @@
 package pipe.gui.imperial.pipe.dsl;
 
+import pipe.gui.imperial.pipe.models.petrinet.DiscretePlace;
+
 import java.util.HashMap;
 import java.util.Map;
-import pipe.gui.imperial.pipe.models.petrinet.DiscretePlace;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
 
 public final class APlace implements DSLCreator {
    private String id;
@@ -38,8 +38,8 @@ public final class APlace implements DSLCreator {
       return this;
    }
 
-   public Place create(Map tokens, Map places, Map transitions, Map rateParameters) {
-      Place place = new DiscretePlace(this.id, this.id);
+   public DiscretePlace create(Map tokens, Map places, Map transitions, Map rateParameters) {
+      DiscretePlace place = new DiscretePlace(this.id, this.id);
       place.setX(this.x);
       place.setY(this.y);
       place.setCapacity(this.capacity);

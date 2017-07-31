@@ -1,18 +1,10 @@
 package pipe.gui.imperial.pipe.models.petrinet;
 
-import pipe.gui.imperial.pipe.models.petrinet.Arc;
-import pipe.gui.imperial.pipe.models.petrinet.ArcPoint;
-import pipe.gui.imperial.pipe.models.petrinet.ArcType;
-
 import java.awt.geom.Point2D;
 import java.awt.geom.Point2D.Double;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public abstract class AbstractArc extends AbstractPetriNetPubSub implements Arc {
    private Connectable source;
@@ -26,7 +18,7 @@ public abstract class AbstractArc extends AbstractPetriNetPubSub implements Arc 
    private final pipe.gui.imperial.pipe.models.petrinet.ArcPoint targetPoint;
    private final PropertyChangeListener intermediateListener = new AbstractArc.ArcPointChangeListener(null);
 
-   public AbstractArc(Connectable source, Connectable target, Map tokenWeights, pipe.gui.imperial.pipe.models.petrinet.ArcType type) {
+   public AbstractArc(AbstractConnectable source, AbstractConnectable target, Map tokenWeights, pipe.gui.imperial.pipe.models.petrinet.ArcType type) {
       this.source = source;
       this.target = target;
       this.tokenWeights = tokenWeights;
@@ -37,6 +29,10 @@ public abstract class AbstractArc extends AbstractPetriNetPubSub implements Arc 
       this.targetPoint = new pipe.gui.imperial.pipe.models.petrinet.ArcPoint(this.getEndPoint(), false, false);
       this.arcPoints.add(this.sourcePoint);
       this.arcPoints.add(this.targetPoint);
+
+      source.AddOutboundConnectable(target, this);
+      target.AddInboundConnectable (source, this);
+
       source.addPropertyChangeListener(new PropertyChangeListener() {
          public void propertyChange(PropertyChangeEvent evt) {
             String name = evt.getPropertyName();

@@ -1,22 +1,22 @@
 package pipe.gui.imperial.pipe.visitor.connectable.arc;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import pipe.gui.imperial.pipe.exceptions.PetriNetComponentException;
 import pipe.gui.imperial.pipe.models.petrinet.Connectable;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
-import pipe.gui.imperial.pipe.models.petrinet.Transition;
-import pipe.gui.imperial.pipe.visitor.connectable.arc.ArcSourceVisitor;
+import pipe.gui.imperial.pipe.models.petrinet.DiscretePlace;
+import pipe.gui.imperial.pipe.models.petrinet.DiscreteTransition;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public final class InhibitorSourceVisitor implements ArcSourceVisitor {
    private static final Logger LOGGER = Logger.getLogger(InhibitorSourceVisitor.class.getName());
    private boolean canCreate = false;
 
-   public void visit(Place place) {
+   public void visit(DiscretePlace place) {
       this.canCreate = true;
    }
 
-   public void visit(Transition transition) {
+   public void visit(DiscreteTransition transition) {
       this.canCreate = false;
    }
 

@@ -1,7 +1,7 @@
 package pipe.gui.imperial.pipe.animation;
 
+import pipe.gui.imperial.pipe.models.petrinet.DiscretePlace;
 import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
 import pipe.gui.imperial.pipe.models.petrinet.Token;
 import pipe.gui.imperial.state.HashedStateBuilder;
 import pipe.gui.imperial.state.State;
@@ -14,7 +14,7 @@ public final class AnimationUtils {
       Iterator i$ = petriNet.getPlaces().iterator();
 
       while(i$.hasNext()) {
-         Place place = (Place)i$.next();
+         DiscretePlace place = (DiscretePlace)i$.next();
          Iterator i$1 = petriNet.getTokens().iterator();
 
          while(i$1.hasNext()) {

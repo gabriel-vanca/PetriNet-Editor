@@ -1,9 +1,6 @@
 package pipe.gui.imperial.pipe.animation;
 
-import pipe.gui.imperial.pipe.models.petrinet.Arc;
-import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
-import pipe.gui.imperial.pipe.models.petrinet.Transition;
+import pipe.gui.imperial.pipe.models.petrinet.*;
 import pipe.gui.imperial.state.State;
 
 import java.util.*;
@@ -26,7 +23,7 @@ public final class PetriNetAnimator implements Animator {
       Iterator i$ = this.petriNet.getPlaces().iterator();
 
       while(i$.hasNext()) {
-         Place place = (Place)i$.next();
+         DiscretePlace place = (DiscretePlace)i$.next();
          this.savedStateTokens.put(place.getId(), new HashMap(place.getTokenCounts()));
       }
 
@@ -36,7 +33,7 @@ public final class PetriNetAnimator implements Animator {
       Iterator i$ = this.petriNet.getPlaces().iterator();
 
       while(i$.hasNext()) {
-         Place place = (Place)i$.next();
+         DiscretePlace place = (DiscretePlace)i$.next();
          Map originalTokens = (Map)this.savedStateTokens.get(place.getId());
          place.setTokenCounts(originalTokens);
       }
@@ -63,7 +60,7 @@ public final class PetriNetAnimator implements Animator {
       Iterator i$ = this.petriNet.getPlaces().iterator();
 
       while(i$.hasNext()) {
-         Place place = (Place)i$.next();
+         DiscretePlace place = (DiscretePlace)i$.next();
          place.setTokenCounts(newState.getTokens(place.getId()));
       }
 

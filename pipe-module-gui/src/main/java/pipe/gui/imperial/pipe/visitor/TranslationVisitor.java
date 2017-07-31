@@ -1,23 +1,13 @@
 package pipe.gui.imperial.pipe.visitor;
 
-import java.awt.Point;
+import pipe.gui.imperial.pipe.models.petrinet.*;
+
+import java.awt.*;
 import java.awt.geom.Point2D;
 import java.awt.geom.Point2D.Double;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import pipe.gui.imperial.pipe.models.petrinet.Annotation;
-import pipe.gui.imperial.pipe.models.petrinet.AnnotationVisitor;
-import pipe.gui.imperial.pipe.models.petrinet.Arc;
-import pipe.gui.imperial.pipe.models.petrinet.ArcPoint;
-import pipe.gui.imperial.pipe.models.petrinet.ArcPointVisitor;
-import pipe.gui.imperial.pipe.models.petrinet.ArcVisitor;
-import pipe.gui.imperial.pipe.models.petrinet.InboundArc;
-import pipe.gui.imperial.pipe.models.petrinet.OutboundArc;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
-import pipe.gui.imperial.pipe.models.petrinet.PlaceVisitor;
-import pipe.gui.imperial.pipe.models.petrinet.Transition;
-import pipe.gui.imperial.pipe.models.petrinet.TransitionVisitor;
 
 public final class TranslationVisitor implements ArcVisitor, ArcPointVisitor, PlaceVisitor, TransitionVisitor, AnnotationVisitor {
    private final Point translation;
@@ -28,12 +18,12 @@ public final class TranslationVisitor implements ArcVisitor, ArcPointVisitor, Pl
       this.selected = selected;
    }
 
-   public void visit(Place place) {
+   public void visit(DiscretePlace place) {
       place.setX(place.getX() + this.translation.x);
       place.setY(place.getY() + this.translation.y);
    }
 
-   public void visit(Transition transition) {
+   public void visit(DiscreteTransition transition) {
       transition.setX(transition.getX() + this.translation.x);
       transition.setY(transition.getY() + this.translation.y);
    }

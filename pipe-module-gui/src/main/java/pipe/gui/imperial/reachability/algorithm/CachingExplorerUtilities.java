@@ -3,8 +3,8 @@ package pipe.gui.imperial.reachability.algorithm;
 import pipe.gui.imperial.pipe.animation.AnimationLogic;
 import pipe.gui.imperial.pipe.animation.PetriNetAnimationLogic;
 import pipe.gui.imperial.pipe.exceptions.InvalidRateException;
+import pipe.gui.imperial.pipe.models.petrinet.DiscretePlace;
 import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
 import pipe.gui.imperial.pipe.models.petrinet.Token;
 import pipe.gui.imperial.pipe.models.petrinet.Transition;
 import pipe.gui.imperial.pipe.parsers.FunctionalResults;
@@ -65,7 +65,7 @@ public abstract class CachingExplorerUtilities implements ExplorerUtilities {
       Iterator i$ = this.petriNet.getPlaces().iterator();
 
       while(i$.hasNext()) {
-         Place place = (Place)i$.next();
+         DiscretePlace place = (DiscretePlace)i$.next();
          Iterator i$1 = this.petriNet.getTokens().iterator();
 
          while(i$1.hasNext()) {

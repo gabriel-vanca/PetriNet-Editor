@@ -1,14 +1,11 @@
 package pipe.gui.imperial.pipe.models.petrinet;
 
-import java.util.Map;
-
-import pipe.gui.imperial.pipe.models.petrinet.ArcType;
-import pipe.gui.imperial.pipe.models.petrinet.ArcVisitor;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
 import pipe.gui.imperial.pipe.visitor.component.PetriNetComponentVisitor;
 
+import java.util.Map;
+
 public abstract class InboundArc extends AbstractArc {
-   public InboundArc(Place source, Transition target, Map tokenWeights, ArcType type) {
+   public InboundArc(DiscretePlace source, DiscreteTransition target, Map tokenWeights, ArcType type) {
       super(source, target, tokenWeights, type);
    }
 

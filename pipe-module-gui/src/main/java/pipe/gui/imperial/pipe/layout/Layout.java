@@ -5,10 +5,7 @@ import com.mxgraph.layout.mxFastOrganicLayout;
 import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxGeometry;
 import com.mxgraph.view.mxGraph;
-import pipe.gui.imperial.pipe.models.petrinet.Arc;
-import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
-import pipe.gui.imperial.pipe.models.petrinet.Transition;
+import pipe.gui.imperial.pipe.models.petrinet.*;
 
 import java.awt.*;
 import java.util.HashMap;
@@ -39,7 +36,7 @@ public class Layout {
          Iterator i$ = petriNet.getPlaces().iterator();
 
          while(i$.hasNext()) {
-            Place place = (Place)i$.next();
+            DiscretePlace place = (DiscretePlace)i$.next();
             objectMap.put(place.getId(), graph.insertVertex(parent, place.getId(), place.getId(), 0.0D, 0.0D, 30.0D, 30.0D));
          }
 
@@ -99,7 +96,7 @@ public class Layout {
       i$ = petriNet.getPlaces().iterator();
 
       while(i$.hasNext()) {
-         Place place = (Place)i$.next();
+         DiscretePlace place = (DiscretePlace)i$.next();
          point = (Point)points.get(place.getId());
          place.setX((int)(point.getX() + Math.abs(minX) + 400.0D));
          place.setY((int)(point.getY() + Math.abs(minY) + 40.0D));

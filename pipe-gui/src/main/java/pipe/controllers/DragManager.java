@@ -168,7 +168,7 @@ public class DragManager {
          * @param place
          */
         @Override
-        public void visit(Place place) {
+        public void visit(DiscretePlace place) {
             savedCoordinates.put(place, new Point2D.Double(place.getX(), place.getY()));
         }
 
@@ -178,7 +178,7 @@ public class DragManager {
          * @param transition
          */
         @Override
-        public void visit(Transition transition) {
+        public void visit(DiscreteTransition transition) {
             savedCoordinates.put(transition, new Point2D.Double(transition.getX(), transition.getY()));
 
         }

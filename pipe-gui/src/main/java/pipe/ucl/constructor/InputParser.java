@@ -36,12 +36,14 @@ public class InputParser {
 
     private List<String> ReadFile() {
 
-        String fileName = "input.txt";
+//        String inputFileName = "input_washer.txt";
+        String inputFileName = "input_guitar.txt";
+
         List<String> tranAssertionList = new ArrayList<> ();
 
         try {
 
-            Stream<String> stream = Files.lines (Paths.get (ClassLoader.getSystemResource (fileName)
+            Stream<String> stream = Files.lines (Paths.get (ClassLoader.getSystemResource (inputFileName)
                     .toURI ()));
 
             tranAssertionList = stream

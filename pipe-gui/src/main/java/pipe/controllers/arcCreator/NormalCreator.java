@@ -33,7 +33,7 @@ public class NormalCreator implements ArcActionCreator {
     }
 
     @Override
-    public InboundArc createInboundArc(Place source, Transition target, List<ArcPoint> arcPoints) {
+    public InboundArc createInboundArc(DiscretePlace source, DiscreteTransition target, List<ArcPoint> arcPoints) {
         Map<String, String> weights = getInitialTokenWeights();
         InboundArc inboundArc = new InboundNormalArc(source, target, weights);
         inboundArc.addIntermediatePoints(arcPoints);
@@ -41,7 +41,7 @@ public class NormalCreator implements ArcActionCreator {
     }
 
     @Override
-    public OutboundArc createOutboundArc(Place target, Transition source, List<ArcPoint> arcPoints) {
+    public OutboundArc createOutboundArc(DiscretePlace target, DiscreteTransition source, List<ArcPoint> arcPoints) {
         Map<String, String> weights = getInitialTokenWeights();
         OutboundArc outboundArc = new OutboundNormalArc(source, target, weights);
         outboundArc.addIntermediatePoints(arcPoints);

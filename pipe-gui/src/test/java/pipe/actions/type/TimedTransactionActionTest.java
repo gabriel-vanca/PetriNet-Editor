@@ -1,35 +1,30 @@
 package pipe.actions.type;
 
-import static org.mockito.Matchers.argThat;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
-import java.awt.Point;
-import java.awt.event.MouseEvent;
-
-import javax.swing.event.UndoableEditListener;
-import javax.swing.undo.UndoableEdit;
-
 import matchers.component.HasMultiple;
 import matchers.component.HasTimed;
 import matchers.component.HasXY;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-
 import pipe.actions.gui.PipeApplicationModel;
 import pipe.actions.gui.TimedTransitionAction;
 import pipe.actions.gui.TransitionAction;
 import pipe.controllers.PetriNetController;
-import pipe.historyActions.component.AddPetriNetObject;
-import pipe.utilities.transformers.Contains;
 import pipe.gui.imperial.pipe.models.petrinet.DiscreteTransition;
 import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
 import pipe.gui.imperial.pipe.models.petrinet.Transition;
+import pipe.historyActions.component.AddPetriNetObject;
+import pipe.utilities.transformers.Contains;
+
+import javax.swing.event.UndoableEditListener;
+import javax.swing.undo.UndoableEdit;
+import java.awt.*;
+import java.awt.event.MouseEvent;
+
+import static org.mockito.Matchers.argThat;
+import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class TimedTransactionActionTest {
@@ -68,7 +63,7 @@ public class TimedTransactionActionTest {
 
         action.doAction(mockEvent, mockController);
         verify(mockNet).addTransition(
-                argThat(new HasMultiple<>(new HasXY<Transition>(point.getX(), point.getY()), new HasTimed(true))));
+                argThat(new HasMultiple<DiscreteTransition>(new HasXY<DiscreteTransition>(point.getX(), point.getY()), new HasTimed(true))));
     }
 
     @Test

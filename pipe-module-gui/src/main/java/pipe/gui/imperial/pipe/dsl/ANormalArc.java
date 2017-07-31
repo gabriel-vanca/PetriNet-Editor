@@ -1,16 +1,12 @@
 package pipe.gui.imperial.pipe.dsl;
 
+import pipe.gui.imperial.pipe.models.petrinet.*;
+
 import java.awt.geom.Point2D.Double;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import pipe.gui.imperial.pipe.models.petrinet.Arc;
-import pipe.gui.imperial.pipe.models.petrinet.ArcPoint;
-import pipe.gui.imperial.pipe.models.petrinet.InboundNormalArc;
-import pipe.gui.imperial.pipe.models.petrinet.OutboundNormalArc;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
-import pipe.gui.imperial.pipe.models.petrinet.Transition;
 
 public final class ANormalArc implements DSLCreator {
    private String source;
@@ -41,9 +37,9 @@ public final class ANormalArc implements DSLCreator {
    public Arc create(Map tokens, Map places, Map transitions, Map rateParameters) {
       Object arc;
       if (places.containsKey(this.source)) {
-         arc = new InboundNormalArc((Place)places.get(this.source), (Transition)transitions.get(this.target), this.weights);
+         arc = new InboundNormalArc((DiscretePlace)places.get(this.source), (DiscreteTransition)transitions.get(this.target), this.weights);
       } else {
-         arc = new OutboundNormalArc((Transition)transitions.get(this.source), (Place)places.get(this.target), this.weights);
+         arc = new OutboundNormalArc((DiscreteTransition)transitions.get(this.source), (DiscretePlace)places.get(this.target), this.weights);
       }
 
       ((Arc)arc).addIntermediatePoints(this.intermediatePoints);

@@ -36,11 +36,11 @@ public class PetriNet {
    protected final PropertyChangeSupport changeSupport;
    private final FunctionalWeightParser functionalWeightParser;
    private final PetriNetComponentVisitor deleteVisitor;
-   private final Map transitions;
-   private final Map places;
+   private final HashMap<String, DiscreteTransition> transitions;
+   private final HashMap<String, DiscretePlace> places;
    private final Map tokens;
-   private final Map inboundArcs;
-   private final Map outboundArcs;
+   private final HashMap<String, InboundArc> inboundArcs;
+   private final HashMap<String, OutboundArc> outboundArcs;
    private final Map rateParameters;
    private final Map annotations;
    private final Multimap transitionOutboundArcs;
@@ -77,8 +77,8 @@ public class PetriNet {
    }
 
    private void initialiseIdMap() {
-      this.componentMaps.put(pipe.gui.imperial.pipe.models.petrinet.Place.class, this.places);
-      this.componentMaps.put(Transition.class, this.transitions);
+      this.componentMaps.put(DiscretePlace.class, this.places);
+      this.componentMaps.put(DiscreteTransition.class, this.transitions);
       this.componentMaps.put(InboundArc.class, this.inboundArcs);
       this.componentMaps.put(OutboundArc.class, this.outboundArcs);
       this.componentMaps.put(pipe.gui.imperial.pipe.models.petrinet.Token.class, this.tokens);
@@ -167,7 +167,7 @@ public class PetriNet {
       this.pnmlName = null;
    }
 
-   public void addPlace(pipe.gui.imperial.pipe.models.petrinet.Place place) {
+   public void addPlace(DiscretePlace place) {
       if (!this.places.containsValue(place)) {
          this.places.put(place.getId(), place);
          place.addPropertyChangeListener(new PetriNet.NameChangeListener(place, this.places));
@@ -175,14 +175,14 @@ public class PetriNet {
       }
    }
 
-   public Place getPlace(String id) {
+   public DiscretePlace getPlace(String id) {
       if (this.places.containsKey (id)) {
-         return (Place) places.get (id);
+         return (DiscretePlace) places.get (id);
       }
       return null;
    }
 
-   public Collection<Place> getPlaces() {
+   public Collection<DiscretePlace> getPlaces() {
       return this.places.values();
    }
 
@@ -273,7 +273,7 @@ public class PetriNet {
       this.changeSupport.firePropertyChange("deleteArc", arc, (Object)null);
    }
 
-   public void addTransition(Transition transition) {
+   public void addTransition(DiscreteTransition transition) {
       if (!this.transitions.containsValue(transition)) {
          this.transitions.put(transition.getId(), transition);
          transition.addPropertyChangeListener(new PetriNet.NameChangeListener(transition, this.transitions));
@@ -307,7 +307,7 @@ public class PetriNet {
       this.changeSupport.firePropertyChange("deleteArc", arc, (Object)null);
    }
 
-   public Collection<Transition> getTransitions() {
+   public Collection<DiscreteTransition> getTransitions() {
       return this.transitions.values();
    }
 
@@ -371,7 +371,7 @@ public class PetriNet {
             i$ = referencedPlaces.iterator();
 
             while(i$.hasNext()) {
-               pipe.gui.imperial.pipe.models.petrinet.Place place = (pipe.gui.imperial.pipe.models.petrinet.Place)i$.next();
+               DiscretePlace place = (DiscretePlace)i$.next();
                message.append(place.getId());
             }
 
@@ -399,7 +399,7 @@ public class PetriNet {
       Iterator i$ = this.places.values().iterator();
 
       while(i$.hasNext()) {
-         pipe.gui.imperial.pipe.models.petrinet.Place place = (pipe.gui.imperial.pipe.models.petrinet.Place)i$.next();
+         DiscretePlace place = (DiscretePlace)i$.next();
          if (place.getTokenCount(token.getId()) > 0) {
             result.add(place);
          }
@@ -590,7 +590,7 @@ public class PetriNet {
          Iterator i$ = PetriNet.this.getPlaces().iterator();
 
          while(i$.hasNext()) {
-            pipe.gui.imperial.pipe.models.petrinet.Place place = (Place)i$.next();
+            DiscretePlace place = (DiscretePlace)i$.next();
             int count = place.getTokenCount(oldId);
             place.removeAllTokens(oldId);
             place.setTokenCount(newId, count);

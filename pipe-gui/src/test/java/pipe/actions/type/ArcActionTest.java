@@ -6,24 +6,18 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 import pipe.actions.gui.ArcAction;
+import pipe.actions.gui.PipeApplicationModel;
 import pipe.controllers.PetriNetController;
 import pipe.controllers.application.PipeApplicationController;
 import pipe.controllers.arcCreator.ArcActionCreator;
 import pipe.gui.PetriNetTab;
-import pipe.actions.gui.PipeApplicationModel;
+import pipe.gui.imperial.pipe.models.petrinet.*;
+import pipe.gui.imperial.pipe.visitor.connectable.arc.ArcSourceVisitor;
 import pipe.historyActions.component.AddPetriNetObject;
 import pipe.utilities.transformers.Contains;
-import pipe.views.PipeApplicationView;
 import pipe.views.InhibitorArcHead;
+import pipe.views.PipeApplicationView;
 import pipe.views.TemporaryArcView;
-import pipe.gui.imperial.pipe.models.petrinet.ArcPoint;
-import pipe.gui.imperial.pipe.models.petrinet.OutboundArc;
-import pipe.gui.imperial.pipe.models.petrinet.DiscretePlace;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
-import pipe.gui.imperial.pipe.models.petrinet.DiscreteTransition;
-import pipe.gui.imperial.pipe.models.petrinet.Transition;
-import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
-import pipe.gui.imperial.pipe.visitor.connectable.arc.ArcSourceVisitor;
 
 import javax.swing.event.UndoableEditListener;
 import java.awt.event.InputEvent;
@@ -97,7 +91,7 @@ public class ArcActionTest {
         action.doConnectableAction(transition, mockController);
 
 
-        Place place = new DiscretePlace("", "");
+        DiscretePlace place = new DiscretePlace("", "");
         when(mockCreatorVisitor.canCreate(transition, place)).thenReturn(true);
 
         action.doConnectableAction(place, mockController);
@@ -111,11 +105,11 @@ public class ArcActionTest {
         action.doConnectableAction(transition, mockController);
 
 
-        Place place = new DiscretePlace("", "");
+        DiscretePlace place = new DiscretePlace("", "");
         when(mockCreatorVisitor.canCreate(transition, place)).thenReturn(true);
 
         action.doConnectableAction(place, mockController);
-        verify(mockCreatorVisitor).createOutboundArc(eq(place), eq(transition), anyListOf(ArcPoint.class));
+        verify(mockCreatorVisitor).createOutboundArc(eq(place), eq((DiscreteTransition) transition), anyListOf(ArcPoint.class));
     }
 
     @Test
@@ -129,11 +123,11 @@ public class ArcActionTest {
         when(mockSourceVisitor.canStart(transition)).thenReturn(true);
         action.doConnectableAction(transition, mockController);
 
-        Place place = new DiscretePlace("", "");
+        DiscretePlace place = new DiscretePlace("", "");
         when(mockCreatorVisitor.canCreate(transition, place)).thenReturn(true);
 
         OutboundArc mockArc = mock(OutboundArc.class);
-        when(mockCreatorVisitor.createOutboundArc(any(Place.class), any(Transition.class), anyListOf(ArcPoint.class))).thenReturn(
+        when(mockCreatorVisitor.createOutboundArc(any(DiscretePlace.class), any(DiscreteTransition.class), anyListOf(ArcPoint.class))).thenReturn(
                 mockArc);
 
 

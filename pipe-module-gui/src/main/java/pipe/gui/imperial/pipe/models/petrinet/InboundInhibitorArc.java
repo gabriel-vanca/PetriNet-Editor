@@ -1,23 +1,18 @@
 package pipe.gui.imperial.pipe.models.petrinet;
 
+import pipe.gui.imperial.state.State;
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import pipe.gui.imperial.pipe.models.petrinet.ArcType;
-import pipe.gui.imperial.pipe.models.petrinet.InboundArc;
-import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
-import pipe.gui.imperial.pipe.models.petrinet.Transition;
-import pipe.gui.imperial.state.State;
-
 public class InboundInhibitorArc extends InboundArc {
-   public InboundInhibitorArc(pipe.gui.imperial.pipe.models.petrinet.Place source, Transition target) {
+   public InboundInhibitorArc(DiscretePlace source, DiscreteTransition target) {
       super(source, target, new HashMap(), ArcType.INHIBITOR);
    }
 
    public final boolean canFire(PetriNet petriNet, State state) {
-      Map tokens = state.getTokens(((Place)this.getSource()).getId());
+      Map tokens = state.getTokens(((DiscretePlace)this.getSource()).getId());
       Iterator i$ = tokens.values().iterator();
 
       Integer tokenCount;

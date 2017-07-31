@@ -315,12 +315,12 @@ public class CopyPasteManager extends javax.swing.JComponent
         final Collection<Connectable> connectables = new LinkedList<>();
         PetriNetComponentVisitor connectableVisitor = new PlaceTransitionVisitor() {
             @Override
-            public void visit(Place place) {
+            public void visit(DiscretePlace place) {
                 connectables.add(place);
             }
 
             @Override
-            public void visit(Transition transition) {
+            public void visit(DiscreteTransition transition) {
                 connectables.add(transition);
             }
         };
@@ -496,7 +496,7 @@ public class CopyPasteManager extends javax.swing.JComponent
          * @param place
          */
         @Override
-        public void visit(Place place) {
+        public void visit(DiscretePlace place) {
             adjustLocation(place);
         }
 
@@ -525,7 +525,7 @@ public class CopyPasteManager extends javax.swing.JComponent
          * @param transition to be included in the bounds 
          */
         @Override
-        public void visit(Transition transition) {
+        public void visit(DiscreteTransition transition) {
             adjustLocation(transition);
         }
 

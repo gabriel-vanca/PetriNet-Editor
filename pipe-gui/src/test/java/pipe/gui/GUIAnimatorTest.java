@@ -8,9 +8,9 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 import pipe.controllers.GUIAnimator;
 import pipe.controllers.application.PipeApplicationController;
-import pipe.historyActions.AnimationHistory;
 import pipe.gui.imperial.pipe.animation.Animator;
-import pipe.gui.imperial.pipe.models.petrinet.Transition;
+import pipe.gui.imperial.pipe.models.petrinet.DiscreteTransition;
+import pipe.historyActions.AnimationHistory;
 
 import static org.mockito.Mockito.*;
 
@@ -35,7 +35,7 @@ public class GUIAnimatorTest {
 
     @Test
     public void firingAddsToHistoryAndFires() {
-        Transition transition = mock(Transition.class);
+        DiscreteTransition transition = mock(DiscreteTransition.class);
         animator.fireTransition(transition);
 
         InOrder inOrder = inOrder(mockHistory);
@@ -48,7 +48,7 @@ public class GUIAnimatorTest {
     public void ifStepForwardAnimatesTransition() {
         when(mockHistory.isStepForwardAllowed()).thenReturn(true);
         when(mockHistory.getCurrentPosition()).thenReturn(1);
-        Transition transition = mock(Transition.class);
+        DiscreteTransition transition = mock(DiscreteTransition.class);
         when(mockHistory.getTransition(2)).thenReturn(transition);
 
         animator.stepForward();
@@ -60,7 +60,7 @@ public class GUIAnimatorTest {
     public void ifCannotStepForwardDoesNotAnimateTransition() {
         when(mockHistory.isStepForwardAllowed()).thenReturn(false);
         when(mockHistory.getCurrentPosition()).thenReturn(1);
-        Transition transition = mock(Transition.class);
+        DiscreteTransition transition = mock(DiscreteTransition.class);
         when(mockHistory.getTransition(2)).thenReturn(transition);
 
         animator.stepForward();
@@ -71,7 +71,7 @@ public class GUIAnimatorTest {
     @Test
     public void ifStepBackwardAnimatesTransition() {
         when(mockHistory.isStepBackAllowed()).thenReturn(true);
-        Transition transition = mock(Transition.class);
+        DiscreteTransition transition = mock(DiscreteTransition.class);
         when(mockHistory.getCurrentTransition()).thenReturn(transition);
 
         animator.stepBack();
@@ -82,7 +82,7 @@ public class GUIAnimatorTest {
     @Test
     public void ifCannotStepBackwardDoesNotAnimateTransition() {
         when(mockHistory.isStepBackAllowed()).thenReturn(true);
-        Transition transition = mock(Transition.class);
+        DiscreteTransition transition = mock(DiscreteTransition.class);
         when(mockHistory.getCurrentTransition()).thenReturn(transition);
 
         animator.stepForward();
@@ -92,7 +92,7 @@ public class GUIAnimatorTest {
 
     @Test
     public void doRandomFiringClearsForwardsThenAddsToHistory() {
-        Transition transition = mock(Transition.class);
+        DiscreteTransition transition = mock(DiscreteTransition.class);
         when(mockAnimator.getRandomEnabledTransition()).thenReturn(transition);
         animator.doRandomFiring();
         InOrder inOrder = inOrder(mockHistory);
@@ -102,7 +102,7 @@ public class GUIAnimatorTest {
 
     @Test
     public void doRandomFiringFiresPetriNet() {
-        Transition transition = mock(Transition.class);
+        DiscreteTransition transition = mock(DiscreteTransition.class);
         when(mockAnimator.getRandomEnabledTransition()).thenReturn(transition);
         animator.doRandomFiring();
         verify(mockAnimator).fireTransition(transition);

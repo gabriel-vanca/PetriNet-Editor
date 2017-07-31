@@ -1,12 +1,7 @@
 package pipe.controllers.arcCreator;
 
 
-import pipe.gui.imperial.pipe.models.petrinet.Connectable;
-import pipe.gui.imperial.pipe.models.petrinet.ArcPoint;
-import pipe.gui.imperial.pipe.models.petrinet.InboundArc;
-import pipe.gui.imperial.pipe.models.petrinet.OutboundArc;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
-import pipe.gui.imperial.pipe.models.petrinet.Transition;
+import pipe.gui.imperial.pipe.models.petrinet.*;
 
 import java.util.List;
 
@@ -22,7 +17,7 @@ public interface ArcActionCreator {
      * @param arcPoints on the arc
      * @return inbound arc
      */
-    InboundArc createInboundArc(Place source, Transition target, List<ArcPoint> arcPoints);
+    InboundArc createInboundArc(DiscretePlace source, DiscreteTransition target, List<ArcPoint> arcPoints);
 
     /**
      * Creates an outbound arc
@@ -31,7 +26,7 @@ public interface ArcActionCreator {
      * @param arcPoints on the arc
      * @return outbound arc
      */
-    OutboundArc createOutboundArc(Place target, Transition source, List<ArcPoint> arcPoints);
+    OutboundArc createOutboundArc(DiscretePlace target, DiscreteTransition source, List<ArcPoint> arcPoints);
 
     /**
      * Return true if can create an arc from source to target

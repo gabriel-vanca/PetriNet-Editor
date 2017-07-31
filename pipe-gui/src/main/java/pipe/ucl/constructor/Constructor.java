@@ -40,9 +40,9 @@ public class Constructor {
 
         for (TransAssertion transAssertion : TransAssertionList) {
 
-            Place startState = GetState (transAssertion.getStartStateId (), transAssertion.getStartStateName (), transAssertion.getStartStateDate (), StateType.INTERMEDIARY);
-            Place endState = GetState (transAssertion.getEndStateId (), transAssertion.getEndStateName (), transAssertion.getEndStateDate (), StateType.INTERMEDIARY);
-            Transition gate = AddGate ("name", transAssertion.getTime (), transAssertion.getSign (), transAssertion.getAction (), transAssertion.getAuthor ());
+            DiscretePlace startState = GetState (transAssertion.getStartStateId (), transAssertion.getStartStateName (), transAssertion.getStartStateDate (), StateType.INTERMEDIARY);
+            DiscretePlace endState = GetState (transAssertion.getEndStateId (), transAssertion.getEndStateName (), transAssertion.getEndStateDate (), StateType.INTERMEDIARY);
+            DiscreteTransition gate = AddGate ("name", transAssertion.getTime (), transAssertion.getSign (), transAssertion.getAction (), transAssertion.getAuthor ());
             AddArc (startState, gate);
             AddArc (gate, endState);
         }
@@ -52,12 +52,12 @@ public class Constructor {
 
     private void Layout() {
         Layout.layoutHierarchical (petriNetController.getPetriNet (), 40,
-                50,50, 150, SwingConstants.NORTH);
+                50,50, 350, SwingConstants.NORTH);
 //        componentCreatorManager..changed(petriNet);
     }
 
-    private Place GetState(String id, String name, String time, StateType stateType) {
-        Place place = null;
+    private DiscretePlace GetState(String id, String name, String time, StateType stateType) {
+        DiscretePlace place = null;
 
         try {
             place = petriNetController.getPetriNet ().getPlace (id);
@@ -72,15 +72,18 @@ public class Constructor {
         return place;
     }
 
-    private Place AddState(String id, String name, String time, StateType stateType) {
-        Place place = null;
+    private DiscretePlace AddState(String id, String name, String time, StateType stateType) {
+        DiscretePlace place = null;
 
         try {
             int randomX, randomY;
             randomX = ThreadLocalRandom.current ().nextInt (10, 1270);
             randomY = ThreadLocalRandom.current ().nextInt (10, 675);
 
-//            String id = petriNetController.getUniquePlaceName ();
+            if(id == null || id == "")
+            {
+                id = petriNetController.getUniquePlaceName ();
+            }
             place = new DiscretePlace (id, name, time, stateType);
             place.setX (randomX);
             place.setY (randomY);
@@ -94,7 +97,7 @@ public class Constructor {
         return place;
     }
 
-    private Transition AddGate(String name, String time, Boolean sign, String action, String author) {
+    private DiscreteTransition AddGate(String name, String time, Boolean sign, String action, String author) {
         try{
             int randomX, randomY;
             randomX = ThreadLocalRandom.current ().nextInt (10, 1270);
@@ -115,39 +118,11 @@ public class Constructor {
         return null;
     }
 
-    private void AddArc(Connectable connectableSource, Connectable connectableDestination) {
-//        TemporaryArcView<? extends Connectable> temporaryArcView = null;
+    private void AddArc(AbstractConnectable connectableSource, AbstractConnectable connectableDestination) {
 
-        CreateAction selectedAction = componentCreatorManager.getArcAction(); //applicationModel.getSelectedAction();
+        CreateAction selectedAction = componentCreatorManager.getArcAction();
         selectedAction.doConnectableAction(connectableSource, petriNetController);
         selectedAction.doConnectableAction(connectableDestination, petriNetController);
-
-//        ArcCreatorVisitor visitor;
-//
-//        temporaryArcView.getSourceConnectable().accept(visitor);
-//        boolean inbound = visitor.place != null;
-//        connectable.accept(visitor);
-//        PetriNetController petriNetController = controller.getActivePetriNetController();
-//        PetriNet net = petriNetController.getPetriNet();
-//        Arc arc;
-//        if (inbound) {
-//            arc = arcCreator.createInboundArc(visitor.place, visitor.transition,
-//                    temporaryArcView.getIntermediatePoints());
-//
-//        } else {
-//            arc = arcCreator.createOutboundArc(visitor.place, visitor.transition,
-//                    temporaryArcView.getIntermediatePoints());
-//        }
-//
-//        registerUndoEvent(new AddPetriNetObject (arc, net));
-//        net.add(arc);
-//    } catch (PetriNetComponentException e) {
-//        LOGGER.log(Level.SEVERE, e.getMessage());
-//    }
-//
-//        tab.remove(temporaryArcView);
-//        tab.repaint();
-//    temporaryArcView = null;
 
     }
 }

@@ -50,7 +50,7 @@ public final class ClonePetriNet {
       i$ = this.petriNet.getPlaces().iterator();
 
       while(i$.hasNext()) {
-         Place place = (Place)i$.next();
+         DiscretePlace place = (DiscretePlace)i$.next();
          this.visit(place);
       }
 
@@ -139,7 +139,7 @@ public final class ClonePetriNet {
          LOGGER.log(Level.SEVERE, var6.getMessage());
       }
 
-      Place newPlace = cloner.cloned;
+      DiscretePlace newPlace = cloner.cloned;
       Iterator i$ = place.getTokenCounts().entrySet().iterator();
 
       while(i$.hasNext()) {
@@ -160,7 +160,7 @@ public final class ClonePetriNet {
          LOGGER.log(Level.SEVERE, var5.getMessage());
       }
 
-      Transition newTransition = cloner.cloned;
+      DiscreteTransition newTransition = cloner.cloned;
       if (transition.getRate().getRateType().equals(RateType.RATE_PARAMETER)) {
          FunctionalRateParameter rateParameter = (FunctionalRateParameter)transition.getRate();
          newTransition.setRate((Rate)this.rateParameters.get(rateParameter.getId()));
@@ -171,8 +171,8 @@ public final class ClonePetriNet {
    }
 
    public void visit(InboundArc arc) {
-      Place source = (Place)this.places.get(((Place)arc.getSource()).getId());
-      Transition target = (Transition)this.transitions.get(((Transition)arc.getTarget()).getId());
+      DiscretePlace source = (DiscretePlace)this.places.get(((DiscretePlace)arc.getSource()).getId());
+      DiscreteTransition target = (DiscreteTransition)this.transitions.get(((DiscreteTransition)arc.getTarget()).getId());
       Object newArc;
       switch(arc.getType()) {
       case INHIBITOR:
@@ -193,8 +193,8 @@ public final class ClonePetriNet {
    }
 
    public void visit(OutboundArc arc) {
-      Place target = (Place)this.places.get(((Place)arc.getTarget()).getId());
-      Transition source = (Transition)this.transitions.get(((Transition)arc.getSource()).getId());
+      DiscretePlace target = (DiscretePlace)this.places.get(((DiscretePlace)arc.getTarget()).getId());
+      DiscreteTransition source = (DiscreteTransition)this.transitions.get(((DiscreteTransition)arc.getSource()).getId());
       OutboundArc newArc = new OutboundNormalArc(source, target, arc.getTokenWeights());
       List arcPoints = arc.getArcPoints();
 

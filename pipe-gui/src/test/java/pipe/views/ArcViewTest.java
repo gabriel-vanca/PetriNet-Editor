@@ -36,8 +36,8 @@ public class ArcViewTest {
     private Point2D.Double start = new Point2D.Double(50, 39);
     private Point2D.Double end = new Point2D.Double(100, 500);
 
-    private Place source;
-    private Transition target;
+    private DiscretePlace source;
+    private DiscreteTransition target;
 
     @Before
     public void setUp() {

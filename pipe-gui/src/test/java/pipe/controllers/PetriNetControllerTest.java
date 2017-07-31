@@ -80,7 +80,7 @@ public class PetriNetControllerTest {
 
     @Test
     public void deletesSelectedRemovesFromNet() throws PetriNetComponentException {
-        Place place = new DiscretePlace("", "");
+        DiscretePlace place = new DiscretePlace("", "");
         net.addPlace(place);
 
         controller.select(place);
@@ -90,7 +90,7 @@ public class PetriNetControllerTest {
 
     @Test
     public void deletingSelectionReturnsListOfAbstractUndoEdits() throws PetriNetComponentException {
-        Place place = new DiscretePlace("", "");
+        DiscretePlace place = new DiscretePlace("", "");
         net.addPlace(place);
 
         controller.select(place);
@@ -102,7 +102,7 @@ public class PetriNetControllerTest {
 
     @Test
     public void deleteComponentRemovesFromPetriNet() throws PetriNetComponentException {
-        Place place = new DiscretePlace("", "");
+        DiscretePlace place = new DiscretePlace("", "");
         net.addPlace(place);
 
         controller.delete(place);
@@ -112,7 +112,7 @@ public class PetriNetControllerTest {
 
     @Test
     public void deletingComponentAddsToHistoryManager() throws PetriNetComponentException {
-        Place place = new DiscretePlace("", "");
+        DiscretePlace place = new DiscretePlace("", "");
         net.addPlace(place);
 
         UndoableEdit edit = controller.delete(place);
@@ -123,7 +123,7 @@ public class PetriNetControllerTest {
 
     @Test
     public void deletesSelectedNotifiesObserver() throws PetriNetComponentException {
-        Place place = new DiscretePlace("", "");
+        DiscretePlace place = new DiscretePlace("", "");
         net.addPlace(place);
 
         PropertyChangeListener mockListener = mock(PropertyChangeListener.class);
@@ -136,7 +136,7 @@ public class PetriNetControllerTest {
 
     @Test
     public void selectsItemLocatedWithinSelectionArea() {
-        Place place = mock(Place.class);
+        DiscretePlace place = mock(DiscretePlace.class);
         when(place.getX()).thenReturn(5);
         when(place.getY()).thenReturn(10);
         when(place.getWidth()).thenReturn(5);
@@ -155,7 +155,7 @@ public class PetriNetControllerTest {
      */
     @Test
     public void selectsItemWithWidthAndHeightWithinSelectionArea() {
-        Place place = mock(Place.class);
+        DiscretePlace place = mock(DiscretePlace.class);
         when(place.getX()).thenReturn(0);
         when(place.getY()).thenReturn(0);
         when(place.getWidth()).thenReturn(10);
@@ -203,9 +203,9 @@ public class PetriNetControllerTest {
 
     @Test
     public void translatesSelectedItemsCorrectly() throws PetriNetComponentException {
-        Transition transition = mock(Transition.class);
+        DiscreteTransition transition = mock(DiscreteTransition.class);
         when(transition.isDraggable()).thenReturn(true);
-        Place place = mock(Place.class);
+        DiscretePlace place = mock(DiscretePlace.class);
         when(place.isDraggable()).thenReturn(true);
         net.addPlace(place);
         net.addTransition(transition);

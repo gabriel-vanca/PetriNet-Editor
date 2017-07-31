@@ -4,7 +4,7 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import pipe.gui.imperial.pipe.models.petrinet.Transition;
+import pipe.gui.imperial.pipe.models.petrinet.DiscreteTransition;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -29,7 +29,7 @@ public class AnimationHistoryTest {
 
     @Test
     public void addingTransitionNotifiesObserver() {
-        Transition transition = mock(Transition.class);
+        DiscreteTransition transition = mock(DiscreteTransition.class);
         history.addObserver(observer);
         history.addHistoryItem(transition);
         verify(observer).update(any(Observable.class), any(Object.class));
@@ -44,7 +44,7 @@ public class AnimationHistoryTest {
 
     @Test
     public void steppingForwardNotifiesObserver() {
-        Transition transition = mock(Transition.class);
+        DiscreteTransition transition = mock(DiscreteTransition.class);
         history.addHistoryItem(transition);
         history.stepBackwards();
         history.addObserver(observer);
@@ -54,7 +54,7 @@ public class AnimationHistoryTest {
 
     @Test
     public void steppingBackwardNotifiesObserver() {
-        Transition transition = mock(Transition.class);
+        DiscreteTransition transition = mock(DiscreteTransition.class);
         history.addHistoryItem(transition);
         history.addObserver(observer);
         history.stepBackwards();
@@ -63,14 +63,14 @@ public class AnimationHistoryTest {
 
     @Test
     public void returnsLatestTransitionAdded() {
-        Transition transition = mock(Transition.class);
+        DiscreteTransition transition = mock(DiscreteTransition.class);
         history.addHistoryItem(transition);
         assertEquals(transition, history.getCurrentTransition());
     }
 
     @Test
     public void incrementsCurrentPositionOnAdd() {
-        Transition transition = mock(Transition.class);
+        DiscreteTransition transition = mock(DiscreteTransition.class);
         history.addHistoryItem(transition);
         assertEquals(0, history.getCurrentPosition());
 
@@ -90,14 +90,14 @@ public class AnimationHistoryTest {
 
     @Test
     public void whenContainsOneItemCanStepBack() {
-        Transition transition = mock(Transition.class);
+        DiscreteTransition transition = mock(DiscreteTransition.class);
         history.addHistoryItem(transition);
         assertTrue(history.isStepBackAllowed());
     }
 
     @Test
     public void whenAtTailCannotStepBackward() {
-        Transition transition = mock(Transition.class);
+        DiscreteTransition transition = mock(DiscreteTransition.class);
         history.addHistoryItem(transition);
         history.stepBackwards();
         assertFalse(history.isStepBackAllowed());
@@ -105,14 +105,14 @@ public class AnimationHistoryTest {
 
     @Test
     public void whenAtHeadCannotStepForward() {
-        Transition transition = mock(Transition.class);
+        DiscreteTransition transition = mock(DiscreteTransition.class);
         history.addHistoryItem(transition);
         assertFalse(history.isStepForwardAllowed());
     }
 
     @Test
     public void whenNotAtHeadCanStepForward() {
-        Transition transition = mock(Transition.class);
+        DiscreteTransition transition = mock(DiscreteTransition.class);
         history.addHistoryItem(transition);
         history.stepBackwards();
         assertTrue(history.isStepForwardAllowed());
@@ -125,9 +125,9 @@ public class AnimationHistoryTest {
      */
     @Test
     public void clearStepsForwardRemovesFutureSteps() {
-        Transition transition1 = mock(Transition.class);
-        Transition transition2 = mock(Transition.class);
-        Transition transition3 = mock(Transition.class);
+        DiscreteTransition transition1 = mock(DiscreteTransition.class);
+        DiscreteTransition transition2 = mock(DiscreteTransition.class);
+        DiscreteTransition transition3 = mock(DiscreteTransition.class);
 
         history.addHistoryItem(transition1);
         history.addHistoryItem(transition2);
@@ -142,8 +142,8 @@ public class AnimationHistoryTest {
 
     @Test
     public void getTransitionReturnsCorrectTransition() {
-        Transition transition1 = mock(Transition.class);
-        Transition transition2 = mock(Transition.class);
+        DiscreteTransition transition1 = mock(DiscreteTransition.class);
+        DiscreteTransition transition2 = mock(DiscreteTransition.class);
 
         history.addHistoryItem(transition1);
         history.addHistoryItem(transition2);

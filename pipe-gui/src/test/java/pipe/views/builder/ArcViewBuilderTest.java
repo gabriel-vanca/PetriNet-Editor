@@ -5,18 +5,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
+import pipe.actions.gui.PipeApplicationModel;
 import pipe.controllers.NormalArcViewBuilder;
 import pipe.controllers.PetriNetController;
 import pipe.gui.PetriNetTab;
-import pipe.actions.gui.PipeApplicationModel;
+import pipe.gui.imperial.pipe.models.petrinet.*;
 import pipe.views.ArcView;
-import pipe.gui.imperial.pipe.models.petrinet.Connectable;
-import pipe.gui.imperial.pipe.models.petrinet.InboundArc;
-import pipe.gui.imperial.pipe.models.petrinet.InboundNormalArc;
-import pipe.gui.imperial.pipe.models.petrinet.DiscretePlace;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
-import pipe.gui.imperial.pipe.models.petrinet.DiscreteTransition;
-import pipe.gui.imperial.pipe.models.petrinet.Transition;
 
 import java.util.HashMap;
 
@@ -38,8 +32,8 @@ public class ArcViewBuilderTest {
 
     @Before
     public void setUp() {
-        Place source = new DiscretePlace("source", "source");
-        Transition transition = new DiscreteTransition("id", "name");
+        DiscretePlace source = new DiscretePlace("source", "source");
+        DiscreteTransition transition = new DiscreteTransition("id", "name");
 
         arc = new InboundNormalArc(source, transition, new HashMap<String, String>());
         arc.setId("id");

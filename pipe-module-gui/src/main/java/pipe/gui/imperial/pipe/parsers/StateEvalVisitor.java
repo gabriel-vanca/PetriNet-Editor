@@ -1,12 +1,13 @@
 package pipe.gui.imperial.pipe.parsers;
 
-import java.util.Iterator;
-import java.util.Map;
 import org.antlr.v4.runtime.tree.TerminalNode;
 import pipe.gui.imperial.pipe.exceptions.PetriNetComponentNotFoundException;
+import pipe.gui.imperial.pipe.models.petrinet.DiscretePlace;
 import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
 import pipe.gui.imperial.state.State;
+
+import java.util.Iterator;
+import java.util.Map;
 
 public final class StateEvalVisitor extends RateGrammarBaseVisitor {
    private final PetriNet petriNet;
@@ -58,7 +59,7 @@ public final class StateEvalVisitor extends RateGrammarBaseVisitor {
 
    public Double visitCapacity(RateGrammarParser.CapacityContext ctx) {
       try {
-         Place place = this.getPlace(ctx.ID().getText());
+         DiscretePlace place = this.getPlace(ctx.ID().getText());
          return (double)place.getCapacity();
       } catch (PetriNetComponentNotFoundException var3) {
          return 0.0D;
@@ -83,7 +84,7 @@ public final class StateEvalVisitor extends RateGrammarBaseVisitor {
       return Math.ceil(value.doubleValue());
    }
 
-   public Place getPlace(String id) throws PetriNetComponentNotFoundException {
-      return (Place)this.petriNet.getComponent(id, Place.class);
+   public DiscretePlace getPlace(String id) throws PetriNetComponentNotFoundException {
+      return (DiscretePlace)this.petriNet.getComponent(id, DiscretePlace.class);
    }
 }

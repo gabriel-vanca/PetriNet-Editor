@@ -695,7 +695,7 @@ public class ArcPath implements Shape, Cloneable {
 
     private class ArcConnectableVisitor implements ConnectableVisitor {
         @Override
-        public void visit(Place place) {
+        public void visit(DiscretePlace place) {
             if (pathPoints.get(getEndIndex()).isCurved()) {
                 double angle = Math.toRadians(transitionAngle);
                 ArcPathPoint myPoint = pathPoints.get(getEndIndex());
@@ -712,7 +712,7 @@ public class ArcPath implements Shape, Cloneable {
         }
 
         @Override
-        public void visit(Transition transition) {
+        public void visit(DiscreteTransition transition) {
             if (pathPoints.get(1).isCurved()) {
                 double angle = Math.toRadians(transitionAngle);
                 ArcPathPoint myPoint = pathPoints.get(1);

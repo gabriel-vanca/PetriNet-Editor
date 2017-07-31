@@ -1,29 +1,22 @@
 package pipe.gui.imperial.pipe.models.petrinet;
 
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Map.Entry;
-
-import pipe.gui.imperial.pipe.models.petrinet.AbstractArc;
-import pipe.gui.imperial.pipe.models.petrinet.ArcType;
-import pipe.gui.imperial.pipe.models.petrinet.InboundArc;
-import pipe.gui.imperial.pipe.models.petrinet.OutboundArc;
-import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
-import pipe.gui.imperial.pipe.models.petrinet.Transition;
 import pipe.gui.imperial.pipe.parsers.FunctionalResults;
 import pipe.gui.imperial.pipe.parsers.FunctionalWeightParser;
 import pipe.gui.imperial.pipe.parsers.PetriNetWeightParser;
 import pipe.gui.imperial.pipe.parsers.StateEvalVisitor;
 import pipe.gui.imperial.state.State;
 
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+
 public class OutboundNormalArc extends OutboundArc {
-   public OutboundNormalArc(pipe.gui.imperial.pipe.models.petrinet.Transition source, pipe.gui.imperial.pipe.models.petrinet.Place target, Map tokenWeights) {
+   public OutboundNormalArc(DiscreteTransition source, DiscretePlace target, Map tokenWeights) {
       super(source, target, tokenWeights, ArcType.NORMAL);
    }
 
-   public final boolean canFire(pipe.gui.imperial.pipe.models.petrinet.PetriNet petriNet, State state) {
-      pipe.gui.imperial.pipe.models.petrinet.Place place = (pipe.gui.imperial.pipe.models.petrinet.Place)this.getTarget();
+   public final boolean canFire(PetriNet petriNet, State state) {
+      DiscretePlace place = (DiscretePlace)this.getTarget();
       if (!place.hasCapacityRestriction()) {
          return true;
       } else {
@@ -35,7 +28,7 @@ public class OutboundNormalArc extends OutboundArc {
    }
 
    private int getNumberOfTokensLeavingPlace(State state, pipe.gui.imperial.pipe.models.petrinet.PetriNet petriNet) {
-      pipe.gui.imperial.pipe.models.petrinet.Place place = (pipe.gui.imperial.pipe.models.petrinet.Place)this.getTarget();
+      DiscretePlace place = (DiscretePlace)this.getTarget();
       int count = 0;
       Iterator i$ = petriNet.outboundArcs(place).iterator();
 
@@ -69,7 +62,7 @@ public class OutboundNormalArc extends OutboundArc {
    }
 
    private int getTokensInPlace(State state) {
-      pipe.gui.imperial.pipe.models.petrinet.Place place = (Place)this.getTarget();
+      DiscretePlace place = (DiscretePlace)this.getTarget();
       int count = 0;
 
       Integer value;

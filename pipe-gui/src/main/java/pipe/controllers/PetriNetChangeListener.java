@@ -105,7 +105,7 @@ public class PetriNetChangeListener implements PropertyChangeListener {
      */
     @EventAction(PetriNet.NEW_PLACE_CHANGE_MESSAGE)
     private void newPlace(PropertyChangeEvent propertyChangeEvent) {
-        Place place = (Place) propertyChangeEvent.getNewValue();
+        DiscretePlace place = (DiscretePlace) propertyChangeEvent.getNewValue();
         PlaceViewBuilder builder = new PlaceViewBuilder(place, controller);
         PlaceView view = builder.build(petriNetTab, applicationModel);
         petriNetTab.addNewPetriNetComponent(view);
@@ -177,7 +177,7 @@ public class PetriNetChangeListener implements PropertyChangeListener {
      */
     @EventAction(PetriNet.DELETE_PLACE_CHANGE_MESSAGE)
     private void deletePlace(PropertyChangeEvent propertyChangeEvent) {
-        Place place = (Place) propertyChangeEvent.getOldValue();
+        DiscretePlace place = (DiscretePlace) propertyChangeEvent.getOldValue();
         petriNetTab.deletePetriNetComponent(place.getId());
 
     }

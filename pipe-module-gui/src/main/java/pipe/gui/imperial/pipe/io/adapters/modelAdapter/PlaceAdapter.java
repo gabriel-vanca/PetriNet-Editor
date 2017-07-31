@@ -36,7 +36,7 @@ public final class PlaceAdapter extends XmlAdapter {
 
    public Place unmarshal(AdaptedPlace adaptedPlace) throws Exception {
       NameDetails nameDetails = adaptedPlace.getName();
-      Place place = new DiscretePlace(adaptedPlace.getId(), nameDetails.getName());
+      DiscretePlace place = new DiscretePlace(adaptedPlace.getId(), nameDetails.getName());
       place.setCapacity(adaptedPlace.getCapacity().intValue());
       ConnectableUtils.setConnectablePosition(place, adaptedPlace);
       ConnectableUtils.setConntactableNameOffset(place, adaptedPlace);

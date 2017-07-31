@@ -8,15 +8,8 @@ import org.mockito.runners.MockitoJUnitRunner;
 import pipe.controllers.PetriNetController;
 import pipe.controllers.application.PipeApplicationController;
 import pipe.gui.PetriNetTab;
+import pipe.gui.imperial.pipe.models.petrinet.*;
 import pipe.views.PipeApplicationView;
-import pipe.gui.imperial.pipe.models.petrinet.ArcPoint;
-import pipe.gui.imperial.pipe.models.petrinet.InboundArc;
-import pipe.gui.imperial.pipe.models.petrinet.InboundNormalArc;
-import pipe.gui.imperial.pipe.models.petrinet.DiscretePlace;
-import pipe.gui.imperial.pipe.models.petrinet.Place;
-import pipe.gui.imperial.pipe.models.petrinet.DiscreteTransition;
-import pipe.gui.imperial.pipe.models.petrinet.Transition;
-import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -58,8 +51,8 @@ public class NormalCreatorTest {
 
     @Test
     public void createsCorrectArc() {
-        Place source = new DiscretePlace("", "");
-        Transition transition = new DiscreteTransition("", "");
+        DiscretePlace source = new DiscretePlace("", "");
+        DiscreteTransition transition = new DiscreteTransition("", "");
         when(mockPetriNetController.getSelectedToken()).thenReturn(DEFAULT_TOKEN_ID);
          InboundArc actual = creator.createInboundArc(source, transition, new LinkedList<ArcPoint>());
 
