@@ -3,7 +3,6 @@ package pipe.gui.imperial.pipe.naming;
 import java.util.Iterator;
 import pipe.gui.imperial.pipe.models.petrinet.PetriNet;
 import pipe.gui.imperial.pipe.models.petrinet.Transition;
-import pipe.gui.imperial.pipe.naming.ComponentNamer;
 
 public class TransitionNamer extends ComponentNamer {
    public TransitionNamer(PetriNet petriNet) {
@@ -12,7 +11,7 @@ public class TransitionNamer extends ComponentNamer {
    }
 
    private void initialiseTransitionNames() {
-      Iterator i$ = this.petriNet.getTransitions().iterator();
+      Iterator i$ = this.petriNet.getTransitionsMap ().iterator();
 
       while(i$.hasNext()) {
          Transition transition = (Transition)i$.next();

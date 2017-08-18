@@ -85,7 +85,7 @@ public class PetriNetControllerTest {
 
         controller.select(place);
         controller.deleteSelection();
-        assertFalse(net.getPlaces().contains(place));
+        assertFalse(net.getPlacesMap ().contains(place));
     }
 
     @Test
@@ -107,7 +107,7 @@ public class PetriNetControllerTest {
 
         controller.delete(place);
 
-        assertFalse("Petrinet contains place after deletion", net.getPlaces().contains(place));
+        assertFalse("Petrinet contains place after deletion", net.getPlacesMap ().contains(place));
     }
 
     @Test

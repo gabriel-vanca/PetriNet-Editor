@@ -47,7 +47,7 @@ public final class ClonePetriNet {
          this.visit(annotation);
       }
 
-      i$ = this.petriNet.getPlaces().iterator();
+      i$ = this.petriNet.getPlacesMap ().iterator();
 
       while(i$.hasNext()) {
          DiscretePlace place = (DiscretePlace)i$.next();
@@ -61,7 +61,7 @@ public final class ClonePetriNet {
          this.visit(rateParameter);
       }
 
-      i$ = this.petriNet.getTransitions().iterator();
+      i$ = this.petriNet.getTransitionsMap ().iterator();
 
       while(i$.hasNext()) {
          Transition transition = (Transition)i$.next();

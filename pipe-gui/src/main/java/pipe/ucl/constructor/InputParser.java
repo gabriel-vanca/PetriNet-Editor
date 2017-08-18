@@ -1,7 +1,6 @@
 package pipe.ucl.constructor;
 
-import pipe.ucl.models.TransAssertion;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import pipe.ucl.models.InputLine;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -9,44 +8,51 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class InputParser {
 
-    private ArrayList<TransAssertion> TransAssertionList = new ArrayList<>();
+//    private ArrayList<TransAssertion> TransAssertionList = new ArrayList<>();
 
-    public ArrayList<TransAssertion> getTransAssertionList() {
-        return TransAssertionList;
-    }
+//    public ArrayList<TransAssertion> getTransAssertionList() {
+//        return TransAssertionList;
+//    }
 
-    public void emptyTransAssertionList() {
-        TransAssertionList = new ArrayList<>();
+    private ArrayList<InputLine> ParsedReadDataLinesList = new ArrayList<> ();
+
+    public ArrayList<InputLine> getParsedReadDataLinesList() {
+        return this.ParsedReadDataLinesList;
     }
 
     public InputParser() {
 
-        List<String> tranAssertionList =  ReadFile();
-        for (String tranAssertionString:tranAssertionList) {
-            TransAssertion transAssertion = ParseTranAssertion(tranAssertionString);
-            TransAssertionList.add(transAssertion);
+        List<String> readDataLinesList =  ReadFile();
+        for (String readDataLine:readDataLinesList) {
+            InputLine parsedReadDataLine = ParseReadDataLine(readDataLine);
+            if(parsedReadDataLine == null)
+                continue;
+            ParsedReadDataLinesList.add(parsedReadDataLine);
         }
+    }
+
+    public void EmptyParsedReadDataLinesList() {
+        ParsedReadDataLinesList.clear ();
     }
 
     private List<String> ReadFile() {
 
 //        String inputFileName = "input_washer.txt";
-        String inputFileName = "input_guitar.txt";
+        String inputFileName = "input_washer_newNotation.txt";
 
-        List<String> tranAssertionList = new ArrayList<> ();
+        List<String> readDataLinesList = new ArrayList<> ();
 
         try {
 
             Stream<String> stream = Files.lines (Paths.get (ClassLoader.getSystemResource (inputFileName)
                     .toURI ()));
 
-            tranAssertionList = stream
+            readDataLinesList = stream
                     .collect (Collectors.toList ());
 
         } catch (IOException e) {
@@ -58,118 +64,63 @@ public class InputParser {
             System.out.println ("ERROR while reading input file: " + e);
         }
 
-        tranAssertionList.forEach (System.out::println);
+        readDataLinesList.forEach (System.out::println);
 
-        return tranAssertionList;
+        return readDataLinesList;
     }
 
-    private TransAssertion ParseTranAssertion(String transAssertionString) {
+    // This functions splits a string by commas with the exception of commas inside quotes (https://stackoverflow.com/questions/1757065/java-splitting-a-comma-separated-string-but-ignoring-commas-in-quotes)
+    public static String[] SplitByCommasExceptQuotesAndParentheses(String stringToSplit) {
+        String otherThanQuote = " [^\"] ";
+        String quotedString = String.format(" \" %s* \" ", otherThanQuote);
+        String regex = String.format("(?x) "+ // enable comments, ignore white spaces
+                        ",                         "+ // match a comma
+                        "(?=                       "+ // start positive look ahead
+                        "  (?:                     "+ //   start non-capturing group 1
+                        "    %s*                   "+ //     match 'otherThanQuote' zero or more times
+                        "    %s                    "+ //     match 'quotedString'
+                        "  )*                      "+ //   end group 1 and repeat it zero or more times
+                        "  %s*                     "+ //   match 'otherThanQuote'
+                        "  $                       "+ // match the end of the string
+                        ")                         "+ // stop positive look ahead
+                        "(?![^\\(]*\\))            ", // ignore commas in parentheses as well
+                otherThanQuote, quotedString, otherThanQuote);
 
-        /* Note: String instructions on input should be made */
+        String[] tokens = stringToSplit.split(regex, -1);
+        return tokens;
+    }
 
-        TransAssertion newTransAssertion = new TransAssertion();
+    private InputLine ParseReadDataLine(String readDataLine) {
 
-        try {
-            //.replaceAll("\\s", "")
+        String type;
+        String[] parameters;
+        String content;
 
-            /* Initialisations */
-            transAssertionString = transAssertionString.replace("'", "");
-            transAssertionString = transAssertionString.replace("’", "");
-            transAssertionString = transAssertionString.replace("'", "");
-            transAssertionString = transAssertionString.replace("`", "");
-
-            String[] tranAssertionSplit = transAssertionString.split(Pattern.quote("("));
-            String[] currentSubsectionSplit;
-            String[] currentUnderSubSectionSplit;
-            String function;
-            int currentSectionIndex = 2;
-
-
-
-            currentSubsectionSplit = tranAssertionSplit[currentSectionIndex].split(Pattern.quote(","));
-            newTransAssertion.setStartStateId(currentSubsectionSplit[0]);
-
-            function = null;
-            if(currentSubsectionSplit[1].toLowerCase().contains("default")) {
-                function = "default";
-                currentSectionIndex++;
-                currentSubsectionSplit = tranAssertionSplit[currentSectionIndex].split(Pattern.quote(","));
-
-                newTransAssertion.setStartStateName(function + "( " + currentSubsectionSplit[0]);
-            } else {
-                newTransAssertion.setStartStateName(currentSubsectionSplit[1]);
-            }
-            if(function == null)
-                newTransAssertion.setStartStateDate(currentSubsectionSplit[2].substring(0, currentSubsectionSplit[2].lastIndexOf(")")));
-            else
-                newTransAssertion.setStartStateDate(currentSubsectionSplit[1].substring(0, currentSubsectionSplit[1].lastIndexOf(")")));
-            currentSectionIndex++;
-
-            currentSubsectionSplit = tranAssertionSplit[currentSectionIndex].split(Pattern.quote(","));
-            newTransAssertion.setEndStateId(currentSubsectionSplit[0]);
-
-            function = null;
-            if(currentSubsectionSplit[1].toLowerCase().contains("default")) {
-                function = "default";
-                currentSectionIndex++;
-                currentSubsectionSplit = tranAssertionSplit[currentSectionIndex].split(Pattern.quote(","));
-
-                newTransAssertion.setEndStateName(function + "( " + currentSubsectionSplit[0]);
-            } else {
-                newTransAssertion.setEndStateName(currentSubsectionSplit[1]);
-            }
-            if(function == null) {
-                newTransAssertion.setEndStateDate (currentSubsectionSplit[2].substring (0, currentSubsectionSplit[2].lastIndexOf (")")));
-                currentUnderSubSectionSplit = currentSubsectionSplit[3].split (Pattern.quote (":"));
-            }
-            else {
-                newTransAssertion.setEndStateDate (currentSubsectionSplit[1].substring (0, currentSubsectionSplit[1].lastIndexOf (")")));
-                currentUnderSubSectionSplit = currentSubsectionSplit[2].split (Pattern.quote (":"));
-            }
-
-            if (currentUnderSubSectionSplit.length == 1) {
-                if (currentUnderSubSectionSplit[0].toLowerCase().contains("true")) {
-                    newTransAssertion.setSign(Boolean.TRUE);
-                } else {
-                    if (currentUnderSubSectionSplit[0].toLowerCase().contains("false")) {
-                        newTransAssertion.setSign(Boolean.FALSE);
-                    } else {
-                        throw new NotImplementedException();
-                    }
-                }
-            }
-            else {
-                int indexOfSign = currentUnderSubSectionSplit[0].indexOf("~");
-                if (indexOfSign == -1) {
-                    newTransAssertion.setAuthor (currentUnderSubSectionSplit[0]);
-                    newTransAssertion.setSign(Boolean.TRUE);
-                } else
-                    {
-                        newTransAssertion.setAuthor (currentUnderSubSectionSplit[0].substring(indexOfSign + 1));
-                        newTransAssertion.setSign(Boolean.FALSE);
-                    }
-                String time = currentUnderSubSectionSplit[1] + " ((";
-
-                currentSectionIndex+=2;
-
-                currentSubsectionSplit = tranAssertionSplit[currentSectionIndex].split(Pattern.quote(":"));
-                time += currentSubsectionSplit[0];
-                newTransAssertion.setTime(time);
-                function = currentSubsectionSplit[1]+ " (";
-
-                currentSectionIndex++;
-                function += tranAssertionSplit[currentSectionIndex].substring(0, tranAssertionSplit[currentSectionIndex].lastIndexOf(")"));
-                newTransAssertion.setAction(function);
-            }
-
-        } catch (Exception e) {
-            System.out.println("ERROR: Could not parse new trans-assertion string due to the following error: " + e.toString());
+        int indexBegin = readDataLine.indexOf ("(");
+        if (indexBegin == -1)
             return null;
-        }
 
-        finally {
-            return newTransAssertion;
-        }
-    };
+        int indexEnd = readDataLine.lastIndexOf (")");
+        if (indexEnd == -1)
+            return null;
 
+        type = readDataLine.substring (0, indexBegin).toUpperCase ();
+        content = readDataLine.substring (indexBegin + 1, indexEnd);
+
+        content = content.replaceAll ("'", "\"");
+        content = content.replaceAll ("’", "\"");
+        content = content.replaceAll ("'", "\"");
+        content = content.replaceAll ("`", "\"");
+
+        // Replaces all white spaces, except white spaces inside quotes. Takes into consideration escaped quotes. (https://stackoverflow.com/questions/9577930/regular-expression-to-select-all-whitespace-that-isnt-in-quotes)
+        content = content.replaceAll ("\\s+(?=((\\\\[\\\\\"]|[^\\\\\"])*\"(\\\\[\\\\\"]|[^\\\\\"])*\")*(\\\\[\\\\\"]|[^\\\\\"])*$)", "");
+
+
+      //  parameters = content.split (Pattern.quote (","));
+        parameters = SplitByCommasExceptQuotesAndParentheses (content);
+
+        return new InputLine (type, parameters);
+
+    }
+    
 }

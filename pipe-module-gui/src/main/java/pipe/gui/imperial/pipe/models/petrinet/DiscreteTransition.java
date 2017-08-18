@@ -27,7 +27,7 @@ public final class DiscreteTransition extends AbstractConnectable implements Tra
     private int angle = 0;
     private boolean enabled = false;
     private String time;
-    private String author;
+    private String actor;
     private String action;
     private Boolean sign;
 
@@ -39,9 +39,9 @@ public final class DiscreteTransition extends AbstractConnectable implements Tra
         super (id, id);
     }
 
-    public DiscreteTransition(String id, String name, String author, String action, String time, Boolean sign) {
+    public DiscreteTransition(String id, String name, String actor, String action, String time, Boolean sign) {
         super (id, name);
-        this.author = author;
+        this.actor = actor;
         this.action = action;
         this.time = time;
         this.sign = sign;
@@ -53,11 +53,11 @@ public final class DiscreteTransition extends AbstractConnectable implements Tra
         this.priority = priority;
     }
 
-    public DiscreteTransition(String id, String name, pipe.gui.imperial.pipe.models.petrinet.Rate rate, int priority, String author, String action, String time, Boolean sign) {
+    public DiscreteTransition(String id, String name, pipe.gui.imperial.pipe.models.petrinet.Rate rate, int priority, String actor, String action, String time, Boolean sign) {
         super (id, name);
         this.rate = rate;
         this.priority = priority;
-        this.author = author;
+        this.actor = actor;
         this.action = action;
         this.time = time;
         this.sign = sign;
@@ -70,7 +70,7 @@ public final class DiscreteTransition extends AbstractConnectable implements Tra
         this.timed = transition.timed;
         this.rate = transition.rate;
         this.priority = transition.priority;
-        this.author = transition.author;
+        this.actor = transition.actor;
         this.action = transition.action;
         this.sign = transition.sign;
     }
@@ -83,8 +83,8 @@ public final class DiscreteTransition extends AbstractConnectable implements Tra
 //        string += ":";
         if (this.sign == Boolean.FALSE)
             string += ":!";
-        if (this.author != null && this.author.length () > 0)
-            string += ":" + this.author;
+        if (this.actor != null && this.actor.length () > 0)
+            string += ":" + this.actor;
         if (this.action != null && this.action.length () > 0)
             string += ":" + this.action;
         if (this.time != null && this.time.length () > 0)
@@ -356,11 +356,11 @@ public final class DiscreteTransition extends AbstractConnectable implements Tra
     }
 
     public String getAuthor() {
-        return author;
+        return actor;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setAuthor(String actor) {
+        this.actor = actor;
     }
 
     public String getAction() {

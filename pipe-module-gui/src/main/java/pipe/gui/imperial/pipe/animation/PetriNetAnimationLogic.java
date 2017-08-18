@@ -134,7 +134,7 @@ public final class PetriNetAnimationLogic implements AnimationLogic {
 
    private Set findEnabledTransitions(State state) {
       Set enabledTransitions = new HashSet();
-      Iterator i$ = this.petriNet.getTransitions().iterator();
+      Iterator i$ = this.petriNet.getTransitionsMap ().iterator();
 
       while(i$.hasNext()) {
          Transition transition = (Transition)i$.next();

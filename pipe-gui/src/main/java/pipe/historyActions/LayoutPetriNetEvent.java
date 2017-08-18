@@ -49,12 +49,12 @@ public class LayoutPetriNetEvent extends AbstractUndoableEdit {
      * @param points points for the components
      */
     private void apply(Map<String, Point> points) {
-        for (Place place : petriNet.getPlaces()) {
+        for (Place place : petriNet.getPlacesMap ()) {
             Point point = points.get(place.getId());
             applyPoint(place, point);
         }
 
-        for (Transition transition : petriNet.getTransitions()) {
+        for (Transition transition : petriNet.getTransitionsMap ()) {
             Point point = points.get(transition.getId());
             applyPoint(transition, point);
         }

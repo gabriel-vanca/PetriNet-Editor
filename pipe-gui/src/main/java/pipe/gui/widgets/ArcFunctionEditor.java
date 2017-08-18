@@ -82,7 +82,7 @@ public class ArcFunctionEditor extends JPanel {
         north.setBorder(javax.swing.BorderFactory.createTitledBorder("Places input:"));
 
         Collection<String> placeNames = new LinkedList<>();
-        for (Place place : petriNet.getPlaces()) {
+        for (Place place : petriNet.getPlacesMap ()) {
             placeNames.add(place.getName());
         }
 

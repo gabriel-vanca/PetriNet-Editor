@@ -25,8 +25,8 @@ public class PetriNetAdapter extends XmlAdapter {
       petriNet.tokens = v.getTokens();
       petriNet.annotations = v.getAnnotations();
       petriNet.rateParameters = v.getRateParameters();
-      petriNet.places = v.getPlaces();
-      petriNet.transitions = v.getTransitions();
+      petriNet.places = v.getPlacesMap ();
+      petriNet.transitions = v.getTransitionsMap ();
       petriNet.arcs = v.getArcs();
       return petriNet;
    }

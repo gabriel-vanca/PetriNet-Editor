@@ -62,7 +62,7 @@ public abstract class CachingExplorerUtilities implements ExplorerUtilities {
 
    public final ClassifiedState getCurrentState() {
       HashedStateBuilder builder = new HashedStateBuilder();
-      Iterator i$ = this.petriNet.getPlaces().iterator();
+      Iterator i$ = this.petriNet.getPlacesMap ().iterator();
 
       while(i$.hasNext()) {
          DiscretePlace place = (DiscretePlace)i$.next();

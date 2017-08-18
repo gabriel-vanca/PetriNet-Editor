@@ -36,8 +36,10 @@ public class PetriNet {
    protected final PropertyChangeSupport changeSupport;
    private final FunctionalWeightParser functionalWeightParser;
    private final PetriNetComponentVisitor deleteVisitor;
-   private final HashMap<String, DiscreteTransition> transitions;
-   private final HashMap<String, DiscretePlace> places;
+   private final HashMap<String, DiscreteTransition> transitionsMap;
+   private final HashMap<String, DiscretePlace> placesMap;
+   private final HashMap<String, DiscreteDate> datesMap;
+   private final HashMap<String, DiscreteFunction> functionsMap;
    private final Map tokens;
    private final HashMap<String, InboundArc> inboundArcs;
    private final HashMap<String, OutboundArc> outboundArcs;
@@ -60,9 +62,11 @@ public class PetriNet {
       this.changeSupport = new PropertyChangeSupport(this);
       this.functionalWeightParser = new PetriNetWeightParser(new EvalVisitor(this), this);
       this.deleteVisitor = new PetriNetComponentRemovalVisitor(this);
-      this.transitions = new HashMap();
-      this.places = new HashMap();
+      this.transitionsMap = new HashMap();
+      this.placesMap = new HashMap();
       this.tokens = new HashMap();
+      this.datesMap = new HashMap();
+      this.functionsMap = new HashMap();
       this.inboundArcs = new HashMap();
       this.outboundArcs = new HashMap();
       this.rateParameters = new HashMap();
@@ -77,8 +81,8 @@ public class PetriNet {
    }
 
    private void initialiseIdMap() {
-      this.componentMaps.put(DiscretePlace.class, this.places);
-      this.componentMaps.put(DiscreteTransition.class, this.transitions);
+      this.componentMaps.put(DiscretePlace.class, this.placesMap);
+      this.componentMaps.put(DiscreteTransition.class, this.transitionsMap);
       this.componentMaps.put(InboundArc.class, this.inboundArcs);
       this.componentMaps.put(OutboundArc.class, this.outboundArcs);
       this.componentMaps.put(pipe.gui.imperial.pipe.models.petrinet.Token.class, this.tokens);
@@ -87,8 +91,8 @@ public class PetriNet {
    }
 
    public int hashCode() {
-      int result = this.transitions.hashCode();
-      result = 31 * result + this.places.hashCode();
+      int result = this.transitionsMap.hashCode();
+      result = 31 * result + this.placesMap.hashCode();
       result = 31 * result + this.tokens.hashCode();
       result = 31 * result + this.inboundArcs.hashCode();
       result = 31 * result + this.outboundArcs.hashCode();
@@ -124,14 +128,14 @@ public class PetriNet {
                return false;
             }
 
-            if (!CollectionUtils.isEqualCollection(this.places.values(), petriNet.places.values())) {
+            if (!CollectionUtils.isEqualCollection(this.placesMap.values(), petriNet.placesMap.values())) {
                return false;
             } else if (!CollectionUtils.isEqualCollection(this.rateParameters.values(), petriNet.rateParameters.values())) {
                return false;
             } else if (!CollectionUtils.isEqualCollection(this.tokens.values(), petriNet.tokens.values())) {
                return false;
             } else {
-               return CollectionUtils.isEqualCollection(this.transitions.values(), petriNet.transitions.values());
+               return CollectionUtils.isEqualCollection(this.transitionsMap.values(), petriNet.transitionsMap.values());
             }
          }
       }
@@ -168,22 +172,22 @@ public class PetriNet {
    }
 
    public void addPlace(DiscretePlace place) {
-      if (!this.places.containsValue(place)) {
-         this.places.put(place.getId(), place);
-         place.addPropertyChangeListener(new PetriNet.NameChangeListener(place, this.places));
+      if (!this.placesMap.containsValue(place)) {
+         this.placesMap.put(place.getId(), place);
+         place.addPropertyChangeListener(new PetriNet.NameChangeListener(place, this.placesMap));
          this.changeSupport.firePropertyChange("newPlace", (Object)null, place);
       }
    }
 
    public DiscretePlace getPlace(String id) {
-      if (this.places.containsKey (id)) {
-         return (DiscretePlace) places.get (id);
+      if (this.placesMap.containsKey (id)) {
+         return (DiscretePlace) placesMap.get (id);
       }
       return null;
    }
 
-   public Collection<DiscretePlace> getPlaces() {
-      return this.places.values();
+   public Collection<DiscretePlace> getPlacesMap() {
+      return this.placesMap.values();
    }
 
    public void removePlace(pipe.gui.imperial.pipe.models.petrinet.Place place) throws PetriNetComponentException {
@@ -191,7 +195,7 @@ public class PetriNet {
       if (!components.isEmpty()) {
          throw new PetriNetComponentException("Cannot delete " + place.getId() + " it is referenced in a functional expression!");
       } else {
-         this.places.remove(place.getId());
+         this.placesMap.remove(place.getId());
          Iterator i$ = this.outboundArcs(place).iterator();
 
          while(i$.hasNext()) {
@@ -203,9 +207,39 @@ public class PetriNet {
       }
    }
 
+   public void addDate(DiscreteDate date) {
+      if (!this.datesMap.containsValue(date)) {
+         this.datesMap.put(date.getId(), date);
+         date.addPropertyChangeListener(new PetriNet.NameChangeListener(date, this.datesMap));
+         this.changeSupport.firePropertyChange("newDate", (Object)null, date);
+      }
+   }
+
+   public DiscreteDate getDate(String id) {
+      if (this.datesMap.containsKey (id)) {
+         return (DiscreteDate) datesMap.get (id);
+      }
+      return null;
+   }
+
+   public void addFunction(DiscreteFunction function) {
+      if (!this.functionsMap.containsValue(function)) {
+         this.functionsMap.put(function.getId(), function);
+         function.addPropertyChangeListener(new PetriNet.NameChangeListener(function, this.functionsMap));
+         this.changeSupport.firePropertyChange("newFunction", (Object)null, function);
+      }
+   }
+
+   public DiscreteFunction getFunction(String id) {
+      if (this.functionsMap.containsKey (id)) {
+         return (DiscreteFunction) functionsMap.get (id);
+      }
+      return null;
+   }
+
    private Collection getComponentsReferencingId(String componentId) {
       Set results = new HashSet();
-      Iterator i$ = this.getTransitions().iterator();
+      Iterator i$ = this.getTransitionsMap ().iterator();
 
       while(i$.hasNext()) {
          Transition transition = (Transition)i$.next();
@@ -274,17 +308,24 @@ public class PetriNet {
    }
 
    public void addTransition(DiscreteTransition transition) {
-      if (!this.transitions.containsValue(transition)) {
-         this.transitions.put(transition.getId(), transition);
-         transition.addPropertyChangeListener(new PetriNet.NameChangeListener(transition, this.transitions));
+      if (!this.transitionsMap.containsValue(transition)) {
+         this.transitionsMap.put(transition.getId(), transition);
+         transition.addPropertyChangeListener(new PetriNet.NameChangeListener(transition, this.transitionsMap));
          transition.addPropertyChangeListener(new PetriNet.NameChangeArcListener());
          this.changeSupport.firePropertyChange("newTransition", (Object)null, transition);
       }
 
    }
 
+    public DiscreteTransition getTransition(String id) {
+        if (this.transitionsMap.containsKey (id)) {
+            return (DiscreteTransition) transitionsMap.get (id);
+        }
+        return null;
+    }
+
    public void removeTransition(Transition transition) {
-      this.transitions.remove(transition.getId());
+      this.transitionsMap.remove(transition.getId());
       Iterator i$ = this.outboundArcs(transition).iterator();
 
       while(i$.hasNext()) {
@@ -307,8 +348,8 @@ public class PetriNet {
       this.changeSupport.firePropertyChange("deleteArc", arc, (Object)null);
    }
 
-   public Collection<DiscreteTransition> getTransitions() {
-      return this.transitions.values();
+   public Collection<DiscreteTransition> getTransitionsMap() {
+      return this.transitionsMap.values();
    }
 
    public void addArc(InboundArc inboundArc) {
@@ -367,7 +408,7 @@ public class PetriNet {
          message.append("Cannot remove ").append(token.getId()).append(" token");
          Iterator i$;
          if (!referencedPlaces.isEmpty()) {
-            message.append(" places: ");
+            message.append(" placesMap: ");
             i$ = referencedPlaces.iterator();
 
             while(i$.hasNext()) {
@@ -379,7 +420,7 @@ public class PetriNet {
          }
 
          if (!referencedTransitions.isEmpty()) {
-            message.append(" transitions: ");
+            message.append(" transitionsMap: ");
             i$ = referencedTransitions.iterator();
 
             while(i$.hasNext()) {
@@ -396,7 +437,7 @@ public class PetriNet {
 
    private Collection getPlacesContainingToken(pipe.gui.imperial.pipe.models.petrinet.Token token) {
       Collection result = new LinkedList();
-      Iterator i$ = this.places.values().iterator();
+      Iterator i$ = this.placesMap.values().iterator();
 
       while(i$.hasNext()) {
          DiscretePlace place = (DiscretePlace)i$.next();
@@ -410,7 +451,7 @@ public class PetriNet {
 
    private Collection getTransitionsReferencingToken(Token token) {
       Collection result = new LinkedList();
-      Iterator i$ = this.transitions.values().iterator();
+      Iterator i$ = this.transitionsMap.values().iterator();
 
       while(i$.hasNext()) {
          Transition transition = (Transition)i$.next();
@@ -470,7 +511,7 @@ public class PetriNet {
    }
 
    private void removeRateParameterFromTransitions(RateParameter parameter) {
-      Iterator i$ = this.transitions.values().iterator();
+      Iterator i$ = this.transitionsMap.values().iterator();
 
       while(i$.hasNext()) {
          Transition transition = (Transition)i$.next();
@@ -587,7 +628,7 @@ public class PetriNet {
       }
 
       private void changePlaceTokens(String oldId, String newId) {
-         Iterator i$ = PetriNet.this.getPlaces().iterator();
+         Iterator i$ = PetriNet.this.getPlacesMap ().iterator();
 
          while(i$.hasNext()) {
             DiscretePlace place = (DiscretePlace)i$.next();

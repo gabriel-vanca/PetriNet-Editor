@@ -201,10 +201,10 @@ public class PetriNetController implements Serializable {
      * @param selectionRectangle bounds for selection
      */
     public void select(Rectangle selectionRectangle) {
-        for (Place place : petriNet.getPlaces()) {
+        for (Place place : petriNet.getPlacesMap ()) {
             selectPlaceable(place, selectionRectangle);
         }
-        for (Transition transition : petriNet.getTransitions()) {
+        for (Transition transition : petriNet.getTransitionsMap ()) {
             selectPlaceable(transition, selectionRectangle);
         }
         for (Arc arc : petriNet.getArcs()) {

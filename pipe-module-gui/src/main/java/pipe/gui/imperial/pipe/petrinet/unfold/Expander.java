@@ -74,7 +74,7 @@ public final class Expander {
    }
 
    private void unfoldTransitions() {
-      Iterator i$ = this.petriNet.getTransitions().iterator();
+      Iterator i$ = this.petriNet.getTransitionsMap ().iterator();
 
       while(i$.hasNext()) {
          DiscreteTransition transition = (DiscreteTransition)i$.next();

@@ -61,11 +61,11 @@ public class LayoutAction extends GuiAction {
 
     private Map<String, Point> getLocations(PetriNet petriNet) {
         Map<String, Point> pointMap = new HashMap<>();
-        for (Place place : petriNet.getPlaces()) {
+        for (Place place : petriNet.getPlacesMap ()) {
             pointMap.put(place.getId(), new Point(place.getX(), place.getY()));
         }
 
-        for (Transition transition : petriNet.getTransitions()) {
+        for (Transition transition : petriNet.getTransitionsMap ()) {
             pointMap.put(transition.getId(), new Point(transition.getX(), transition.getY()));
         }
         return pointMap;

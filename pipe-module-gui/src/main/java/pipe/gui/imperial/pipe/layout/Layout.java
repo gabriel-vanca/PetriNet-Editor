@@ -33,14 +33,14 @@ public class Layout {
       HashMap objectMap = new HashMap();
 
       try {
-         Iterator i$ = petriNet.getPlaces().iterator();
+         Iterator i$ = petriNet.getPlacesMap ().iterator();
 
          while(i$.hasNext()) {
             DiscretePlace place = (DiscretePlace)i$.next();
             objectMap.put(place.getId(), graph.insertVertex(parent, place.getId(), place.getId(), 0.0D, 0.0D, 30.0D, 30.0D));
          }
 
-         i$ = petriNet.getTransitions().iterator();
+         i$ = petriNet.getTransitionsMap ().iterator();
 
          while(i$.hasNext()) {
             Transition transition = (Transition)i$.next();
@@ -83,7 +83,7 @@ public class Layout {
          }
       }
 
-      Iterator i$ = petriNet.getTransitions().iterator();
+      Iterator i$ = petriNet.getTransitionsMap ().iterator();
 
       Point point;
       while(i$.hasNext()) {
@@ -93,7 +93,7 @@ public class Layout {
          transition.setY((int)(point.getY() + Math.abs(minY) + 40.0D));
       }
 
-      i$ = petriNet.getPlaces().iterator();
+      i$ = petriNet.getPlacesMap ().iterator();
 
       while(i$.hasNext()) {
          DiscretePlace place = (DiscretePlace)i$.next();

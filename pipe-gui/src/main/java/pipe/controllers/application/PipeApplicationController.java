@@ -128,13 +128,13 @@ public class PipeApplicationController {
             propertyChangeListener.propertyChange(changeEvent);
         }
 
-        for (Place place : net.getPlaces()) {
+        for (Place place : net.getPlacesMap ()) {
             PropertyChangeEvent changeEvent =
                     new PropertyChangeEvent(net, PetriNet.NEW_PLACE_CHANGE_MESSAGE, null, place);
             propertyChangeListener.propertyChange(changeEvent);
         }
 
-        for (Transition transition : net.getTransitions()) {
+        for (Transition transition : net.getTransitionsMap ()) {
             PropertyChangeEvent changeEvent =
                     new PropertyChangeEvent(net, PetriNet.NEW_TRANSITION_CHANGE_MESSAGE, null, transition);
             propertyChangeListener.propertyChange(changeEvent);

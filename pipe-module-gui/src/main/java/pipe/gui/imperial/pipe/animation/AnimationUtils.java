@@ -11,7 +11,7 @@ import java.util.Iterator;
 public final class AnimationUtils {
    public static State getState(PetriNet petriNet) {
       HashedStateBuilder builder = new HashedStateBuilder();
-      Iterator i$ = petriNet.getPlaces().iterator();
+      Iterator i$ = petriNet.getPlacesMap ().iterator();
 
       while(i$.hasNext()) {
          DiscretePlace place = (DiscretePlace)i$.next();

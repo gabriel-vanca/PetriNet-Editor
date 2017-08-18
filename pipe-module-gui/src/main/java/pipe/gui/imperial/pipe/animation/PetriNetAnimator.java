@@ -20,7 +20,7 @@ public final class PetriNetAnimator implements Animator {
 
    public void saveState() {
       this.savedStateTokens.clear();
-      Iterator i$ = this.petriNet.getPlaces().iterator();
+      Iterator i$ = this.petriNet.getPlacesMap ().iterator();
 
       while(i$.hasNext()) {
          DiscretePlace place = (DiscretePlace)i$.next();
@@ -30,7 +30,7 @@ public final class PetriNetAnimator implements Animator {
    }
 
    public void reset() {
-      Iterator i$ = this.petriNet.getPlaces().iterator();
+      Iterator i$ = this.petriNet.getPlacesMap ().iterator();
 
       while(i$.hasNext()) {
          DiscretePlace place = (DiscretePlace)i$.next();
@@ -57,7 +57,7 @@ public final class PetriNetAnimator implements Animator {
 
    public void fireTransition(Transition transition) {
       State newState = this.animationLogic.getFiredState(pipe.gui.imperial.pipe.animation.AnimationUtils.getState(this.petriNet), transition);
-      Iterator i$ = this.petriNet.getPlaces().iterator();
+      Iterator i$ = this.petriNet.getPlacesMap ().iterator();
 
       while(i$.hasNext()) {
          DiscretePlace place = (DiscretePlace)i$.next();

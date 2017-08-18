@@ -12,7 +12,7 @@ public class PlaceNamer extends ComponentNamer {
    }
 
    private void initialisePlaceNames() {
-      Iterator i$ = this.petriNet.getPlaces().iterator();
+      Iterator i$ = this.petriNet.getPlacesMap ().iterator();
 
       while(i$.hasNext()) {
          DiscretePlace place = (DiscretePlace)i$.next();
