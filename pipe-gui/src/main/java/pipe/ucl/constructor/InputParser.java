@@ -122,5 +122,5 @@ public class InputParser {
         return new InputLine (type, parameters);
 
     }
-    
+
 }
